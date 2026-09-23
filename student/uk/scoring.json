@@ -1,0 +1,919 @@
+{
+  "country": "UK",
+  "visa_route": "Student Visa (formerly Tier 4 General)",
+  "last_verified": "2026-05-29",
+  "applicant_profile": "Pakistani nationals applying for a UK Student visa.",
+  "framing_disclaimer": "Measures DOCUMENTED READINESS and RISK EXPOSURE. Does NOT predict the UKVI decision and is not legal advice. Verify maintenance amounts, IHS, fees, and dependant/TB rules on GOV.UK before applying.",
+  "config": {
+    "currency": "GBP",
+    "maintenance_london_per_month": 1529,
+    "maintenance_outside_per_month": 1171,
+    "maintenance_months_max": 9,
+    "maintenance_london_total": 13761,
+    "maintenance_outside_total": 10539,
+    "maintenance_effective_date": "2025-11-11",
+    "maintenance_previous_total_london": 12006,
+    "maintenance_note": "London £1,529/mo and outside £1,171/mo (x9 = £13,761 / £10,539) for applications on/after 11 Nov 2025. Replaced old £1,334/£1,023. Funds = (first-year tuition minus tuition already paid) + the applicable living-cost total.",
+    "funds_holding_days": 28,
+    "bank_statement_max_age_days": 31,
+    "ihs_student_per_year": 776,
+    "visa_fee_outside_uk": 524,
+    "english_b1_courses": "RQF 3-5 (B1, ~IELTS 4.0)",
+    "english_b2_courses": "RQF 6+ degree level (B2, ~IELTS 5.5)",
+    "selt_validity_years": 2,
+    "dependants_rule": "Since 1 Jan 2024 only full-time PhD/research-degree (9+ months) students, or government-sponsored students on a 6+ month course, may bring dependants. Taught Masters, undergraduate, and sub-degree students CANNOT.",
+    "tb_rule": "TB certificate from a UKVI-approved clinic is mandatory for Pakistani applicants staying 6+ months. Missing it = refusal.",
+    "last_verified": "2026-05-29",
+    "MUST_VERIFY_AT_SOURCE": true,
+    "source_urls": [
+      "https://www.gov.uk/student-visa",
+      "https://www.ukcisa.org.uk/",
+      "https://www.gov.uk/government/publications/register-of-licensed-sponsors-students"
+    ],
+    "note": "UK maintenance figures were raised on 11 Nov 2025 and tend to rise ~annually; the old £1,334/£1,023 figures still circulate online. Re-verify maintenance, IHS, fees, and dependant rules on GOV.UK before each production cycle."
+  },
+  "score_bands": [
+    {
+      "min": 85,
+      "max": 100,
+      "label": "Low Risk — Appears Well-Prepared for Submission",
+      "description": "Well-prepared file with low visible risk. NOT a prediction or guarantee — UKVI makes the final decision. Re-verify maintenance/IHS figures and submit once minor items are closed."
+    },
+    {
+      "min": 70,
+      "max": 84,
+      "label": "Moderate Risk — Improve Before Submission",
+      "description": "Eligible but with weak points a caseworker will probe (funds holding, CAS/document consistency, progression, credibility). Close flagged items before submitting."
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "label": "High Refusal Risk",
+      "description": "Serious gaps. Applying now with these gaps unaddressed indicates serious unresolved readiness issues. Resolve all high-risk flags first."
+    },
+    {
+      "min": 0,
+      "max": 49,
+      "label": "Critical Refusal Risk",
+      "description": "Mandatory items missing or integrity flags present. Do not apply — critical readiness gaps that are grounds for refusal, and deception/concealment risks a 10-year UK ban."
+    }
+  ],
+  "scoring_categories": [
+    {
+      "category_id": "cas_sponsor",
+      "label": "CAS & Sponsor Validity",
+      "max_points": 18,
+      "question_ids": [
+        "uk_has_cas",
+        "uk_sponsor_licensed",
+        "uk_cas_unspent",
+        "uk_cas_details_match",
+        "uk_cas_within_6_months",
+        "uk_cas_shows_english",
+        "uk_cas_shows_fees_paid"
+      ]
+    },
+    {
+      "category_id": "financial_maintenance",
+      "label": "Financial Evidence & Maintenance Funds",
+      "max_points": 18,
+      "question_ids": [
+        "uk_course_location",
+        "uk_first_year_tuition_fee",
+        "uk_tuition_fee_paid",
+        "uk_available_funds",
+        "uk_funds_held_28_days",
+        "uk_bank_statement_within_31_days",
+        "uk_funds_currency",
+        "uk_funds_account_holder",
+        "uk_parental_consent_proof",
+        "uk_financial_buffer"
+      ]
+    },
+    {
+      "category_id": "financial_legitimacy",
+      "label": "Source of Funds Legitimacy",
+      "max_points": 8,
+      "question_ids": [
+        "uk_funds_source",
+        "uk_large_recent_deposit",
+        "uk_source_of_funds_documented",
+        "uk_sponsor_immediate_family",
+        "uk_sponsor_files_fbr"
+      ]
+    },
+    {
+      "category_id": "credibility",
+      "label": "Credibility / Genuine Student",
+      "max_points": 12,
+      "question_ids": [
+        "uk_why_uk_specific",
+        "uk_course_career_link",
+        "uk_understands_course_details",
+        "uk_home_ties",
+        "uk_answers_unscripted"
+      ]
+    },
+    {
+      "category_id": "education_consistency",
+      "label": "Educational Consistency & Progression",
+      "max_points": 10,
+      "question_ids": [
+        "uk_edu_gap_over_1yr",
+        "uk_edu_gap_justified",
+        "uk_academic_progression",
+        "uk_drastic_field_change",
+        "uk_academics_verifiable"
+      ]
+    },
+    {
+      "category_id": "immigration_history",
+      "label": "Immigration History & Truthfulness",
+      "max_points": 10,
+      "question_ids": [
+        "uk_has_prior_refusal",
+        "uk_refusal_details",
+        "uk_immigration_history_disclosed",
+        "uk_overstay_or_removal",
+        "uk_asylum_history"
+      ]
+    },
+    {
+      "category_id": "application_consistency",
+      "label": "Application / CAS / Document Consistency",
+      "max_points": 8,
+      "question_ids": [
+        "uk_names_dates_consistent",
+        "uk_application_matches_cas"
+      ]
+    },
+    {
+      "category_id": "documents",
+      "label": "Core Documents (Passport/Course/English)",
+      "max_points": 8,
+      "question_ids": [
+        "uk_applicant_age",
+        "uk_has_valid_passport",
+        "uk_passport_valid_for_stay",
+        "uk_course_level",
+        "uk_has_english_exemption",
+        "uk_has_selt",
+        "uk_selt_provider",
+        "uk_english_cefr_level",
+        "uk_selt_within_2_years"
+      ]
+    },
+    {
+      "category_id": "health_character",
+      "label": "TB / ATAS / Health",
+      "max_points": 4,
+      "question_ids": [
+        "uk_stay_longer_than_6_months",
+        "uk_has_tb_certificate",
+        "uk_course_requires_atas",
+        "uk_has_atas_certificate"
+      ]
+    },
+    {
+      "category_id": "agent_integrity",
+      "label": "Application Integrity / Agent Risk",
+      "max_points": 2,
+      "question_ids": [
+        "uk_agent_prepared_app",
+        "uk_personally_reviewed_all",
+        "uk_no_fake_documents",
+        "uk_agent_advised_hiding"
+      ]
+    },
+    {
+      "category_id": "general_awareness",
+      "label": "General Awareness (IHS/Dependants/Work)",
+      "max_points": 2,
+      "question_ids": [
+        "uk_application_location",
+        "uk_application_date",
+        "uk_ihs_ready",
+        "uk_bringing_dependants",
+        "uk_dependant_eligibility",
+        "uk_wants_to_work"
+      ]
+    }
+  ],
+  "evaluation_model": {
+    "tiers": {
+      "hard_blocker": "Any triggered hard blocker forces 'Critical Refusal Risk'; score skipped. Mandatory items (passport/CAS/sponsor/course/funds/28-day/English/TB/ATAS/IHS/disclosure/no-fake-docs).",
+      "high_risk_flag": "Each triggered high-risk flag deducts impact AND caps the max band: 1-2 => 'High Refusal Risk'; 3+ => 'Critical Refusal Risk'. Prevents averaging from hiding serious risk.",
+      "soft_warning": "Each triggered soft warning deducts impact within band; does not cap the band."
+    },
+    "calculation_logic": {
+      "method": "tiered_weighted_with_band_caps",
+      "step_1": "Evaluate hard blockers. If ANY triggers -> 'Critical Refusal Risk'; stop.",
+      "step_2": "Per category: category_score = (sum score_impact of PASSING scored questions / sum score_impact of ALL scored questions) x max_points. 'info' questions (trigger_if=never) are routing-only.",
+      "step_3": "total_score = sum of category scores, rounded to nearest integer.",
+      "step_4": "Count triggered high-risk flags; apply band cap (1-2 => High; 3+ => Critical).",
+      "step_5": "Map total to a band; final band = worse of score-band and cap-band.",
+      "passing_definition": "A question PASSES when the answer satisfies pass_if. Financial pass requires funds >= (first-year tuition minus deposit) + applicable living-cost total, held per the 28-day rule.",
+      "rounding": "Category to 1 decimal; total to nearest integer."
+    }
+  },
+  "result_payload_template": {
+    "label": "<band label>",
+    "total_score": "<0-100>",
+    "estimated_refusal_concerns": "<triggered hard blockers + high-risk flags in plain English>",
+    "recommended_improvements": "<soft warnings + how to close each flag>",
+    "priority_action_list": "<hard blockers first, then high-risk flags, then soft warnings>",
+    "financial_evidence_advice": "<28-day continuous holding, accepted account holder, FRC+consent if parental, documented source, buffer above minimum>",
+    "cas_application_consistency_warning": "<reconcile name/DOB/course/fee/dates across passport, CAS, academics, financials, application form>",
+    "credibility_interview_advice": "<rehearse why-UK/this-university, course modules, funding, ties and plans in your own words>",
+    "risk_explanation": "<why this band, referencing financial/CAS/credibility scrutiny>",
+    "disclaimer": "Readiness assessment, not an approval prediction or legal advice. Verify all figures on GOV.UK before applying."
+  },
+  "critical_blockers_hard": [
+    {
+      "question_id": "uk_applicant_age",
+      "trigger_if": {
+        "type": "lt",
+        "value": 16
+      },
+      "mapped_rule_name": "Minimum Age Requirement",
+      "mapped_rule_id": "uk_eligibility_minimum_age_requirement",
+      "conditional_on": null,
+      "message": "You must be at least 16 for the Student visa. Under-16s need the Child Student visa."
+    },
+    {
+      "question_id": "uk_has_valid_passport",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule_name": "Valid Passport Required",
+      "mapped_rule_id": "uk_identity_valid_passport_required",
+      "conditional_on": null,
+      "message": "A valid passport is required. Renew before applying if needed."
+    },
+    {
+      "question_id": "uk_passport_valid_for_stay",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Valid Passport Required",
+      "mapped_rule_id": "uk_identity_valid_passport_required",
+      "conditional_on": null,
+      "message": "A passport expiring during your stay should be renewed first to avoid complications."
+    },
+    {
+      "question_id": "uk_has_cas",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule_name": "CAS from Licensed Sponsor Required",
+      "mapped_rule_id": "uk_sponsorship_cas_from_licensed_sponsor_required",
+      "conditional_on": null,
+      "message": "The CAS (Confirmation of Acceptance for Studies) is mandatory. No application can proceed without it. An offer letter is NOT a CAS."
+    },
+    {
+      "question_id": "uk_sponsor_licensed",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "CAS from Licensed Sponsor Required",
+      "mapped_rule_id": "uk_sponsorship_cas_from_licensed_sponsor_required",
+      "conditional_on": null,
+      "message": "Only licensed sponsors can issue a valid CAS. Verify your institution yourself on the public Register of Licensed Student Sponsors — agents sometimes push unlicensed 'colleges'."
+    },
+    {
+      "question_id": "uk_cas_unspent",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "CAS Must Be Unspent and Match Personal Details Exactly",
+      "mapped_rule_id": "uk_sponsorship_cas_must_be_unspent_and_match_personal_details_exactly",
+      "conditional_on": null,
+      "message": "A CAS can only be used once. If it was used in a prior (e.g. refused) application, request a fresh CAS from your sponsor."
+    },
+    {
+      "question_id": "uk_cas_details_match",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "CAS Must Be Unspent and Match Personal Details Exactly",
+      "mapped_rule_id": "uk_sponsorship_cas_must_be_unspent_and_match_personal_details_exactly",
+      "conditional_on": null,
+      "message": "Any mismatch between CAS and passport/documents (a common Pakistani refusal cause — name spelling, DOB, fee figure) can cause refusal. Check every field and ask the sponsor to correct errors BEFORE applying."
+    },
+    {
+      "question_id": "uk_cas_within_6_months",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "CAS Must Not Be Older Than 6 Months (Outside UK Applicants)",
+      "mapped_rule_id": "uk_sponsorship_cas_must_not_be_older_than_6_months_outside_uk_applicants",
+      "conditional_on": {
+        "question_id": "uk_application_location",
+        "operator": "eq",
+        "value": "outside_uk"
+      },
+      "message": "A CAS older than 6 months is invalid for outside-UK applications. Request a fresh CAS if needed."
+    },
+    {
+      "question_id": "uk_course_level",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Course Must Be at RQF Level 3 or Above",
+      "mapped_rule_id": "uk_course_course_must_be_at_rqf_level_3_or_above",
+      "conditional_on": null,
+      "message": "The Student visa requires a course at RQF Level 3 or above (most degrees are Level 6+). Below that is not eligible."
+    },
+    {
+      "question_id": "uk_available_funds",
+      "trigger_if": {
+        "type": "computed_funds_short"
+      },
+      "mapped_rule_name": "Sufficient Maintenance Funds Required",
+      "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+      "conditional_on": null,
+      "message": "Required = (first-year tuition minus deposit paid) + living costs (£13,761 London / £10,539 outside). Funds must be genuine and held correctly for 28 days."
+    },
+    {
+      "question_id": "uk_funds_held_28_days",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "28-Day Continuous Funds Holding Rule",
+      "mapped_rule_id": "uk_financial_28_day_continuous_funds_holding_rule",
+      "conditional_on": null,
+      "message": "The 28-day rule is strict: the balance must NEVER dip below the required total at any point in a 28-consecutive-day window. A single large deposit just before applying fails this. (Unlike Australia, the UK enforces a hard 28-day period.)"
+    },
+    {
+      "question_id": "uk_bank_statement_within_31_days",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "28-Day Continuous Funds Holding Rule",
+      "mapped_rule_id": "uk_financial_28_day_continuous_funds_holding_rule",
+      "conditional_on": null,
+      "message": "The statement closing date must be no more than 31 days before you apply, or the evidence is rejected."
+    },
+    {
+      "question_id": "uk_parental_consent_proof",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+      "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+      "conditional_on": {
+        "question_id": "uk_funds_source",
+        "operator": "eq",
+        "value": "parent_guardian_savings"
+      },
+      "message": "Parent/guardian funds require BOTH a relationship document (Family Registration Certificate or birth certificate) AND a signed consent letter allowing you to use the funds. Missing either = refusal."
+    },
+    {
+      "question_id": "uk_has_selt",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Secure English Language Test (SELT) Required",
+      "mapped_rule_id": "uk_english_secure_english_language_test_selt_required",
+      "conditional_on": {
+        "question_id": "uk_has_english_exemption",
+        "operator": "eq",
+        "value": "no"
+      },
+      "message": "Below-degree courses need a SELT from a UKVI-approved provider; general IELTS is NOT accepted — it must be IELTS for UKVI / PTE Academic UKVI / LanguageCert SELT etc. Degree-level courses may use a university assessment recorded on the CAS."
+    },
+    {
+      "question_id": "uk_selt_provider",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Secure English Language Test (SELT) Required",
+      "mapped_rule_id": "uk_english_secure_english_language_test_selt_required",
+      "conditional_on": {
+        "question_id": "uk_has_english_exemption",
+        "operator": "eq",
+        "value": "no"
+      },
+      "message": "Only UKVI-approved SELTs count (IELTS for UKVI, PTE Academic UKVI, LanguageCert, etc.). A normal academic IELTS taken at a non-SELT centre is invalid for below-degree courses."
+    },
+    {
+      "question_id": "uk_english_cefr_level",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Minimum CEFR Level by Course Level",
+      "mapped_rule_id": "uk_english_minimum_cefr_level_by_course_level",
+      "conditional_on": {
+        "question_id": "uk_has_english_exemption",
+        "operator": "eq",
+        "value": "no"
+      },
+      "message": "Below-degree: B1 (~IELTS 4.0). Degree level: B2 (~IELTS 5.5) in all four skills. A score below your course level fails."
+    },
+    {
+      "question_id": "uk_selt_within_2_years",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "SELT Result Must Not Be More Than 2 Years Old",
+      "mapped_rule_id": "uk_english_selt_result_must_not_be_more_than_2_years_old",
+      "conditional_on": {
+        "question_id": "uk_has_english_exemption",
+        "operator": "eq",
+        "value": "no"
+      },
+      "message": "A SELT older than 2 years is invalid; you must retake it."
+    },
+    {
+      "question_id": "uk_has_tb_certificate",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "TB Test Mandatory for Pakistani Applicants (6+ Month Stay)",
+      "mapped_rule_id": "uk_health_tb_test_mandatory_for_pakistani_applicants_6_month_stay",
+      "conditional_on": {
+        "question_id": "uk_stay_longer_than_6_months",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "For Pakistani applicants staying 6+ months, a TB test from a UKVI-APPROVED clinic (e.g. IOM Islamabad/Karachi/Lahore) is mandatory. A normal hospital chest X-ray does NOT count. Missing it = automatic refusal."
+    },
+    {
+      "question_id": "uk_has_atas_certificate",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "ATAS Certificate Required for Sensitive STEM Postgraduate Subjects",
+      "mapped_rule_id": "uk_course_atas_certificate_required_for_sensitive_stem_postgraduate_subjects",
+      "conditional_on": {
+        "question_id": "uk_course_requires_atas",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Where required, ATAS must be obtained BEFORE submitting the visa application. Applying without it = refusal."
+    },
+    {
+      "question_id": "uk_ihs_ready",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule_name": "Immigration Health Surcharge (IHS) Must Be Paid Upfront",
+      "mapped_rule_id": "uk_fees_immigration_health_surcharge_ihs_must_be_paid_upfront",
+      "conditional_on": null,
+      "message": "IHS (~£776 per year of stay) must be paid in full during the application — no instalments. It's separate from the ~£524 visa fee."
+    },
+    {
+      "question_id": "uk_immigration_history_disclosed",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule_name": "Full Immigration History Must Be Accurately Disclosed",
+      "mapped_rule_id": "uk_immigration_history_full_immigration_history_must_be_accurately_disclosed",
+      "conditional_on": null,
+      "message": "Concealing immigration history is treated as deception — a 10-year ban from the UK. Disclose everything, even old or minor matters."
+    },
+    {
+      "question_id": "uk_no_fake_documents",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Application Integrity and Agent Risk",
+      "mapped_rule_id": "uk_integrity_application_integrity_and_agent_risk",
+      "conditional_on": null,
+      "message": "A single fabricated document (bank balance, experience letter, transcript) triggers refusal under deception rules and a 10-year ban — even if an agent did it. Verify authenticity of everything."
+    }
+  ],
+  "high_risk_flags": [
+    {
+      "question_id": "uk_cas_shows_english",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Secure English Language Test (SELT) Required",
+      "mapped_rule_id": "uk_english_secure_english_language_test_selt_required",
+      "conditional_on": null,
+      "message": "If your university assessed your English (degree-level courses), the CAS must record it. A blank/incorrect CAS English field can force you to take a SELT."
+    },
+    {
+      "question_id": "uk_cas_shows_fees_paid",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Sufficient Maintenance Funds Required",
+      "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+      "conditional_on": null,
+      "message": "Fees shown as paid on the CAS reduce the tuition amount you must evidence. If your deposit isn't recorded, ask the sponsor to fix the CAS — it directly changes your required funds."
+    },
+    {
+      "question_id": "uk_funds_account_holder",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+      "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+      "conditional_on": null,
+      "message": "Funds must be in your own name or a parent's/legal guardian's. Funds in a brother's, uncle's, or family-friend's account are NOT accepted for maintenance (different from the US/Canada sponsor model)."
+    },
+    {
+      "question_id": "uk_source_of_funds_documented",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+      "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+      "conditional_on": null,
+      "message": "Caseworkers query unexplained money. Each significant amount needs proof: registered sale deed, FBR-declared salary, sanctioned loan letter, or a notarised gift affidavit from a traceable giver."
+    },
+    {
+      "question_id": "uk_sponsor_files_fbr",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+      "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+      "conditional_on": null,
+      "message": "Large funds with no FBR/filer history imply undeclared income and weaken credibility if source is questioned. Declared income should plausibly support the amount."
+    },
+    {
+      "question_id": "uk_why_uk_specific",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Genuine Student / Credibility Assessment",
+      "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+      "conditional_on": null,
+      "message": "If a credibility interview happens, generic answers hurt. Name the course content, ranking, or specialization and tie it to your background and a Pakistan-based career. Random/agent-picked universities are a red flag."
+    },
+    {
+      "question_id": "uk_course_career_link",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Genuine Student / Credibility Assessment",
+      "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+      "conditional_on": null,
+      "message": "Show the path: your background -> this UK course -> a named role/sector in Pakistan. No logical payoff at home weakens credibility."
+    },
+    {
+      "question_id": "uk_understands_course_details",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Genuine Student / Credibility Assessment",
+      "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+      "conditional_on": null,
+      "message": "Credibility interviews probe whether you actually understand what you signed up for. Not knowing your own modules/fees/duration signals an agent-driven, non-genuine application."
+    },
+    {
+      "question_id": "uk_home_ties",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Genuine Student / Credibility Assessment",
+      "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+      "conditional_on": null,
+      "message": "While the UK route allows some switching later, credibility still weighs intent. Be ready to describe concrete ties and a return/career plan."
+    },
+    {
+      "question_id": "uk_edu_gap_justified",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Educational Consistency and Academic Progression",
+      "mapped_rule_id": "uk_education_educational_consistency_and_academic_progression",
+      "conditional_on": {
+        "question_id": "uk_edu_gap_over_1yr",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Provide employment letters, salary slips, freelance proof, or transcripts covering the gap. Unevidenced 'I was at home/preparing' is weak."
+    },
+    {
+      "question_id": "uk_academic_progression",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Educational Consistency and Academic Progression",
+      "mapped_rule_id": "uk_education_educational_consistency_and_academic_progression",
+      "conditional_on": null,
+      "message": "UKVI scrutinises 'academic progression'. Going from a Masters back down to a lower diploma, or a drastic field switch, looks non-genuine and must be justified."
+    },
+    {
+      "question_id": "uk_drastic_field_change",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule_name": "Educational Consistency and Academic Progression",
+      "mapped_rule_id": "uk_education_educational_consistency_and_academic_progression",
+      "conditional_on": null,
+      "message": "A big, unexplained field switch is a credibility trigger. If yes, be ready to explain the logic clearly."
+    },
+    {
+      "question_id": "uk_academics_verifiable",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Educational Consistency and Academic Progression",
+      "mapped_rule_id": "uk_education_educational_consistency_and_academic_progression",
+      "conditional_on": null,
+      "message": "Inconsistent/unverifiable academics (mismatched names/dates, missing transcripts) raise fraud concerns. Have complete, attested records ready."
+    },
+    {
+      "question_id": "uk_names_dates_consistent",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Application, CAS and Document Consistency",
+      "mapped_rule_id": "uk_consistency_application_cas_and_document_consistency",
+      "conditional_on": null,
+      "message": "Name/DOB mismatches (e.g. 'Muhammad' vs 'Mohammad', differing spellings on degree vs passport) are a very common Pakistani refusal cause. Reconcile every document to the passport spelling before applying."
+    },
+    {
+      "question_id": "uk_application_matches_cas",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Application, CAS and Document Consistency",
+      "mapped_rule_id": "uk_consistency_application_cas_and_document_consistency",
+      "conditional_on": null,
+      "message": "The application form, CAS, and bank evidence must tell one consistent story. Contradictions read as deception."
+    },
+    {
+      "question_id": "uk_has_prior_refusal",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule_name": "Full Immigration History Must Be Accurately Disclosed",
+      "mapped_rule_id": "uk_immigration_history_full_immigration_history_must_be_accurately_disclosed",
+      "conditional_on": null,
+      "message": "Prior refusals are visible and probed. A refusal is survivable IF disclosed and explained — concealment is treated as deception with a 10-year UK ban risk."
+    },
+    {
+      "question_id": "uk_overstay_or_removal",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule_name": "Full Immigration History Must Be Accurately Disclosed",
+      "mapped_rule_id": "uk_immigration_history_full_immigration_history_must_be_accurately_disclosed",
+      "conditional_on": null,
+      "message": "Overstays/removals must be disclosed and explained; concealment risks a ban."
+    },
+    {
+      "question_id": "uk_asylum_history",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule_name": "Full Immigration History Must Be Accurately Disclosed",
+      "mapped_rule_id": "uk_immigration_history_full_immigration_history_must_be_accurately_disclosed",
+      "conditional_on": null,
+      "message": "An asylum history conflicts with a temporary-study application and must be addressed candidly, ideally with legal advice."
+    },
+    {
+      "question_id": "uk_dependant_eligibility",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Dependants Restricted to PhD/Research Students (From 1 Jan 2024)",
+      "mapped_rule_id": "uk_dependants_dependants_restricted_to_phd_research_students_from_1_jan_2024",
+      "conditional_on": {
+        "question_id": "uk_bringing_dependants",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "From 1 Jan 2024, only full-time PhD/research-degree students (or government-sponsored students) may bring dependants. Taught Masters/undergraduate/sub-degree students CANNOT. Applying with ineligible dependants causes problems."
+    },
+    {
+      "question_id": "uk_personally_reviewed_all",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Application Integrity and Agent Risk",
+      "mapped_rule_id": "uk_integrity_application_integrity_and_agent_risk",
+      "conditional_on": null,
+      "message": "Some agents inflate balances, fake experience/bank letters, or alter transcripts. If an agent fabricated anything, YOU face refusal and a deception finding (10-year ban). Verify every line yourself."
+    },
+    {
+      "question_id": "uk_agent_advised_hiding",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Application Integrity and Agent Risk",
+      "mapped_rule_id": "uk_integrity_application_integrity_and_agent_risk",
+      "conditional_on": null,
+      "message": "If an agent told you to conceal something, that's a path to a deception finding and a 10-year ban. Disclose truthfully; ignore that advice."
+    }
+  ],
+  "soft_warnings": [
+    {
+      "question_id": "uk_funds_currency",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Sufficient Maintenance Funds Required",
+      "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+      "conditional_on": null,
+      "message": "PKR balances are converted using the OANDA rate on the application date. Keep a buffer above the minimum so exchange-rate movement doesn't drop you below the threshold."
+    },
+    {
+      "question_id": "uk_sponsor_immediate_family",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+      "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+      "conditional_on": {
+        "question_id": "uk_funds_source",
+        "operator": "eq",
+        "value": "parent_guardian_savings"
+      },
+      "message": "Only a parent or legal guardian's funds are accepted under the maintenance rules. An uncle/brother/grandfather funding you means the money must first be legitimately transferred to your or your parent's account and held for 28 days."
+    },
+    {
+      "question_id": "uk_financial_buffer",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Sufficient Maintenance Funds Required",
+      "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+      "conditional_on": null,
+      "message": "Barely meeting the minimum is risky — exchange-rate shifts or a small dip can fail you. Keep a sensible cushion above the required total."
+    },
+    {
+      "question_id": "uk_answers_unscripted",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule_name": "Genuine Student / Credibility Assessment",
+      "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+      "conditional_on": null,
+      "message": "Interviewers flag rehearsed agent scripts. Practise the content, but answer naturally."
+    },
+    {
+      "question_id": "uk_wants_to_work",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule_name": "Student Visa Work Rights Depend on Course Level and Sponsor Status",
+      "mapped_rule_id": "uk_student_work_rights_awareness",
+      "conditional_on": null,
+      "message": "Work rights on the UK Student visa are not automatic and vary by course level and your institution's UKVI sponsor status. Do not assume you can work. Verify current conditions on GOV.UK before beginning any employment."
+    }
+  ]
+}

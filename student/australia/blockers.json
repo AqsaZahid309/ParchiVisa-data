@@ -1,0 +1,510 @@
+{
+  "country": "Australia",
+  "visa_route": "Student Visa (Subclass 500)",
+  "version": "2026-06-06",
+  "source": "extracted_from_scoring_json",
+  "total_blockers": 21,
+  "critical_count": 21,
+  "high_count": 0,
+  "last_verified": "2026-05-29",
+  "blockers": [
+    {
+      "blocker_id": "aus_blocker_has_coe",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_has_coe",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Confirmation of Enrolment not yet received",
+      "user_message": "You cannot lodge a Subclass 500 without a valid CoE from a CRICOS-registered provider. An offer letter is NOT a CoE — the CoE is issued after you accept and pay the deposit.",
+      "recommended_next_step": "A valid Confirmation of Enrolment from a CRICOS-registered provider is mandatory. Your application cannot proceed without one — an offer letter is not a CoE.",
+      "rule_source_id": "aus_student_coe_required",
+      "rule_source_name": "Confirmation of Enrolment (CoE) Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_coe_number_entered",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_coe_number_entered",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "CoE number not yet available for lodgement",
+      "user_message": "The exact CoE number must be entered during lodgement. Keep the PDF from your provider handy.",
+      "recommended_next_step": "The exact CoE number must be entered during lodgement in ImmiAccount. Keep the CoE PDF from your provider available.",
+      "rule_source_id": "aus_student_coe_required",
+      "rule_source_name": "Confirmation of Enrolment (CoE) Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_all_courses_have_coe",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_all_courses_have_coe",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Not all course stages have a CoE (packaged programs)",
+      "user_message": "Packaged courses (common for pathway/foundation programs) need a CoE for each stage at lodgement.",
+      "recommended_next_step": "For packaged or pathway programs, each course stage requires its own CoE at lodgement. A single CoE for only one stage is insufficient.",
+      "rule_source_id": "aus_student_coe_required",
+      "rule_source_name": "Confirmation of Enrolment (CoE) Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_cricos_provider",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_cricos_provider",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Institution not confirmed as CRICOS-registered",
+      "user_message": "Many Pakistani students are mis-sold by agents into non-CRICOS providers. Verify the provider yourself on the official CRICOS register before paying anything.",
+      "recommended_next_step": "Your institution must be registered on the CRICOS register. Verify the provider yourself at cricos.teqsa.gov.au before paying any agent or deposit.",
+      "rule_source_id": "aus_student_cricos_enrolment_required",
+      "rule_source_name": "Full-Time Enrolment at CRICOS-Registered Institution Required",
+      "source_url": "https://cricos.teqsa.gov.au/",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_cricos_course",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_cricos_course",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Course not confirmed as CRICOS-registered",
+      "user_message": "The exact course must be CRICOS-registered, not only the university. Search your course title on the CRICOS register.",
+      "recommended_next_step": "Your specific course — not just the institution — must be listed on the CRICOS register. Search the course title yourself at cricos.teqsa.gov.au.",
+      "rule_source_id": "aus_student_cricos_enrolment_required",
+      "rule_source_name": "Full-Time Enrolment at CRICOS-Registered Institution Required",
+      "source_url": "https://cricos.teqsa.gov.au/",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_full_time_enrolment",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_full_time_enrolment",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Enrolment is not full-time",
+      "user_message": "Subclass 500 requires full-time study. Part-time enrolment is not eligible.",
+      "recommended_next_step": "Subclass 500 requires full-time enrolment. Part-time enrolment is not eligible and your application cannot proceed on that basis.",
+      "rule_source_id": "aus_student_cricos_enrolment_required",
+      "rule_source_name": "Full-Time Enrolment at CRICOS-Registered Institution Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_gs_responses_ready",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "eligibility_check",
+      "question_id": "aus_gs_responses_ready",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Genuine Student (GS) responses not yet prepared",
+      "user_message": "Since March 2024 the old GTE statement is replaced by GS questions answered directly in the form (ties at home, why this course/Australia, course-career benefit, plus any relevant facts). Weak/generic GS answers are the No.1 refusal reason for Pakistani applicants.",
+      "recommended_next_step": "Since March 2024, the GS questions in the application form replace the old GTE statement. Weak or generic GS answers are the leading refusal cause for Pakistani applicants.",
+      "rule_source_id": "aus_student_genuine_student_requirement",
+      "rule_source_name": "Genuine Student (GS) Requirement",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_available_funds",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "aus_available_funds",
+      "trigger": {
+        "operator": "computed_funds_short"
+      },
+      "condition": null,
+      "title": "Available funds fall short of the required total",
+      "user_message": "Minimum = first-year tuition + AUD 29,710 living costs + ~AUD 2,500 airfare (plus extra for any dependants). Funds must be genuine and accessible, not just a number on paper.",
+      "recommended_next_step": "Funds must cover first-year tuition + AUD 29,710 living costs + ~AUD 2,500 return airfare. They must be genuine, accessible, and consistently held — not just a number on paper.",
+      "rule_source_id": "aus_student_financial_capacity",
+      "rule_source_name": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_funds_cover_tuition_living_travel",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "aus_funds_cover_tuition_living_travel",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Funds may not cover tuition, living costs, and return airfare",
+      "user_message": "This is the core financial-capacity test. Under-funding is a top refusal cause. Use current figures — the living cost rose from 24,505 to 29,710 in 2024.",
+      "recommended_next_step": "Under-funding is a top refusal cause at Assessment Level 3. Your total evidence must cover tuition + AUD 29,710 living + return airfare, plus any dependant additions.",
+      "rule_source_id": "aus_student_financial_capacity",
+      "rule_source_name": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_has_dependant_funds",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "aus_has_dependant_funds",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Additional funds for dependants may not be evidenced",
+      "user_message": "Add ~AUD 10,394 for a partner and ~AUD 4,449 per child to your required funds. Under-funding dependants invalidates the financial test.",
+      "recommended_next_step": "Each dependant requires additional funds (~AUD 10,394 for a partner, ~AUD 4,449 per child). Under-funding dependants invalidates the financial test.",
+      "rule_source_id": "aus_student_financial_capacity",
+      "rule_source_name": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_has_oshc",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "aus_has_oshc",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Overseas Student Health Cover not yet arranged",
+      "user_message": "OSHC is mandatory and must be from an approved Australian provider. Pakistani/local health insurance is NOT accepted.",
+      "recommended_next_step": "Overseas Student Health Cover from an approved Australian provider is mandatory. Local Pakistani or international insurance is not accepted.",
+      "rule_source_id": "aus_student_oshc_mandatory",
+      "rule_source_name": "Overseas Student Health Cover (OSHC) Mandatory",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_oshc_approved_provider",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "aus_oshc_approved_provider",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "OSHC may not be from an approved Australian provider",
+      "user_message": "Only the five approved Australian OSHC providers count. Verify before paying.",
+      "recommended_next_step": "Only OSHC from one of the five approved Australian providers (Allianz, Bupa, Medibank, NIB, ahm) is accepted. Verify the provider before purchasing.",
+      "rule_source_id": "aus_student_oshc_mandatory",
+      "rule_source_name": "Overseas Student Health Cover (OSHC) Mandatory",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_oshc_full_duration",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "aus_oshc_full_duration",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "OSHC may not cover the full visa period",
+      "user_message": "Cover must span your whole visa period, starting ~1 week before classes. Gaps in OSHC breach visa conditions.",
+      "recommended_next_step": "Your OSHC must cover your full visa period, starting approximately one week before courses commence. Any gap in cover breaches visa conditions.",
+      "rule_source_id": "aus_student_oshc_mandatory",
+      "rule_source_name": "Overseas Student Health Cover (OSHC) Mandatory",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_has_english_test",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_has_english_test",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": {
+        "question_id": "aus_english_exempt",
+        "operator": "eq",
+        "value": "no"
+      },
+      "title": "Valid English test result not yet obtained",
+      "user_message": "A valid result is required unless genuinely exempt. Minimum IELTS 5.5 overall for the visa; your course often needs higher (6.0–7.0).",
+      "recommended_next_step": "A valid approved English test result (IELTS, PTE, TOEFL iBT, or Cambridge) is required unless you are genuinely exempt. The visa minimum is IELTS 5.5 overall.",
+      "rule_source_id": "aus_student_english_language_required",
+      "rule_source_name": "English Language Test Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_english_score_meets_course",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_english_score_meets_course",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": {
+        "question_id": "aus_english_exempt",
+        "operator": "eq",
+        "value": "no"
+      },
+      "title": "English score may not meet both course and visa requirements",
+      "user_message": "Meeting the visa floor (IELTS 5.5) is not enough if your university needs 6.5. Both must be satisfied.",
+      "recommended_next_step": "Your English score must satisfy both the visa minimum (IELTS 5.5) and your course's own requirement. Meeting only the visa floor is not sufficient if the course needs more.",
+      "rule_source_id": "aus_student_english_language_required",
+      "rule_source_name": "English Language Test Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_health_exam_done",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_health_exam_done",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Health examination not yet completed or booked",
+      "user_message": "A health exam is mandatory. Pakistani applicants almost always need a chest X-ray for TB screening.",
+      "recommended_next_step": "A health examination at an approved panel physician is mandatory. Pakistani applicants almost always require a chest X-ray for TB screening.",
+      "rule_source_id": "aus_student_health_examination_required",
+      "rule_source_name": "Health Examination Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_health_panel_physician",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_health_panel_physician",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Health exam may not be from an approved panel physician",
+      "user_message": "Only exams at approved panel clinics count. A cheaper local clinic's report is worthless for the visa and wastes money.",
+      "recommended_next_step": "Only health examinations conducted by IRCC-approved panel physicians are accepted. A report from a local clinic not on the panel list is worthless for the visa.",
+      "rule_source_id": "aus_student_health_examination_required",
+      "rule_source_name": "Health Examination Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_police_clearances_ready",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_police_clearances_ready",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": {
+        "question_id": "aus_lived_12_months_other_country",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "title": "Police clearances not yet obtained for all required countries",
+      "user_message": "Pakistani applicants typically need a PCC from NADRA/local police; add clearances for any other country of long residence.",
+      "recommended_next_step": "Pakistani applicants typically need a PCC from NADRA or local police. If you have lived abroad for 12+ months, you also need clearances from those countries.",
+      "rule_source_id": "aus_student_character_police_clearances",
+      "rule_source_name": "Character Requirement — Police Clearances Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_criminal_history_disclosed",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_criminal_history_disclosed",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Criminal or character history may not be fully disclosed",
+      "user_message": "Hiding a character issue is an independent refusal ground — worse than the issue itself. Disclose everything.",
+      "recommended_next_step": "Hiding a character issue is an independent refusal ground — often more damaging than the underlying matter itself. Disclose everything accurately.",
+      "rule_source_id": "aus_student_character_police_clearances",
+      "rule_source_name": "Character Requirement — Police Clearances Required",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_history_disclosed",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "eligibility_check",
+      "question_id": "aus_history_disclosed",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Immigration history may not be fully disclosed",
+      "user_message": "Non-disclosure of immigration history is an independent refusal ground and can trigger a re-entry ban (PIC 4020). Disclose everything, even old/minor matters.",
+      "recommended_next_step": "Non-disclosure of immigration history is an independent refusal ground and can trigger a PIC 4020 three-year exclusion. Disclose everything, including old or minor matters.",
+      "rule_source_id": "aus_student_immigration_history_disclosure",
+      "rule_source_name": "Poor Immigration History Causes Refusal",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "aus_blocker_course_same_higher_aqf",
+      "country": "Australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "aus_course_same_higher_aqf",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": {
+        "question_id": "aus_changing_course",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "title": "New course is at a lower AQF level (Condition 8202 risk)",
+      "user_message": "Dropping to a lower AQF level on the same visa breaches Condition 8202 and risks cancellation. You'd need a new Subclass 500.",
+      "recommended_next_step": "Dropping to a lower AQF level on the same visa breaches Condition 8202 and risks visa cancellation. You would need to apply for a new Subclass 500.",
+      "rule_source_id": "aus_student_aqf_level_condition_8202",
+      "rule_source_name": "Course Must Be at the Same or Higher AQF Level (Condition 8202)",
+      "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    }
+  ]
+}

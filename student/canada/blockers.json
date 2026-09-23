@@ -1,0 +1,376 @@
+{
+  "country": "Canada",
+  "visa_route": "Study Permit",
+  "version": "2026-06-06",
+  "source": "extracted_from_scoring_json",
+  "total_blockers": 15,
+  "critical_count": 15,
+  "high_count": 0,
+  "last_verified": "2026-05-29",
+  "blockers": [
+    {
+      "blocker_id": "can_blocker_has_dli_loa",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_has_dli_loa",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Letter of Acceptance not yet received",
+      "user_message": "You cannot apply without an LOA from a DLI. An admission/offer email is not enough — you need the official LOA. Beware agents enrolling you at non-DLI 'colleges'.",
+      "recommended_next_step": "A valid Letter of Acceptance from a Designated Learning Institution (DLI) is mandatory. Your study permit application cannot proceed without one.",
+      "rule_source_id": "can_eligibility_must_be_enrolled_at_a_designated_learning_institution_dli",
+      "rule_source_name": "Must Be Enrolled at a Designated Learning Institution (DLI)",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_verified_dli_on_official_list",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_verified_dli_on_official_list",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "DLI not verified on the official government list",
+      "user_message": "Check the DLI number on the government list yourself. Many Pakistani students are mis-sold into institutions that are not DLIs or have lost PGWP eligibility.",
+      "recommended_next_step": "You must personally verify your institution appears on the official DLI list at canada.ca. Agents sometimes direct students to unlisted or PGWP-ineligible institutions.",
+      "rule_source_id": "can_eligibility_must_be_enrolled_at_a_designated_learning_institution_dli",
+      "rule_source_name": "Must Be Enrolled at a Designated Learning Institution (DLI)",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_dli_number_available",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_dli_number_available",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "DLI number not yet obtained",
+      "user_message": "The DLI number (starts with 'O') is required in the application. It is on your LOA.",
+      "recommended_next_step": "Your DLI number (starting with 'O') must be entered in your study permit application. It is printed on your Letter of Acceptance.",
+      "rule_source_id": "can_eligibility_must_be_enrolled_at_a_designated_learning_institution_dli",
+      "rule_source_name": "Must Be Enrolled at a Designated Learning Institution (DLI)",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_loa_uploaded_correct_section",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_loa_uploaded_correct_section",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "LOA not confirmed for correct upload section",
+      "user_message": "An LOA in the wrong field can cause the system not to register it. Follow the document checklist exactly.",
+      "recommended_next_step": "Your LOA must be uploaded in the correct document section. An LOA placed in the wrong field may not be registered by IRCC.",
+      "rule_source_id": "can_documents_letter_of_acceptance_loa_required_must_be_uploaded_correctly",
+      "rule_source_name": "Letter of Acceptance (LOA) Required — Must Be Uploaded Correctly",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_school_will_validate_loa",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_school_will_validate_loa",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "School may not validate LOA with IRCC",
+      "user_message": "Since the LOA-verification system, IRCC checks LOAs directly with institutions. A fake or unverifiable LOA = refusal and a misrepresentation finding.",
+      "recommended_next_step": "IRCC verifies LOAs directly with institutions. A fake or unverifiable LOA results in refusal and a 5-year misrepresentation bar under A40.",
+      "rule_source_id": "can_documents_letter_of_acceptance_loa_required_must_be_uploaded_correctly",
+      "rule_source_name": "Letter of Acceptance (LOA) Required — Must Be Uploaded Correctly",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_has_letter_of_explanation",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "eligibility_check",
+      "question_id": "can_has_letter_of_explanation",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Letter of Explanation not yet prepared",
+      "user_message": "Canada has no 'GS form' like Australia — your study plan/Letter of Explanation IS your case for being a genuine student who will leave on expiry. Weak SOPs and weak home ties are the top Pakistani refusal reasons.",
+      "recommended_next_step": "A Letter of Explanation (study plan/statement of purpose) is essential. Canada has no GS form — your LOE is your primary evidence of genuine study intent.",
+      "rule_source_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+      "rule_source_name": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_has_pal_tal",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_has_pal_tal",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": {
+        "operator": "and",
+        "conditions": [
+          {
+            "question_id": "can_is_quebec_applicant",
+            "operator": "eq",
+            "value": "no"
+          },
+          {
+            "question_id": "can_masters_doctoral_public_dli_exemption",
+            "operator": "eq",
+            "value": "no"
+          }
+        ]
+      },
+      "title": "PAL/TAL not yet received (non-Quebec, non-exempt)",
+      "user_message": "Most non-Quebec post-secondary applicants must include a PAL/TAL or the application is returned. It is issued by the province after you have an LOA.",
+      "recommended_next_step": "Most non-Quebec post-secondary applicants must submit a PAL/TAL with their application or it will be returned. It is issued by the province after you receive your LOA.",
+      "rule_source_id": "can_documents_provincial_attestation_letter_pal_or_territorial_attestation_letter_tal_required",
+      "rule_source_name": "Provincial Attestation Letter (PAL) or Territorial Attestation Letter (TAL) Required",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_pal_tal_submitted_with_application",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_pal_tal_submitted_with_application",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "PAL/TAL not confirmed for submission with application",
+      "user_message": "The PAL/TAL must be in the initial submission. Sending it later does not fix a returned application.",
+      "recommended_next_step": "The PAL/TAL must be included in your initial application submission. Sending it after the fact does not fix a returned application.",
+      "rule_source_id": "can_documents_provincial_attestation_letter_pal_or_territorial_attestation_letter_tal_required",
+      "rule_source_name": "Provincial Attestation Letter (PAL) or Territorial Attestation Letter (TAL) Required",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_has_caq",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_has_caq",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": {
+        "question_id": "can_is_quebec_applicant",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "title": "CAQ not yet received (Quebec applicant)",
+      "user_message": "Quebec study requires a CAQ from the province before/with the federal study permit. No CAQ = cannot proceed for Quebec.",
+      "recommended_next_step": "Quebec study requires a Certificat d'acceptation du Québec (CAQ) from the province before the federal study permit can be issued. Without it the application cannot proceed.",
+      "rule_source_id": "can_documents_quebec_applicants_need_certificat_d_acceptation_du_qu_bec_caq",
+      "rule_source_name": "Quebec Applicants Need Certificat d'acceptation du Québec (CAQ)",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_caq_has_allocation_line",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_caq_has_allocation_line",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": {
+        "question_id": "can_is_quebec_applicant",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "title": "CAQ may not include required attestation/allocation",
+      "user_message": "The CAQ must reflect Quebec's attestation/allocation. An incomplete CAQ will not satisfy IRCC.",
+      "recommended_next_step": "Your CAQ must include Quebec's required attestation and allocation confirmation. An incomplete CAQ will not satisfy IRCC.",
+      "rule_source_id": "can_documents_quebec_applicants_need_certificat_d_acceptation_du_qu_bec_caq",
+      "rule_source_name": "Quebec Applicants Need Certificat d'acceptation du Québec (CAQ)",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_living_funds_available",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_living_funds_available",
+      "trigger": {
+        "operator": "computed_living_short"
+      },
+      "condition": null,
+      "title": "Living funds fall short of the required threshold",
+      "user_message": "Outside Quebec, a single applicant must show CAD 22,895 for living costs (from Sept 2025), separate from tuition and travel. More for dependants; Quebec is higher.",
+      "recommended_next_step": "Outside Quebec, a single applicant must show CAD 22,895 for living costs (from September 2025), separate from tuition and return transport. Insufficient funds is a top refusal cause.",
+      "rule_source_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "rule_source_name": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_total_funds_available",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "can_total_funds_available",
+      "trigger": {
+        "operator": "computed_total_short"
+      },
+      "condition": null,
+      "title": "Total funds fall short of the required threshold",
+      "user_message": "Total must cover CAD 22,895 living + first-year tuition + ~CAD 1,500 return transport (plus dependants). Funds must be genuine and accessible, not a paper figure.",
+      "recommended_next_step": "Your total evidence must cover living costs plus first-year tuition plus return transport (~CAD 1,500). Funds must be genuine, accessible, and consistently held.",
+      "rule_source_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "rule_source_name": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_medical_exam_required_completed",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "can_medical_exam_required_completed",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": {
+        "question_id": "can_stay_six_months_or_more",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "title": "Immigration medical exam not yet completed",
+      "user_message": "An IME is required for 6+ month stays. Pakistani applicants typically need TB screening (chest X-ray).",
+      "recommended_next_step": "An immigration medical exam by an IRCC panel physician is required for stays of 6 months or more. Pakistani applicants typically require TB screening.",
+      "rule_source_id": "can_medical_medical_exam_required_for_stays_of_6_months",
+      "rule_source_name": "Medical Exam Required for Stays of 6+ Months",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_medical_panel_physician",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "can_medical_panel_physician",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": {
+        "question_id": "can_stay_six_months_or_more",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "title": "Medical exam may not be from an IRCC panel physician",
+      "user_message": "Only exams by IRCC panel physicians count. A cheaper local clinic's report is worthless for the permit.",
+      "recommended_next_step": "Only exams conducted by IRCC-approved panel physicians are accepted. A report from a local clinic not on the panel list is worthless for the study permit application.",
+      "rule_source_id": "can_medical_medical_exam_required_for_stays_of_6_months",
+      "rule_source_name": "Medical Exam Required for Stays of 6+ Months",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "can_blocker_all_docs_truthful",
+      "country": "Canada",
+      "visa_route": "Study Permit",
+      "severity": "critical",
+      "blocker_type": "integrity_check",
+      "question_id": "can_all_docs_truthful",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Document authenticity not confirmed — misrepresentation risk",
+      "user_message": "Misrepresentation (fake bank balances, altered transcripts, hidden refusals) causes refusal AND a 5-year ban under A40. This applies even if an agent did it in your name.",
+      "recommended_next_step": "Any misrepresentation — fake bank balances, altered transcripts, hidden refusals — triggers refusal and a 5-year inadmissibility bar under A40, even if an agent prepared the documents.",
+      "rule_source_id": "can_integrity_all_documents_and_statements_must_be_truthful_misrepresentation_bar",
+      "rule_source_name": "All Documents and Statements Must Be Truthful (Misrepresentation Bar)",
+      "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    }
+  ]
+}

@@ -1,0 +1,754 @@
+{
+  "country": "Australia",
+  "visa_route": "Student Visa (Subclass 500)",
+  "last_verified": "2026-05-29",
+  "applicant_profile": "Pakistani nationals (Assessment/Evidence Level 3, effective 2026-01-08)",
+  "framing_disclaimer": "This tool measures DOCUMENTED READINESS and RISK EXPOSURE. It does NOT predict the case officer's decision and is not legal/migration advice. Always verify current figures on the Department of Home Affairs website before lodging.",
+  "config": {
+    "currency": "AUD",
+    "living_cost_single_12m": 29710,
+    "living_cost_partner_add": 10394,
+    "living_cost_child_add": 4449,
+    "return_airfare_estimate": 2500,
+    "oshc_estimate_per_year": 700,
+    "visa_application_charge": 2000,
+    "english_min_ielts_overall": 5.5,
+    "fund_seasoning_months_min": 3,
+    "evidence_level": 3,
+    "evidence_level_effective": "2026-01-08",
+    "last_verified": "2026-05-29",
+    "MUST_VERIFY_AT_SOURCE": true,
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "note": "Figures change without notice. The tool MUST re-display 'confirm on the Department page on lodgement day'. Pakistan = Assessment Level 3 since 8 Jan 2026: full financial + academic + English documentation required."
+  },
+  "score_bands": [
+    {
+      "min": 85,
+      "max": 100,
+      "label": "Strong Readiness",
+      "description": "Your documented file is well-prepared with low visible risk. This is NOT a prediction or guarantee of a visa grant — the case officer decides. Re-verify figures and lodge with confidence once any minor items are closed."
+    },
+    {
+      "min": 70,
+      "max": 84,
+      "label": "Moderate Risk — Improve Before Lodging",
+      "description": "Eligible but with visible weak points that EL3 officers will probe. Close the flagged items before lodging to avoid avoidable refusal."
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "label": "High Refusal Risk",
+      "description": "Serious gaps present. Lodging now indicates serious unresolved readiness issues that EL3 scrutiny will expose. Resolve all high-risk flags first."
+    },
+    {
+      "min": 0,
+      "max": 49,
+      "label": "Critical Refusal Risk",
+      "description": "Mandatory requirements missing or integrity flags present. Do not lodge — critical items are missing or unresolved — Proceeding risks a PIC 4020 exclusion if anything is misrepresented."
+    }
+  ],
+  "scoring_categories": [
+    {
+      "category_id": "genuine_student",
+      "label": "Genuine Student & Return Intent",
+      "max_points": 22,
+      "question_ids": [
+        "aus_gs_responses_ready",
+        "aus_gs_home_ties",
+        "aus_gs_course_reason",
+        "aus_gs_career_benefit",
+        "aus_gs_why_australia_vs_cheaper",
+        "aus_gs_course_aligns_career",
+        "aus_gs_return_evidence_ready"
+      ]
+    },
+    {
+      "category_id": "financial_legitimacy",
+      "label": "Financial Legitimacy (EL3)",
+      "max_points": 22,
+      "question_ids": [
+        "aus_tuition_first_year",
+        "aus_available_funds",
+        "aus_funds_cover_tuition_living_travel",
+        "aus_funds_source",
+        "aus_funds_held_3_months",
+        "aus_bank_history_consistent",
+        "aus_large_recent_deposits",
+        "aus_source_of_funds_documented",
+        "aus_sponsor_immediate_family",
+        "aus_sponsor_files_fbr",
+        "aus_property_sale_documented",
+        "aus_loan_sanctioned",
+        "aus_has_dependant_funds",
+        "aus_can_pay_visa_fee"
+      ]
+    },
+    {
+      "category_id": "education_consistency",
+      "label": "Educational Consistency",
+      "max_points": 12,
+      "question_ids": [
+        "aus_edu_gap_over_1yr",
+        "aus_edu_gap_justified",
+        "aus_drastic_field_change",
+        "aus_transcripts_authenticated"
+      ]
+    },
+    {
+      "category_id": "immigration_history",
+      "label": "Immigration History",
+      "max_points": 12,
+      "question_ids": [
+        "aus_prior_refusals_overstays",
+        "aus_refusal_countries",
+        "aus_history_disclosed",
+        "aus_asylum_history"
+      ]
+    },
+    {
+      "category_id": "enrolment_documents",
+      "label": "Enrolment & Core Documents",
+      "max_points": 12,
+      "question_ids": [
+        "aus_has_coe",
+        "aus_coe_number_entered",
+        "aus_all_courses_have_coe",
+        "aus_cricos_provider",
+        "aus_cricos_course",
+        "aus_full_time_enrolment",
+        "aus_english_exempt",
+        "aus_has_english_test",
+        "aus_english_score_meets_course"
+      ]
+    },
+    {
+      "category_id": "health_character",
+      "label": "Health & Character",
+      "max_points": 10,
+      "question_ids": [
+        "aus_has_oshc",
+        "aus_oshc_approved_provider",
+        "aus_oshc_full_duration",
+        "aus_hap_id_generated",
+        "aus_health_exam_done",
+        "aus_health_panel_physician",
+        "aus_lived_12_months_other_country",
+        "aus_police_clearances_ready",
+        "aus_criminal_history_disclosed"
+      ]
+    },
+    {
+      "category_id": "agent_integrity",
+      "label": "Application Integrity / Agent Risk",
+      "max_points": 5,
+      "question_ids": [
+        "aus_agent_prepared_docs",
+        "aus_personally_reviewed_all",
+        "aus_agent_registered"
+      ]
+    },
+    {
+      "category_id": "general_awareness",
+      "label": "General Awareness",
+      "max_points": 5,
+      "question_ids": [
+        "aus_applicant_age",
+        "aus_current_location",
+        "aus_is_main_applicant",
+        "aus_prior_aus_student_visa",
+        "aus_changing_course",
+        "aus_course_same_higher_aqf",
+        "aus_understands_work_limit",
+        "aus_maintain_full_time_progress"
+      ]
+    }
+  ],
+  "evaluation_model": {
+    "tiers": {
+      "hard_blocker": "Any triggered hard blocker forces result = 'Critical Refusal Risk'. Score calculation is skipped. These are legally mandatory items or integrity grounds.",
+      "high_risk_flag": "Each triggered high-risk flag deducts its impact AND caps the maximum achievable band. Caps: 1-2 flags => max band 'High Refusal Risk'; 3+ flags => 'Critical Refusal Risk'. This prevents proportional averaging from hiding serious risk behind an otherwise clean file.",
+      "soft_warning": "Each triggered soft warning deducts its impact within the band but does not cap the band. Surfaced as 'improve before lodging'."
+    },
+    "calculation_logic": {
+      "method": "tiered_weighted_with_band_caps",
+      "step_1": "Evaluate hard blockers. If ANY triggers -> result 'Critical Refusal Risk'; stop.",
+      "step_2": "For each category: category_score = (sum of score_impact for PASSING questions / sum of score_impact for ALL scored questions in category) x max_points. 'info' questions with trigger_if=never are excluded from pass/fail and contribute only routing.",
+      "step_3": "total_score = sum of category scores, rounded to nearest integer.",
+      "step_4": "Count triggered high-risk flags. Apply band cap: 1-2 => cap at 'High Refusal Risk'; 3+ => 'Critical Refusal Risk'.",
+      "step_5": "Map total_score to a band, then apply the band cap (final band = the worse of score-band and cap-band).",
+      "passing_definition": "A question PASSES when the user's answer satisfies its pass_if condition. Computed financial pass is funds >= tuition + 29710 + 2500 + dependant additions.",
+      "rounding": "Category scores to 1 decimal; total to nearest integer."
+    }
+  },
+  "result_payload_template": {
+    "label": "<band label>",
+    "total_score": "<0-100>",
+    "estimated_refusal_concerns": "<list of triggered hard blockers + high-risk flags, plain English>",
+    "recommended_improvements": "<soft warnings + how to close each flag>",
+    "priority_action_list": "<ordered: hard blockers first, then high-risk flags, then soft warnings>",
+    "risk_explanation": "<why this band, referencing EL3 scrutiny>",
+    "disclaimer": "This is a readiness assessment, not a visa-approval prediction or legal advice. Verify all figures at immi.homeaffairs.gov.au before lodging."
+  },
+  "critical_blockers_hard": [
+    {
+      "question_id": "aus_has_coe",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Confirmation of Enrolment (CoE) Required",
+      "conditional_on": null,
+      "message": "You cannot lodge a Subclass 500 without a valid CoE from a CRICOS-registered provider. An offer letter is NOT a CoE — the CoE is issued after you accept and pay the deposit."
+    },
+    {
+      "question_id": "aus_coe_number_entered",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Confirmation of Enrolment (CoE) Required",
+      "conditional_on": null,
+      "message": "The exact CoE number must be entered during lodgement. Keep the PDF from your provider handy."
+    },
+    {
+      "question_id": "aus_all_courses_have_coe",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Confirmation of Enrolment (CoE) Required",
+      "conditional_on": null,
+      "message": "Packaged courses (common for pathway/foundation programs) need a CoE for each stage at lodgement."
+    },
+    {
+      "question_id": "aus_cricos_provider",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Full-Time Enrolment at CRICOS-Registered Institution Required",
+      "conditional_on": null,
+      "message": "Many Pakistani students are mis-sold by agents into non-CRICOS providers. Verify the provider yourself on the official CRICOS register before paying anything."
+    },
+    {
+      "question_id": "aus_cricos_course",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Full-Time Enrolment at CRICOS-Registered Institution Required",
+      "conditional_on": null,
+      "message": "The exact course must be CRICOS-registered, not only the university. Search your course title on the CRICOS register."
+    },
+    {
+      "question_id": "aus_full_time_enrolment",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Full-Time Enrolment at CRICOS-Registered Institution Required",
+      "conditional_on": null,
+      "message": "Subclass 500 requires full-time study. Part-time enrolment is not eligible."
+    },
+    {
+      "question_id": "aus_gs_responses_ready",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Genuine Student (GS) Requirement",
+      "conditional_on": null,
+      "message": "Since March 2024 the old GTE statement is replaced by GS questions answered directly in the form (ties at home, why this course/Australia, course-career benefit, plus any relevant facts). Weak/generic GS answers are the No.1 refusal reason for Pakistani applicants."
+    },
+    {
+      "question_id": "aus_available_funds",
+      "trigger_if": {
+        "type": "computed_funds_short"
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": null,
+      "message": "Minimum = first-year tuition + AUD 29,710 living costs + ~AUD 2,500 airfare (plus extra for any dependants). Funds must be genuine and accessible, not just a number on paper."
+    },
+    {
+      "question_id": "aus_funds_cover_tuition_living_travel",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": null,
+      "message": "This is the core financial-capacity test. Under-funding is a top refusal cause. Use current figures — the living cost rose from 24,505 to 29,710 in 2024."
+    },
+    {
+      "question_id": "aus_has_dependant_funds",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": null,
+      "message": "Add ~AUD 10,394 for a partner and ~AUD 4,449 per child to your required funds. Under-funding dependants invalidates the financial test."
+    },
+    {
+      "question_id": "aus_has_oshc",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Overseas Student Health Cover (OSHC) Mandatory",
+      "conditional_on": null,
+      "message": "OSHC is mandatory and must be from an approved Australian provider. Pakistani/local health insurance is NOT accepted."
+    },
+    {
+      "question_id": "aus_oshc_approved_provider",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Overseas Student Health Cover (OSHC) Mandatory",
+      "conditional_on": null,
+      "message": "Only the five approved Australian OSHC providers count. Verify before paying."
+    },
+    {
+      "question_id": "aus_oshc_full_duration",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Overseas Student Health Cover (OSHC) Mandatory",
+      "conditional_on": null,
+      "message": "Cover must span your whole visa period, starting ~1 week before classes. Gaps in OSHC breach visa conditions."
+    },
+    {
+      "question_id": "aus_has_english_test",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "English Language Test Required",
+      "conditional_on": {
+        "question_id": "aus_english_exempt",
+        "operator": "eq",
+        "value": "no"
+      },
+      "message": "A valid result is required unless genuinely exempt. Minimum IELTS 5.5 overall for the visa; your course often needs higher (6.0–7.0)."
+    },
+    {
+      "question_id": "aus_english_score_meets_course",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "English Language Test Required",
+      "conditional_on": {
+        "question_id": "aus_english_exempt",
+        "operator": "eq",
+        "value": "no"
+      },
+      "message": "Meeting the visa floor (IELTS 5.5) is not enough if your university needs 6.5. Both must be satisfied."
+    },
+    {
+      "question_id": "aus_health_exam_done",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Health Examination Required",
+      "conditional_on": null,
+      "message": "A health exam is mandatory. Pakistani applicants almost always need a chest X-ray for TB screening."
+    },
+    {
+      "question_id": "aus_health_panel_physician",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Health Examination Required",
+      "conditional_on": null,
+      "message": "Only exams at approved panel clinics count. A cheaper local clinic's report is worthless for the visa and wastes money."
+    },
+    {
+      "question_id": "aus_police_clearances_ready",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Character Requirement — Police Clearances Required",
+      "conditional_on": {
+        "question_id": "aus_lived_12_months_other_country",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Pakistani applicants typically need a PCC from NADRA/local police; add clearances for any other country of long residence."
+    },
+    {
+      "question_id": "aus_criminal_history_disclosed",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Character Requirement — Police Clearances Required",
+      "conditional_on": null,
+      "message": "Hiding a character issue is an independent refusal ground — worse than the issue itself. Disclose everything."
+    },
+    {
+      "question_id": "aus_history_disclosed",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Poor Immigration History Causes Refusal",
+      "conditional_on": null,
+      "message": "Non-disclosure of immigration history is an independent refusal ground and can trigger a re-entry ban (PIC 4020). Disclose everything, even old/minor matters."
+    },
+    {
+      "question_id": "aus_course_same_higher_aqf",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Course Must Be at the Same or Higher AQF Level (Condition 8202)",
+      "conditional_on": {
+        "question_id": "aus_changing_course",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Dropping to a lower AQF level on the same visa breaches Condition 8202 and risks cancellation. You'd need a new Subclass 500."
+    }
+  ],
+  "high_risk_flags": [
+    {
+      "question_id": "aus_gs_home_ties",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Genuine Student (GS) Requirement",
+      "conditional_on": null,
+      "message": "Vague ties ('my family is here') are weak. Strong ties are documentable: ancestral property in your name, a written return job offer, a family business you are part of, dependants relying on you."
+    },
+    {
+      "question_id": "aus_gs_course_reason",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Genuine Student (GS) Requirement",
+      "conditional_on": null,
+      "message": "Officers reject generic reasons. Name the specific units, faculty, accreditation, or industry link that maps to YOUR background and a Pakistan-based career outcome."
+    },
+    {
+      "question_id": "aus_gs_career_benefit",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Genuine Student (GS) Requirement",
+      "conditional_on": null,
+      "message": "Show the path: current background → this course → a named role/sector in Pakistan. A course with no logical career payoff at home signals migration intent."
+    },
+    {
+      "question_id": "aus_gs_why_australia_vs_cheaper",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Genuine Student (GS) Requirement",
+      "conditional_on": null,
+      "message": "EL3 officers probe 'why spend this much?'. Have a defensible reason tied to course quality/accreditation — not lifestyle or work rights."
+    },
+    {
+      "question_id": "aus_gs_course_aligns_career",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Genuine Student (GS) Requirement",
+      "conditional_on": null,
+      "message": "A drastic, unexplained field change (e.g. MBBS → hospitality) is a classic refusal trigger. If you are switching, your GS answer must explain it credibly."
+    },
+    {
+      "question_id": "aus_edu_gap_justified",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      },
+      "mapped_rule": "Educational Consistency and Course Logic (GS-linked)",
+      "conditional_on": {
+        "question_id": "aus_edu_gap_over_1yr",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Provide employment letters, salary slips, freelance/contract proof, or transcripts covering the gap years. 'I was preparing' without proof is weak."
+    },
+    {
+      "question_id": "aus_drastic_field_change",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Educational Consistency and Course Logic (GS-linked)",
+      "conditional_on": null,
+      "message": "A large field switch is allowed but heavily scrutinised at EL3. If yes, your GS answers must connect old and new fields with a credible career story."
+    },
+    {
+      "question_id": "aus_transcripts_authenticated",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Educational Consistency and Course Logic (GS-linked)",
+      "conditional_on": null,
+      "message": "EL3 requires authenticated academic documents. Get HEC attestation for degrees and IBCC for FSc/Matric where applicable; provide certified English translations."
+    },
+    {
+      "question_id": "aus_funds_held_3_months",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": null,
+      "message": "EL3 expects a settled balance history (~3 months minimum). Unlike the UK there is no fixed 28-day rule, but a long consistent balance beats a recent lump sum every time."
+    },
+    {
+      "question_id": "aus_bank_history_consistent",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": null,
+      "message": "Erratic statements (empty for months, then suddenly full) signal arranged funds and trigger verification calls to your bank."
+    },
+    {
+      "question_id": "aus_source_of_funds_documented",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": null,
+      "message": "EL3's core test. Each major deposit needs proof: registered sale deed for property, FBR-declared salary, sanctioned loan letter, or a notarised gift affidavit from a traceable giver."
+    },
+    {
+      "question_id": "aus_sponsor_files_fbr",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": null,
+      "message": "A sponsor showing large funds but no FBR tax history is a major red flag — it implies undeclared/untraceable income. Sponsor's declared income should plausibly support the amount."
+    },
+    {
+      "question_id": "aus_prior_refusals_overstays",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Poor Immigration History Causes Refusal",
+      "conditional_on": null,
+      "message": "Prior refusals (especially UK/Canada/USA) are visible to Australia and heavily scrutinised. A refusal is survivable IF disclosed and explained — concealment is fatal."
+    },
+    {
+      "question_id": "aus_asylum_history",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Poor Immigration History Causes Refusal",
+      "conditional_on": null,
+      "message": "An asylum claim history strongly conflicts with 'temporary student returning home' and must be addressed candidly with legal advice if it applies."
+    },
+    {
+      "question_id": "aus_personally_reviewed_all",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Application Integrity and Agent Risk",
+      "conditional_on": null,
+      "message": "Unscrupulous agents inflate bank balances, fake experience letters, or alter transcripts. If an agent fabricated anything, YOU face refusal and a PIC 4020 ban. Verify every line yourself."
+    }
+  ],
+  "soft_warnings": [
+    {
+      "question_id": "aus_applicant_age",
+      "trigger_if": {
+        "type": "lt",
+        "value": 6
+      },
+      "mapped_rule": "Character Requirement — Police Clearances Required",
+      "conditional_on": null,
+      "message": "Subclass 500 applicants are usually 6+ for school sectors and 18+ for higher education. This is informational and rarely a problem for university applicants."
+    },
+    {
+      "question_id": "aus_gs_return_evidence_ready",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Genuine Student (GS) Requirement",
+      "conditional_on": null,
+      "message": "Attach what you can: property papers, family business registration, a conditional return job letter. Documents beat narrative."
+    },
+    {
+      "question_id": "aus_sponsor_immediate_family",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": null,
+      "message": "Immediate-family sponsorship is expected and trusted. Distant relatives or 'family friends' as sponsors raise scrutiny and need a strong relationship + funds-source explanation."
+    },
+    {
+      "question_id": "aus_property_sale_documented",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": {
+        "question_id": "aus_funds_source",
+        "operator": "eq",
+        "value": "property_sale"
+      },
+      "message": "Property-sale funding is fine if the sale deed is registered and money entered the account through the banking channel — not cash."
+    },
+    {
+      "question_id": "aus_loan_sanctioned",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      },
+      "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+      "conditional_on": {
+        "question_id": "aus_funds_source",
+        "operator": "eq",
+        "value": "bank_loan_sanctioned"
+      },
+      "message": "Education loans are accepted with a formal sanction letter from a recognised financial institution. Informal/family loans are not the same and carry less weight."
+    },
+    {
+      "question_id": "aus_can_pay_visa_fee",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Visa Application Fee AUD 2,000",
+      "conditional_on": null,
+      "message": "The visa charge (~AUD 2,000 per primary applicant) is paid at lodgement and is separate from your evidence-of-funds. Confirm the current charge before lodging."
+    },
+    {
+      "question_id": "aus_hap_id_generated",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Health Examination Required",
+      "conditional_on": null,
+      "message": "The HAP ID lets you book the medical. Generate it early — panel-clinic slots in Pakistan can be limited."
+    },
+    {
+      "question_id": "aus_understands_work_limit",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Work Limited to 48 Hours Per Fortnight During Study",
+      "conditional_on": null,
+      "message": "Work is capped at 48 hours/fortnight while classes are in session (unlimited during scheduled breaks). Breaching it risks cancellation."
+    },
+    {
+      "question_id": "aus_maintain_full_time_progress",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Must Maintain Full-Time Enrolment and Satisfactory Academic Progress",
+      "conditional_on": null,
+      "message": "Condition 8202: maintain full-time enrolment and progress. Failing this is a common cause of cancellation for students who treat study as secondary."
+    },
+    {
+      "question_id": "aus_agent_registered",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Application Integrity and Agent Risk",
+      "conditional_on": null,
+      "message": "Prefer agents authorised by your institution or a registered migration agent. 'Guaranteed visa' middlemen are the source of most fraud-related refusals."
+    }
+  ]
+}

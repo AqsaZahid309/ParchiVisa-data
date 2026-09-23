@@ -1,0 +1,2999 @@
+[
+  {
+    "id": "uk_applicant_age",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Profile",
+    "question": "What is your age (in years)?",
+    "help_text": "You must be at least 16 for the Student visa. Under-16s need the Child Student visa.",
+    "input_type": "number",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "gte",
+        "value": 16
+      },
+      "trigger_if": {
+        "type": "lt",
+        "value": 16
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Minimum Age Requirement",
+    "mapped_rule_id": "uk_eligibility_minimum_age_requirement",
+    "scoring_key": "documents",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "integer",
+    "error_message": "The UK Student visa requires applicants to be at least 16 years old. Applicants under 16 must apply for the Child Student visa instead.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_application_location",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Profile",
+    "question": "Are you applying from inside or outside the UK?",
+    "help_text": "Most Pakistani applicants apply from outside the UK. This affects the CAS 6-month rule and IHS exemptions.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Outside the UK",
+        "value": "outside_uk"
+      },
+      {
+        "label": "Inside the UK",
+        "value": "inside_uk"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "CAS from Licensed Sponsor Required",
+    "mapped_rule_id": "uk_sponsorship_cas_from_licensed_sponsor_required",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your application location affects CAS validity rules and the documentation pathway. Most Pakistani applicants apply from outside the UK.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_application_date",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Profile",
+    "question": "When do you plan to submit your UK student visa application?",
+    "help_text": "Used to check CAS age and the 31-day bank-statement window. You can apply up to 6 months before course start (outside UK).",
+    "input_type": "date",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "CAS from Licensed Sponsor Required",
+    "mapped_rule_id": "uk_sponsorship_cas_from_licensed_sponsor_required",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "YYYY-MM-DD",
+    "error_message": "Your planned submission date is used to verify your CAS is within the 6-month validity window and to confirm your bank statement meets the 31-day requirement. Enter the date in DD/MM/YYYY format; the value is stored as YYYY-MM-DD.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_has_valid_passport",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Identity",
+    "question": "Do you have a valid passport?",
+    "help_text": "A valid passport is required. Renew before applying if needed.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Valid Passport Required",
+    "mapped_rule_id": "uk_identity_valid_passport_required",
+    "scoring_key": "documents",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A valid passport is required to apply for a UK Student visa. Renew your passport before applying if it is expired or about to expire.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_passport_valid_for_stay",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Identity",
+    "question": "Will your passport stay valid through your planned course period?",
+    "help_text": "A passport expiring during your stay should be renewed first to avoid complications.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Valid Passport Required",
+    "mapped_rule_id": "uk_identity_valid_passport_required",
+    "scoring_key": "documents",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your passport should remain valid for the full duration of your planned course period. If it will expire during your studies, renew it before applying.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_has_cas",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "CAS / Sponsorship",
+    "question": "Have you received your CAS from your UK university/college?",
+    "help_text": "The CAS (Confirmation of Acceptance for Studies) is mandatory. No application can proceed without it. An offer letter is NOT a CAS.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "CAS from Licensed Sponsor Required",
+    "mapped_rule_id": "uk_sponsorship_cas_from_licensed_sponsor_required",
+    "scoring_key": "cas_sponsor",
+    "score_impact": 10,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A Confirmation of Acceptance for Studies (CAS) from a licensed UK sponsor is mandatory. You cannot submit a UK Student visa application without one. Contact your institution to request your CAS.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_sponsor_licensed",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "CAS / Sponsorship",
+    "question": "Is your institution on the UKVI Register of Licensed Student Sponsors?",
+    "help_text": "Only licensed sponsors can issue a valid CAS. Verify your institution yourself on the public Register of Licensed Student Sponsors — agents sometimes push unlicensed 'colleges'.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "CAS from Licensed Sponsor Required",
+    "mapped_rule_id": "uk_sponsorship_cas_from_licensed_sponsor_required",
+    "scoring_key": "cas_sponsor",
+    "score_impact": 8,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your institution must be on the UKVI Register of Licensed Student Sponsors. Only licensed sponsors can issue a valid CAS. Verify your institution on the official register before paying any fees.",
+    "source_url": "https://www.gov.uk/government/publications/register-of-licensed-sponsors-students",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_cas_unspent",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "CAS / Sponsorship",
+    "question": "Is your CAS unused (not already used in a previous application)?",
+    "help_text": "A CAS can only be used once. If it was used in a prior (e.g. refused) application, request a fresh CAS from your sponsor.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "CAS Must Be Unspent and Match Personal Details Exactly",
+    "mapped_rule_id": "uk_sponsorship_cas_must_be_unspent_and_match_personal_details_exactly",
+    "scoring_key": "cas_sponsor",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A CAS that has already been used in a prior application cannot be reused. Request a new, unused CAS from your institution before applying again.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_cas_details_match",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "CAS / Sponsorship",
+    "question": "Do ALL CAS details match your passport exactly (name, DOB, passport no., course title/level, fees, dates)?",
+    "help_text": "Any mismatch between CAS and passport/documents (a common Pakistani refusal cause — name spelling, DOB, fee figure) can cause refusal. Check every field and ask the sponsor to correct errors BEFORE applying.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "CAS Must Be Unspent and Match Personal Details Exactly",
+    "mapped_rule_id": "uk_sponsorship_cas_must_be_unspent_and_match_personal_details_exactly",
+    "scoring_key": "cas_sponsor",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Every detail on your CAS must exactly match your passport — name spelling, date of birth, passport number, course title, fees, and start dates. Ask your institution to correct any discrepancy before you apply.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_cas_within_6_months",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "CAS / Sponsorship",
+    "question": "If applying from outside the UK, was your CAS issued within the last 6 months?",
+    "help_text": "A CAS older than 6 months is invalid for outside-UK applications. Request a fresh CAS if needed.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_application_location",
+      "operator": "eq",
+      "value": "outside_uk"
+    },
+    "mapped_rule": "CAS Must Not Be Older Than 6 Months (Outside UK Applicants)",
+    "mapped_rule_id": "uk_sponsorship_cas_must_not_be_older_than_6_months_outside_uk_applicants",
+    "scoring_key": "cas_sponsor",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A CAS more than 6 months old is invalid for outside-UK applications. Contact your institution to request a fresh CAS.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_cas_shows_english",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "CAS / Sponsorship",
+    "question": "Does your CAS correctly record any English assessment the university did (if not using a SELT)?",
+    "help_text": "If your university assessed your English (degree-level courses), the CAS must record it. A blank/incorrect CAS English field can force you to take a SELT.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Secure English Language Test (SELT) Required",
+    "mapped_rule_id": "uk_english_secure_english_language_test_selt_required",
+    "scoring_key": "cas_sponsor",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "If your university assessed your English for a degree-level course, this must be correctly recorded on your CAS. An incorrect or blank English field may require you to obtain a separate SELT. Ask your institution to update the CAS before applying.",
+    "source_url": "https://www.gov.uk/student-visa/knowledge-of-english",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_cas_shows_fees_paid",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "CAS / Sponsorship",
+    "question": "Does your CAS correctly show any tuition fees you've already paid (deposit)?",
+    "help_text": "Fees shown as paid on the CAS reduce the tuition amount you must evidence. If your deposit isn't recorded, ask the sponsor to fix the CAS — it directly changes your required funds.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Maintenance Funds Required",
+    "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+    "scoring_key": "cas_sponsor",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Any tuition deposit you have already paid should be recorded on your CAS, as it reduces the funds you must evidence. If it is not recorded, ask your institution to update the CAS.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_course_level",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Course",
+    "question": "Is your course at RQF Level 3 or above?",
+    "help_text": "The Student visa requires a course at RQF Level 3 or above (most degrees are Level 6+). Below that is not eligible.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Course Must Be at RQF Level 3 or Above",
+    "mapped_rule_id": "uk_course_course_must_be_at_rqf_level_3_or_above",
+    "scoring_key": "documents",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "The UK Student visa requires a course at RQF Level 3 or above. Courses below this level are not eligible for this visa.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_course_location",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Is your course in London or outside London?",
+    "help_text": "London courses require higher maintenance (£1,529/mo vs £1,171/mo). Routes the funds computation.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "London",
+        "value": "london"
+      },
+      {
+        "label": "Outside London",
+        "value": "outside_london"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Maintenance Funds Required",
+    "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your course location sets the living cost rate used to calculate required maintenance funds — £1,529 per month in London or £1,171 per month outside London.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_first_year_tuition_fee",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "What is your first-year tuition fee (in GBP) per your CAS?",
+    "help_text": "Enter the GBP tuition from your CAS. The tool subtracts any deposit paid and adds living costs to compute required funds.",
+    "input_type": "currency_amount",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "gt",
+        "value": 0
+      },
+      "trigger_if": {
+        "type": "lte",
+        "value": 0
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Maintenance Funds Required",
+    "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "numeric_gbp",
+    "error_message": "A tuition fee of zero is unlikely to be correct unless you hold a full scholarship confirmed in writing by your institution. Verify the first-year tuition amount on your CAS before continuing.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_tuition_fee_paid",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "How much tuition have you already paid (deposit), in GBP?",
+    "help_text": "Tuition already paid (and shown on the CAS) reduces what you must evidence. Enter 0 if none paid.",
+    "input_type": "currency_amount",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "gte",
+        "value": 0
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Maintenance Funds Required",
+    "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "numeric_gbp",
+    "error_message": "Enter 0 if no deposit has been paid. An inaccurate deposit figure will cause an incorrect calculation of the funds you need to evidence.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_available_funds",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "How much money (GBP) can you genuinely show as available and accessible?",
+    "help_text": "Required = (first-year tuition minus deposit paid) + living costs (£13,761 London / £10,539 outside). Funds must be genuine and held correctly for 28 days.",
+    "input_type": "currency_amount",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "computed_funds_ok"
+      },
+      "trigger_if": {
+        "type": "computed_funds_short"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Maintenance Funds Required",
+    "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 10,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "numeric_gbp",
+    "error_message": "Your available funds do not meet the required minimum. You must show funds covering unpaid first-year tuition plus living costs — £13,761 per month in London or £10,539 outside London — held continuously for at least 28 days.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_funds_held_28_days",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Have the funds been held continuously for at least 28 days, with the lowest balance never dropping below the required amount?",
+    "help_text": "The 28-day rule is strict: the balance must NEVER dip below the required total at any point in a 28-consecutive-day window. A single large deposit just before applying fails this. (Unlike Australia, the UK enforces a hard 28-day period.)",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "28-Day Continuous Funds Holding Rule",
+    "mapped_rule_id": "uk_financial_28_day_continuous_funds_holding_rule",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 10,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your funds must have been held at or above the required total continuously for at least 28 consecutive days up to your application date. A lump sum deposited within the 28-day window will not satisfy this requirement.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_bank_statement_within_31_days",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Will your bank statement's end/closing date be within 31 days of your application date?",
+    "help_text": "The statement closing date must be no more than 31 days before you apply, or the evidence is rejected.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "28-Day Continuous Funds Holding Rule",
+    "mapped_rule_id": "uk_financial_28_day_continuous_funds_holding_rule",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 5,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "The closing date on your bank statement must be no more than 31 days before your application submission date. An older statement will be rejected as financial evidence.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_funds_currency",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Are your funds in PKR (or another currency) that you'll convert at the official rate for the application?",
+    "help_text": "PKR balances are converted using the OANDA rate on the application date. Keep a buffer above the minimum so exchange-rate movement doesn't drop you below the threshold.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Maintenance Funds Required",
+    "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "If your funds are held in PKR or another non-GBP currency, they will be converted at the OANDA rate on your application date. Maintain a buffer well above the minimum to account for exchange rate movement.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_funds_account_holder",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Are the funds in YOUR account or your parent's/legal guardian's account (not a third party)?",
+    "help_text": "Funds must be in your own name or a parent's/legal guardian's. Funds in a brother's, uncle's, or family-friend's account are NOT accepted for maintenance (different from the US/Canada sponsor model).",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+    "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Funds must be held in your own account or a parent's or legal guardian's account. Funds in an account belonging to a brother, uncle, or unrelated third party are not accepted as maintenance evidence for the UK Student visa.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_parental_consent_proof",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "If using parent/guardian funds, do you have proof of relationship (FRC/birth certificate) AND a written consent letter?",
+    "help_text": "Parent/guardian funds require BOTH a relationship document (Family Registration Certificate or birth certificate) AND a signed consent letter allowing you to use the funds. Missing either = refusal.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_funds_source",
+      "operator": "eq",
+      "value": "parent_guardian_savings"
+    },
+    "mapped_rule": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+    "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "When using a parent or guardian's funds, you must provide both a relationship document (Family Registration Certificate or birth certificate) and a signed consent letter authorising use of the funds. Missing either document will result in refusal.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_funds_source",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "What is the main source of these funds?",
+    "help_text": "Each source needs its own paper trail. Note: regulated financial-institution loans count; informal/family loans generally do not.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "My own savings",
+        "value": "own_savings"
+      },
+      {
+        "label": "Parent or guardian's savings",
+        "value": "parent_guardian_savings"
+      },
+      {
+        "label": "Property sale proceeds",
+        "value": "property_sale"
+      },
+      {
+        "label": "Bank loan (with sanction letter)",
+        "value": "bank_loan_sanctioned"
+      },
+      {
+        "label": "Family business income",
+        "value": "family_business_income"
+      },
+      {
+        "label": "Scholarship or sponsorship",
+        "value": "scholarship"
+      },
+      {
+        "label": "Other source",
+        "value": "other"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+    "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your fund source determines the evidence trail required. Ensure you have the appropriate documentation for the source you have selected.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_funds_source_other_detail",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Please briefly describe your source of funds.",
+    "help_text": "Use this only if your funding source is not covered by the listed options. Be specific — for example, 'proceeds from agricultural land sale' or 'monthly remittances from spouse working abroad'. Vague responses such as 'miscellaneous income' are unlikely to satisfy caseworker scrutiny and may invite a request for further evidence.",
+    "input_type": "text",
+    "required": false,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": {
+      "question_id": "uk_funds_source",
+      "operator": "eq",
+      "value": "other"
+    },
+    "mapped_rule": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+    "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 0,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_trimmed",
+    "error_message": "Please describe your fund source briefly. A specific, honest description helps confirm that your funds are genuine and traceable — vague answers may not satisfy caseworker scrutiny.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29",
+    "needs_rule_confirmation": false
+  },
+  {
+    "id": "uk_large_recent_deposit",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Were there large/sudden deposits during the 28-day window?",
+    "help_text": "A large deposit inside the 28-day window usually breaks the rule (the balance wasn't held for 28 days). Routes to the source check.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "28-Day Continuous Funds Holding Rule",
+    "mapped_rule_id": "uk_financial_28_day_continuous_funds_holding_rule",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Any large or sudden deposit during the 28-day window must be accompanied by a paper trail — a registered sale deed, salary records, a loan sanction letter, or a notarised gift affidavit. Undocumented deposits raise credibility concerns.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_source_of_funds_documented",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Can you document the source of significant funds (sale deed, salary, sanctioned loan, gift affidavit)?",
+    "help_text": "Caseworkers query unexplained money. Each significant amount needs proof: registered sale deed, FBR-declared salary, sanctioned loan letter, or a notarised gift affidavit from a traceable giver.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+    "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Every significant fund deposit must be backed by documentary proof — a registered sale deed, FBR-declared salary slips, a formal bank loan sanction letter, or a notarised gift affidavit from a traceable source. Undocumented funds are a leading refusal cause.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_sponsor_immediate_family",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "If a parent/guardian is funding you, are they an immediate parent/legal guardian (not uncle/brother/friend)?",
+    "help_text": "Only a parent or legal guardian's funds are accepted under the maintenance rules. An uncle/brother/grandfather funding you means the money must first be legitimately transferred to your or your parent's account and held for 28 days.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_funds_source",
+      "operator": "eq",
+      "value": "parent_guardian_savings"
+    },
+    "mapped_rule": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+    "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Under UK Student visa rules, only a parent or legal guardian's funds count directly as maintenance. Funds from siblings, uncles, or other relatives must be legitimately transferred to your or your parent's account and held for 28 days before the application.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_sponsor_files_fbr",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Does the person providing funds file FBR tax returns consistent with the amount?",
+    "help_text": "Large funds with no FBR/filer history imply undeclared income and weaken credibility if source is questioned. Declared income should plausibly support the amount.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Evidence Must Be Genuine, Sourced and Correctly Held",
+    "mapped_rule_id": "uk_financial_financial_evidence_must_be_genuine_sourced_and_correctly_held",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A sponsor showing large funds without a consistent FBR filing history implies undeclared income and weakens the credibility of your financial evidence. The sponsor's declared income should plausibly support the amount provided.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_financial_buffer",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Financial",
+    "question": "Do you hold a reasonable buffer above the minimum (not barely meeting it)?",
+    "help_text": "Barely meeting the minimum is risky — exchange-rate shifts or a small dip can fail you. Keep a sensible cushion above the required total.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Maintenance Funds Required",
+    "mapped_rule_id": "uk_financial_sufficient_maintenance_funds_required",
+    "scoring_key": "financial_maintenance",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Holding funds at exactly the minimum is risky. Exchange rate shifts, bank charges, or a minor dip during the 28 days could cause your application to fail the financial test. Maintain a sensible buffer above the required amount.",
+    "source_url": "https://www.gov.uk/student-visa/money",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_has_english_exemption",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "English",
+    "question": "Are you exempt from proving English (e.g. degree taught in English in an eligible country, or university-assessed at degree level)?",
+    "help_text": "Most Pakistani applicants are NOT exempt and need a SELT or a valid university assessment recorded on the CAS. If unsure, assume you need evidence.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Secure English Language Test (SELT) Required",
+    "mapped_rule_id": "uk_english_secure_english_language_test_selt_required",
+    "scoring_key": "documents",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Most Pakistani applicants are not exempt from the English language requirement. If you are unsure whether an exemption applies to you, assume you need to provide English evidence and proceed accordingly.",
+    "source_url": "https://www.gov.uk/student-visa/knowledge-of-english",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_has_selt",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "English",
+    "question": "If not exempt, do you have a valid SELT (or university-assessed English on your CAS)?",
+    "help_text": "Below-degree courses need a SELT from a UKVI-approved provider; general IELTS is NOT accepted — it must be IELTS for UKVI / PTE Academic UKVI / LanguageCert SELT etc. Degree-level courses may use a university assessment recorded on the CAS.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_has_english_exemption",
+      "operator": "eq",
+      "value": "no"
+    },
+    "mapped_rule": "Secure English Language Test (SELT) Required",
+    "mapped_rule_id": "uk_english_secure_english_language_test_selt_required",
+    "scoring_key": "documents",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A valid SELT from a UKVI-approved provider, or a university English assessment correctly recorded on your CAS for degree-level courses, is required. Applying without valid English evidence will result in refusal.",
+    "source_url": "https://www.gov.uk/student-visa/knowledge-of-english",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_selt_provider",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "English",
+    "question": "If using a SELT, is it from a UKVI-approved SELT provider (not general IELTS)?",
+    "help_text": "Only UKVI-approved SELTs count (IELTS for UKVI, PTE Academic UKVI, LanguageCert, etc.). A normal academic IELTS taken at a non-SELT centre is invalid for below-degree courses.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_has_english_exemption",
+      "operator": "eq",
+      "value": "no"
+    },
+    "mapped_rule": "Secure English Language Test (SELT) Required",
+    "mapped_rule_id": "uk_english_secure_english_language_test_selt_required",
+    "scoring_key": "documents",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Only tests from UKVI-approved SELT providers are accepted — for example IELTS for UKVI, PTE Academic UKVI, or LanguageCert SELT. A standard academic IELTS taken at a non-SELT test centre is not valid for below-degree courses.",
+    "source_url": "https://www.gov.uk/student-visa/knowledge-of-english",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_english_cefr_level",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "English",
+    "question": "Does your English meet the required CEFR level (B1 for RQF 3-5; B2 for degree level RQF 6+)?",
+    "help_text": "Below-degree: B1 (~IELTS 4.0). Degree level: B2 (~IELTS 5.5) in all four skills. A score below your course level fails.",
+    "input_type": "yes_no_unknown",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_has_english_exemption",
+      "operator": "eq",
+      "value": "no"
+    },
+    "mapped_rule": "Minimum CEFR Level by Course Level",
+    "mapped_rule_id": "uk_english_minimum_cefr_level_by_course_level",
+    "scoring_key": "documents",
+    "score_impact": 5,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your English test result must meet the minimum CEFR level for your course — B1 for RQF Level 3 to 5, B2 for degree level (RQF Level 6 and above). A score below the required threshold will result in refusal.",
+    "source_url": "https://www.gov.uk/student-visa/knowledge-of-english",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_selt_within_2_years",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "English",
+    "question": "If using a SELT, was it taken within the last 2 years?",
+    "help_text": "A SELT older than 2 years is invalid; you must retake it.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_has_english_exemption",
+      "operator": "eq",
+      "value": "no"
+    },
+    "mapped_rule": "SELT Result Must Not Be More Than 2 Years Old",
+    "mapped_rule_id": "uk_english_selt_result_must_not_be_more_than_2_years_old",
+    "scoring_key": "documents",
+    "score_impact": 3,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A SELT result more than 2 years old at the time of application is not valid. You must retake the test and obtain a current result before applying.",
+    "source_url": "https://www.gov.uk/student-visa/knowledge-of-english",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_stay_longer_than_6_months",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Health & Security",
+    "question": "Will you be in the UK for more than 6 months?",
+    "help_text": "Pakistani applicants staying 6+ months need a TB certificate. Routes the TB question. (The tool already assumes Pakistani nationality.)",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "TB Test Mandatory for Pakistani Applicants (6+ Month Stay)",
+    "mapped_rule_id": "uk_health_tb_test_mandatory_for_pakistani_applicants_6_month_stay",
+    "scoring_key": "health_character",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Pakistani applicants staying 6 months or more in the UK must provide a TB certificate from a UKVI-approved clinic as part of their application.",
+    "source_url": "https://www.gov.uk/tb-test-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_has_tb_certificate",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Health & Security",
+    "question": "Do you have a TB certificate from a UKVI-approved clinic in Pakistan (e.g. IOM)?",
+    "help_text": "For Pakistani applicants staying 6+ months, a TB test from a UKVI-APPROVED clinic (e.g. IOM Islamabad/Karachi/Lahore) is mandatory. A normal hospital chest X-ray does NOT count. Missing it = automatic refusal.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_stay_longer_than_6_months",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "TB Test Mandatory for Pakistani Applicants (6+ Month Stay)",
+    "mapped_rule_id": "uk_health_tb_test_mandatory_for_pakistani_applicants_6_month_stay",
+    "scoring_key": "health_character",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Pakistani applicants staying 6 or more months must provide a valid TB certificate from a UKVI-approved clinic — such as IOM in Islamabad, Karachi, or Lahore. A standard hospital chest X-ray is not acceptable and its absence will result in automatic refusal.",
+    "source_url": "https://www.gov.uk/tb-test-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_course_requires_atas",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Health & Security",
+    "question": "Does your course require an ATAS certificate (sensitive STEM postgraduate subjects)?",
+    "help_text": "Some postgraduate STEM courses need ATAS clearance. Your CAS/offer states if ATAS is required. Routes the ATAS question.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "ATAS Certificate Required for Sensitive STEM Postgraduate Subjects",
+    "mapped_rule_id": "uk_course_atas_certificate_required_for_sensitive_stem_postgraduate_subjects",
+    "scoring_key": "health_character",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "ATAS clearance may be required for postgraduate STEM courses involving sensitive technology areas. Check your offer letter or CAS to confirm whether ATAS applies to your specific course.",
+    "source_url": "https://www.gov.uk/guidance/academic-technology-approval-scheme",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_has_atas_certificate",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Health & Security",
+    "question": "If ATAS is required, have you obtained the ATAS certificate?",
+    "help_text": "Where required, ATAS must be obtained BEFORE submitting the visa application. Applying without it = refusal.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_course_requires_atas",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "ATAS Certificate Required for Sensitive STEM Postgraduate Subjects",
+    "mapped_rule_id": "uk_course_atas_certificate_required_for_sensitive_stem_postgraduate_subjects",
+    "scoring_key": "health_character",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "ATAS clearance must be obtained before submitting the visa application for any course that requires it. Applying without ATAS when it is required will result in refusal.",
+    "source_url": "https://www.gov.uk/guidance/academic-technology-approval-scheme",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_ihs_ready",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Fees / IHS",
+    "question": "Can you pay the Immigration Health Surcharge (IHS, ~£776/year) in full upfront?",
+    "help_text": "IHS (~£776 per year of stay) must be paid in full during the application — no instalments. It's separate from the ~£524 visa fee.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Immigration Health Surcharge (IHS) Must Be Paid Upfront",
+    "mapped_rule_id": "uk_fees_immigration_health_surcharge_ihs_must_be_paid_upfront",
+    "scoring_key": "general_awareness",
+    "score_impact": 3,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "The Immigration Health Surcharge — approximately £776 per year of your visa — must be paid in full during the online application. Payment cannot be made in instalments. Ensure these funds are available before you begin your application.",
+    "source_url": "https://www.gov.uk/healthcare-immigration-application",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_why_uk_specific",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Credibility",
+    "question": "Can you explain — specifically — why the UK and this university, not just 'good education'?",
+    "help_text": "If a credibility interview happens, generic answers hurt. Name the course content, ranking, or specialization and tie it to your background and a Pakistan-based career. Random/agent-picked universities are a red flag.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student / Credibility Assessment",
+    "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+    "scoring_key": "credibility",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Generic answers such as 'good universities' or 'better education' weaken your credibility if a UKVI interview is required. Prepare a specific explanation connecting this university and course to your academic background and a concrete career plan in Pakistan.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_course_career_link",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Credibility",
+    "question": "Can you explain how this course connects to a realistic career back in Pakistan?",
+    "help_text": "Show the path: your background -> this UK course -> a named role/sector in Pakistan. No logical payoff at home weakens credibility.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student / Credibility Assessment",
+    "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+    "scoring_key": "credibility",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "An application with no clear career pathway back to Pakistan raises credibility concerns about genuine student intent. Be ready to name the specific role, sector, or employer in Pakistan that this qualification prepares you for.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_understands_course_details",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Credibility",
+    "question": "Do you know your course modules, tuition, location, and duration well enough to discuss them?",
+    "help_text": "Credibility interviews probe whether you actually understand what you signed up for. Not knowing your own modules/fees/duration signals an agent-driven, non-genuine application.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student / Credibility Assessment",
+    "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+    "scoring_key": "credibility",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Inability to discuss basic details of your own course — modules, fees, location, duration — suggests an agent-driven rather than genuinely chosen application. Ensure you fully understand what you have applied for before any interview.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_home_ties",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Credibility",
+    "question": "Do you have ties to Pakistan you can describe (family, property, business, career plan)?",
+    "help_text": "While the UK route allows some switching later, credibility still weighs intent. Be ready to describe concrete ties and a return/career plan.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student / Credibility Assessment",
+    "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+    "scoring_key": "credibility",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Weak or absent ties to Pakistan raise credibility concerns about your intention to return after studies. Prepare concrete, documentable evidence — property records, family business documents, or a written career plan.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_answers_unscripted",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Credibility",
+    "question": "Can you answer credibility questions naturally, in your own words (not memorised agent scripts)?",
+    "help_text": "Interviewers flag rehearsed agent scripts. Practise the content, but answer naturally.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student / Credibility Assessment",
+    "mapped_rule_id": "uk_credibility_genuine_student_credibility_assessment",
+    "scoring_key": "credibility",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Rehearsed agent scripts are easily detected in a credibility interview and can undermine a genuine application. Practise your own answers in your own words; credibility comes from authenticity, not memorisation.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_edu_gap_over_1yr",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Education",
+    "question": "Do you have an education/employment gap longer than 12 months (after Matric/FSc/A-Levels/Bachelors/Masters)?",
+    "help_text": "Gaps are common in Pakistan. A gap alone is fine; an UNEXPLAINED gap is the problem. Routes to the next question.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Academic Progression",
+    "mapped_rule_id": "uk_education_educational_consistency_and_academic_progression",
+    "scoring_key": "education_consistency",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "An education or employment gap over 12 months alone is not a refusal ground, but an unexplained gap is. If you have such a gap, you will be asked to justify it with documentary evidence.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_edu_gap_justified",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Education",
+    "question": "If you have a 12+ month gap, can you justify it with evidence (job letters, transcripts, valid reasons)?",
+    "help_text": "Provide employment letters, salary slips, freelance proof, or transcripts covering the gap. Unevidenced 'I was at home/preparing' is weak.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_edu_gap_over_1yr",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Educational Consistency and Academic Progression",
+    "mapped_rule_id": "uk_education_educational_consistency_and_academic_progression",
+    "scoring_key": "education_consistency",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "An unexplained gap of over 12 months is a credibility concern for UKVI. Provide employment letters, salary slips, freelance contracts, academic transcripts, or other documentation covering the gap period.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_academic_progression",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Education",
+    "question": "Is your UK course a clear step UP from your previous qualification (not a downgrade)?",
+    "help_text": "UKVI scrutinises 'academic progression'. Going from a Masters back down to a lower diploma, or a drastic field switch, looks non-genuine and must be justified.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Academic Progression",
+    "mapped_rule_id": "uk_education_educational_consistency_and_academic_progression",
+    "scoring_key": "education_consistency",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "UKVI's academic progression requirement means your UK course should be a clear step forward from your existing qualification. A downgrade in level or a drastic, unexplained field change must be credibly justified.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_drastic_field_change",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Education",
+    "question": "Is your UK course in a substantially different field from your last qualification?",
+    "help_text": "A big, unexplained field switch is a credibility trigger. If yes, be ready to explain the logic clearly.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Academic Progression",
+    "mapped_rule_id": "uk_education_educational_consistency_and_academic_progression",
+    "scoring_key": "education_consistency",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A large unexplained change of field between your previous qualification and your UK course raises credibility concerns. Be prepared to explain the academic or career rationale for the switch in your own words.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_academics_verifiable",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Education",
+    "question": "Are your Matric/FSc/Bachelors transcripts and degrees complete, consistent, and verifiable?",
+    "help_text": "Inconsistent/unverifiable academics (mismatched names/dates, missing transcripts) raise fraud concerns. Have complete, attested records ready.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Academic Progression",
+    "mapped_rule_id": "uk_education_educational_consistency_and_academic_progression",
+    "scoring_key": "education_consistency",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Inconsistent or unverifiable academic records — mismatched name spellings, missing transcripts, or unattested degrees — raise fraud concerns with UKVI. Ensure all documents are complete, attested where required, and consistently named throughout.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_names_dates_consistent",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Consistency",
+    "question": "Do your name and date of birth match EXACTLY across passport, CAS, academic documents, and financial documents?",
+    "help_text": "Name/DOB mismatches (e.g. 'Muhammad' vs 'Mohammad', differing spellings on degree vs passport) are a very common Pakistani refusal cause. Reconcile every document to the passport spelling before applying.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application, CAS and Document Consistency",
+    "mapped_rule_id": "uk_consistency_application_cas_and_document_consistency",
+    "scoring_key": "application_consistency",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Name and date of birth mismatches across your passport, CAS, academic documents, and financial papers are among the most common causes of UK Student visa refusal for Pakistani applicants. Reconcile every document to your passport spelling before applying.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_application_matches_cas",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Consistency",
+    "question": "Will your visa application form match your CAS and financial evidence (course, fees, dates, funds)?",
+    "help_text": "The application form, CAS, and bank evidence must tell one consistent story. Contradictions read as deception.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application, CAS and Document Consistency",
+    "mapped_rule_id": "uk_consistency_application_cas_and_document_consistency",
+    "scoring_key": "application_consistency",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your visa application form, CAS, and bank evidence must present a single consistent picture. Any contradiction between them — course title, fees, dates, personal details — is likely to be treated as a discrepancy or potential deception.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_has_prior_refusal",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Immigration History",
+    "question": "Have you EVER been refused a visa by the UK or any country (USA, Canada, Australia, Schengen)?",
+    "help_text": "Prior refusals are visible and probed. A refusal is survivable IF disclosed and explained — concealment is treated as deception with a 10-year UK ban risk.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Full Immigration History Must Be Accurately Disclosed",
+    "mapped_rule_id": "uk_immigration_history_full_immigration_history_must_be_accurately_disclosed",
+    "scoring_key": "immigration_history",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Prior visa refusals from any country will be visible to UKVI and may be questioned. A refusal is survivable if honestly disclosed and properly explained, but concealment is treated as deception and carries a 10-year UK ban risk.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_refusal_details",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Immigration History",
+    "question": "If yes, which country/countries, when, and the reason?",
+    "help_text": "Note each refusal and reason — you must disclose each accurately and address it in your application.",
+    "input_type": "text",
+    "required": false,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": {
+      "question_id": "uk_has_prior_refusal",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Full Immigration History Must Be Accurately Disclosed",
+    "mapped_rule_id": "uk_immigration_history_full_immigration_history_must_be_accurately_disclosed",
+    "scoring_key": "immigration_history",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_trimmed",
+    "error_message": "Record each refusal accurately — country, approximate date, and the stated reason. You must disclose every refusal on your application form and be prepared to address each one.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_immigration_history_disclosed",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Immigration History",
+    "question": "Will you disclose ALL prior refusals/overstays/removals accurately in your application?",
+    "help_text": "Concealing immigration history is treated as deception — a 10-year ban from the UK. Disclose everything, even old or minor matters.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Full Immigration History Must Be Accurately Disclosed",
+    "mapped_rule_id": "uk_immigration_history_full_immigration_history_must_be_accurately_disclosed",
+    "scoring_key": "immigration_history",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Concealing any prior refusal, overstay, or removal from your immigration history is treated as deception by UKVI. The consequence is a 10-year ban from the UK — far more serious than the underlying issue. Disclose everything accurately.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_overstay_or_removal",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Immigration History",
+    "question": "Have you ever overstayed a visa or been deported/removed from any country?",
+    "help_text": "Overstays/removals must be disclosed and explained; concealment risks a ban.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Full Immigration History Must Be Accurately Disclosed",
+    "mapped_rule_id": "uk_immigration_history_full_immigration_history_must_be_accurately_disclosed",
+    "scoring_key": "immigration_history",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A prior overstay or deportation directly contradicts a temporary student intention and must be disclosed honestly. Concealment is a deception finding that carries a 10-year UK ban.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_asylum_history",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Immigration History",
+    "question": "Have you ever claimed asylum in any country?",
+    "help_text": "An asylum history conflicts with a temporary-study application and must be addressed candidly, ideally with legal advice.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Full Immigration History Must Be Accurately Disclosed",
+    "mapped_rule_id": "uk_immigration_history_full_immigration_history_must_be_accurately_disclosed",
+    "scoring_key": "immigration_history",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A history of asylum claims in any country is inconsistent with a temporary study intention and must be disclosed honestly. Seek legal advice before applying if this applies to you.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_bringing_dependants",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Dependants",
+    "question": "Are you planning to bring dependants (partner/children)?",
+    "help_text": "Since Jan 2024 most students cannot bring dependants. Routes the eligibility question.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Dependants Restricted to PhD/Research Students (From 1 Jan 2024)",
+    "mapped_rule_id": "uk_dependants_dependants_restricted_to_phd_research_students_from_1_jan_2024",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Since 1 January 2024, most UK Student visa holders cannot bring dependants. Only full-time PhD and research-degree students, and government-sponsored students, are eligible.",
+    "source_url": "https://www.gov.uk/student-visa/family-members",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_dependant_eligibility",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Dependants",
+    "question": "If yes, are you on a PhD/research degree (9+ months) or a government-sponsored 6+ month course?",
+    "help_text": "From 1 Jan 2024, only full-time PhD/research-degree students (or government-sponsored students) may bring dependants. Taught Masters/undergraduate/sub-degree students CANNOT. Applying with ineligible dependants causes problems.",
+    "input_type": "single_choice",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "uk_bringing_dependants",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Dependants Restricted to PhD/Research Students (From 1 Jan 2024)",
+    "mapped_rule_id": "uk_dependants_dependants_restricted_to_phd_research_students_from_1_jan_2024",
+    "scoring_key": "general_awareness",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Since 1 January 2024, only students on full-time PhD or research programmes — or government-sponsored students — may bring dependants. Students on taught Masters, undergraduate, or below-degree courses are not eligible. Applying with ineligible dependants will cause problems with your application.",
+    "source_url": "https://www.gov.uk/student-visa/family-members",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_wants_to_work",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Work Awareness",
+    "question": "Do you understand your work rights depend on course level and sponsor status?",
+    "help_text": "Degree-level students at HEPs with a track record may work limited hours during term; below-degree/part-time may have no work rights. Don't assume you can work.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Student Visa Work Rights Depend on Course Level and Sponsor Status",
+    "mapped_rule_id": "uk_student_work_rights_awareness",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Work rights on the UK Student visa depend on your course level and your institution's sponsor status. Do not assume you can work — verify your specific entitlement before beginning any employment. Exceeding your work limit or working without permission can result in visa cancellation.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29",
+    "needs_rule_confirmation": false
+  },
+  {
+    "id": "uk_agent_prepared_app",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Agent Integrity",
+    "question": "Did an education agent/consultant prepare or submit your application?",
+    "help_text": "Using an agent is fine — but YOU are responsible for everything submitted in your name. Routes to verification.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "uk_integrity_application_integrity_and_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Using an education agent is permitted, but you are personally and legally responsible for all content submitted in your name, including any documents prepared on your behalf by an agent.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_personally_reviewed_all",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Agent Integrity",
+    "question": "Did YOU personally review the application and verify every document before submission?",
+    "help_text": "Some agents inflate balances, fake experience/bank letters, or alter transcripts. If an agent fabricated anything, YOU face refusal and a deception finding (10-year ban). Verify every line yourself.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "uk_integrity_application_integrity_and_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Agents sometimes inflate bank balances, insert fabricated experience letters, or alter transcripts. If any false document appears in your application, you face refusal and a 10-year deception ban — regardless of who prepared it. Review every document personally before submission.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_no_fake_documents",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Agent Integrity",
+    "question": "Are you certain NO fake, edited, or exaggerated documents are in your application?",
+    "help_text": "A single fabricated document (bank balance, experience letter, transcript) triggers refusal under deception rules and a 10-year ban — even if an agent did it. Verify authenticity of everything.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "uk_integrity_application_integrity_and_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Any false, altered, or exaggerated document in your application — bank statements, salary slips, experience letters, or academic transcripts — is grounds for refusal and a 10-year deception ban. This applies even if an agent prepared the document without your direct knowledge.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "uk_agent_advised_hiding",
+    "country": "UK",
+    "visa_route": "Student Visa (formerly Tier 4 General)",
+    "section": "Agent Integrity",
+    "question": "Has any consultant advised you to HIDE a refusal, income issue, gap, or family detail?",
+    "help_text": "If an agent told you to conceal something, that's a path to a deception finding and a 10-year ban. Disclose truthfully; ignore that advice.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "uk_integrity_application_integrity_and_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "If any consultant has advised you to conceal a refusal, income issue, employment gap, or family detail, that advice is legally dangerous. Following it risks a deception finding and a 10-year ban from the UK. Disclose everything accurately and disregard that advice.",
+    "source_url": "https://www.gov.uk/student-visa",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  }
+]

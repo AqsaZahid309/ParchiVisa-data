@@ -1,0 +1,845 @@
+{
+  "country": "USA",
+  "visa_route": "F-1 Student Visa",
+  "last_verified": "2026-05-29",
+  "applicant_profile": "Pakistani nationals applying for a US F-1 student visa (Islamabad embassy / Karachi consulate).",
+  "framing_disclaimer": "Measures DOCUMENTED READINESS and 214(b)/financial RISK EXPOSURE. Does NOT predict the consular officer's decision — 214(b) is subjective and interview-driven. Not legal advice. Verify SEVIS fee, social-media rule, and current vetting/appointment conditions at travel.state.gov and ice.gov before applying.",
+  "config": {
+    "currency": "USD",
+    "sevis_fee_f1": 350,
+    "sevis_fee_j1": 220,
+    "sevis_payment_portal": "fmjfee.com",
+    "ds160_portal": "ceac.state.gov/genniv",
+    "financial_basis": "NO US government living-cost figure. Required funds = the TOTAL cost of attendance stated on the student's Form I-20 (tuition + living + fees) for the first academic year, plus return travel and a sensible buffer.",
+    "english_test_basis": "US visa itself does NOT mandate a standalone English test; the SEVP school sets admission English requirements. Do not treat a missing IELTS/PTE as a visa blocker.",
+    "social_media_rule": "From 18 Jun 2025, F/M/J applicants must set ALL social media profiles to public and disclose every handle used in the last 5 years on DS-160. No official pre-interview deadline specified; keep profiles public until a decision is made.",
+    "passport_validity_rule": "Pakistani passport valid at least 6 months beyond intended US stay.",
+    "entry_window": "New/initial F-1 students cannot enter the US more than 30 days before the I-20 program start date.",
+    "section_214b": "INA 214(b): every nonimmigrant applicant is presumed an intending immigrant and must overcome it. #1 F-1 refusal ground for Pakistani applicants. Inherently officer-subjective and interview-driven.",
+    "last_verified": "2026-05-29",
+    "MUST_VERIFY_AT_SOURCE": true,
+    "source_urls": [
+      "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "https://www.ice.gov/sevis/i901",
+      "https://studyinthestates.dhs.gov/"
+    ],
+    "note": "US student-visa policy is changing rapidly in 2025-2026 (EO 14161 vetting expansions). Re-verify SEVIS fee, social-media rule, and interview/appointment conditions at travel.state.gov and ice.gov before each production cycle."
+  },
+  "score_bands": [
+    {
+      "min": 85,
+      "max": 100,
+      "label": "Low Risk — Appears Well-Prepared for Interview",
+      "description": "Well-prepared file with low visible 214(b)/financial risk. NOT a prediction — F-1 approval is officer-subjective and interview-driven. Re-verify fees/policy and prepare your interview answers."
+    },
+    {
+      "min": 70,
+      "max": 84,
+      "label": "Moderate 214(b) Risk — Improve Before Interview",
+      "description": "Eligible but with weak points an officer will probe (ties, funding story, study-plan logic, consistency). Close flagged items and rehearse before the interview."
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "label": "High Refusal Risk",
+      "description": "Serious unresolved gaps. Attending the interview now with these issues unaddressed indicates high 214(b) risk and document readiness shortfalls. Resolve all high-risk flags before proceeding."
+    },
+    {
+      "min": 0,
+      "max": 49,
+      "label": "Critical Refusal Risk",
+      "description": "Critical mandatory items are missing or integrity flags are present. Do not attend yet — these unresolved issues are serious refusal-ground risks, and misrepresentation/concealment risks a permanent bar."
+    }
+  ],
+  "scoring_categories": [
+    {
+      "category_id": "intent_214b",
+      "label": "Genuine Student Intent & 214(b) Risk",
+      "max_points": 20,
+      "question_ids": [
+        "usa_home_ties_ready",
+        "usa_home_ties_evidence",
+        "usa_why_usa_specific",
+        "usa_course_career_link",
+        "usa_post_study_plan"
+      ]
+    },
+    {
+      "category_id": "interview_readiness",
+      "label": "Interview Readiness",
+      "max_points": 16,
+      "question_ids": [
+        "usa_interview_booked",
+        "usa_interview_documents_ready",
+        "usa_can_explain_funding",
+        "usa_answers_unscripted",
+        "usa_can_handle_refusal_questions"
+      ]
+    },
+    {
+      "category_id": "financial_legitimacy",
+      "label": "Financial Legitimacy",
+      "max_points": 14,
+      "question_ids": [
+        "usa_financial_proof_sufficient",
+        "usa_financial_documents_available",
+        "usa_bank_history_consistent",
+        "usa_large_recent_deposit",
+        "usa_source_of_funds_documented",
+        "usa_funding_covers_full_program"
+      ]
+    },
+    {
+      "category_id": "sponsor_credibility",
+      "label": "Sponsor Credibility",
+      "max_points": 8,
+      "question_ids": [
+        "usa_sponsor_immediate_family",
+        "usa_sponsor_files_fbr",
+        "usa_sponsor_income_provable"
+      ]
+    },
+    {
+      "category_id": "ds160_i20_sevis_consistency",
+      "label": "DS-160 / I-20 / SEVIS Consistency",
+      "max_points": 10,
+      "question_ids": [
+        "usa_i20_details_accurate",
+        "usa_sevis_fee_paid",
+        "usa_sevis_receipt_matches",
+        "usa_ds160_completed",
+        "usa_ds160_consistent_with_docs"
+      ]
+    },
+    {
+      "category_id": "education_consistency",
+      "label": "Educational Consistency",
+      "max_points": 8,
+      "question_ids": [
+        "usa_edu_gap_over_1yr",
+        "usa_edu_gap_justified",
+        "usa_drastic_field_change",
+        "usa_program_suits_background",
+        "usa_academics_verifiable"
+      ]
+    },
+    {
+      "category_id": "immigration_history",
+      "label": "Immigration History & Truthfulness",
+      "max_points": 8,
+      "question_ids": [
+        "usa_prior_refusals",
+        "usa_refusal_details",
+        "usa_prior_history_disclosed",
+        "usa_overstay_or_removal",
+        "usa_asylum_history"
+      ]
+    },
+    {
+      "category_id": "documents",
+      "label": "Core Documents (SEVP/I-20/Passport)",
+      "max_points": 6,
+      "question_ids": [
+        "usa_sevp_school_confirmed",
+        "usa_has_i20",
+        "usa_i20_signed",
+        "usa_i20_school_matches",
+        "usa_ds160_confirmation_printed",
+        "usa_passport_validity"
+      ]
+    },
+    {
+      "category_id": "security_vetting",
+      "label": "Security Vetting (Social Media)",
+      "max_points": 4,
+      "question_ids": [
+        "usa_ds160_social_media_disclosed",
+        "usa_social_profiles_public",
+        "usa_social_content_reviewed"
+      ]
+    },
+    {
+      "category_id": "agent_integrity",
+      "label": "Application Integrity / Agent Risk",
+      "max_points": 3,
+      "question_ids": [
+        "usa_ds160_personally_reviewed",
+        "usa_agent_prepared_app",
+        "usa_no_fake_documents",
+        "usa_agent_advised_hiding"
+      ]
+    },
+    {
+      "category_id": "general_awareness",
+      "label": "General Awareness (Status/Work/Entry)",
+      "max_points": 3,
+      "question_ids": [
+        "usa_program_start_date",
+        "usa_visa_subtype",
+        "usa_entry_within_30_days",
+        "usa_full_time_understanding",
+        "usa_work_auth_understanding",
+        "usa_cpt_opt_understanding",
+        "usa_has_dependants",
+        "usa_f2_work_understanding"
+      ]
+    }
+  ],
+  "evaluation_model": {
+    "tiers": {
+      "hard_blocker": "Any triggered hard blocker forces 'Critical Refusal Risk'; score skipped. Mandatory items (SEVP/I-20/SEVIS/DS-160/passport/social-media/funds/full-time/work-auth/disclosure/no-fake-docs) or core 214(b) failure.",
+      "high_risk_flag": "Each triggered high-risk flag deducts impact AND caps the max band: 1-2 => 'High Refusal Risk'; 3+ => 'Critical Refusal Risk'. Prevents averaging from hiding serious 214(b)/financial risk.",
+      "soft_warning": "Each triggered soft warning deducts impact within band; does not cap the band."
+    },
+    "calculation_logic": {
+      "method": "tiered_weighted_with_band_caps",
+      "step_1": "Evaluate hard blockers. If ANY triggers -> 'Critical Refusal Risk'; stop.",
+      "step_2": "Per category: category_score = (sum score_impact of PASSING scored questions / sum score_impact of ALL scored questions) x max_points. 'info' questions (trigger_if=never) are routing-only.",
+      "step_3": "total_score = sum of category scores, rounded to nearest integer.",
+      "step_4": "Count triggered high-risk flags; apply band cap (1-2 => High; 3+ => Critical).",
+      "step_5": "Map total to a band; final band = worse of score-band and cap-band.",
+      "passing_definition": "A question PASSES when the answer satisfies pass_if. Financial pass requires funds covering the full I-20 cost-of-attendance + travel (no fixed US figure).",
+      "rounding": "Category to 1 decimal; total to nearest integer."
+    }
+  },
+  "result_payload_template": {
+    "label": "<band label>",
+    "total_score": "<0-100>",
+    "estimated_refusal_concerns": "<triggered hard blockers + high-risk flags in plain English>",
+    "recommended_improvements": "<soft warnings + how to close each flag>",
+    "priority_action_list": "<hard blockers first, then high-risk flags, then soft warnings>",
+    "interview_preparation_advice": "<rehearse why-USA/this-school, funding/source-of-funds in own words, return plan, refusal explanation>",
+    "financial_documentation_advice": "<6-month statements, sponsor FBR/NTN/salary proof, documented source for every major deposit, full-program funding>",
+    "ds160_i20_sevis_consistency_warning": "<reconcile name/funding/program/dates across DS-160, I-20, SEVIS receipt, admission letter, financials>",
+    "risk_explanation": "<why this band, referencing 214(b) and interview subjectivity>",
+    "disclaimer": "Readiness assessment, not an approval prediction or legal advice. Verify all fees/policies at travel.state.gov and ice.gov before applying."
+  },
+  "critical_blockers_hard": [
+    {
+      "question_id": "usa_sevp_school_confirmed",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Must Be Accepted at an SEVP-Certified School",
+      "mapped_rule_id": "usa_eligibility_must_be_accepted_at_an_sevp_certified_school",
+      "conditional_on": null,
+      "message": "Only SEVP-certified schools can issue an I-20. Verify the school yourself — agents sometimes push non-SEVP or low-credibility schools that wreck your 214(b) case."
+    },
+    {
+      "question_id": "usa_has_i20",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Form I-20 Mandatory — Must Be Signed and Current",
+      "mapped_rule_id": "usa_documents_form_i_20_mandatory_must_be_signed_and_current",
+      "conditional_on": null,
+      "message": "The I-20 (Certificate of Eligibility) is issued by the school's DSO after you're entered in SEVIS. No I-20 = no F-1 application."
+    },
+    {
+      "question_id": "usa_i20_signed",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Form I-20 Mandatory — Must Be Signed and Current",
+      "mapped_rule_id": "usa_documents_form_i_20_mandatory_must_be_signed_and_current",
+      "conditional_on": null,
+      "message": "An unsigned I-20 is invalid. Sign it and confirm the DSO signature is present."
+    },
+    {
+      "question_id": "usa_i20_school_matches",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Form I-20 Mandatory — Must Be Signed and Current",
+      "mapped_rule_id": "usa_documents_form_i_20_mandatory_must_be_signed_and_current",
+      "conditional_on": null,
+      "message": "For your first US entry the school on the visa must match the I-20. If you change schools before the visa, get an updated visa."
+    },
+    {
+      "question_id": "usa_sevis_fee_paid",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "SEVIS I-901 Fee Must Be Paid Before Visa Is Issued",
+      "mapped_rule_id": "usa_application_process_sevis_i_901_fee_must_be_paid_before_visa_is_issued",
+      "conditional_on": null,
+      "message": "The SEVIS fee (USD 350 for F-1) must be paid BEFORE the visa is issued. Pay only at fmjfee.com — beware fake payment sites pushed by agents. No paid fee on record = refusal on the day, no same-day fix."
+    },
+    {
+      "question_id": "usa_sevis_receipt_matches",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "SEVIS I-901 Fee Must Be Paid Before Visa Is Issued",
+      "mapped_rule_id": "usa_application_process_sevis_i_901_fee_must_be_paid_before_visa_is_issued",
+      "conditional_on": null,
+      "message": "Pay using the exact SEVIS ID on your I-20. A mismatch means the system can't confirm your payment at the interview."
+    },
+    {
+      "question_id": "usa_ds160_completed",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "DS-160 Online Application Must Be Completed and Consistent",
+      "mapped_rule_id": "usa_application_process_ds_160_online_application_must_be_completed_and_consistent",
+      "conditional_on": null,
+      "message": "The DS-160 is mandatory before the interview. Complete it carefully — it is the spine of your case and everything you say at interview must match it."
+    },
+    {
+      "question_id": "usa_ds160_confirmation_printed",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "DS-160 Online Application Must Be Completed and Consistent",
+      "mapped_rule_id": "usa_application_process_ds_160_online_application_must_be_completed_and_consistent",
+      "conditional_on": null,
+      "message": "Bring the printed DS-160 confirmation barcode page to the interview. Without it you can be turned away."
+    },
+    {
+      "question_id": "usa_ds160_social_media_disclosed",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Social Media Must Be Public and Fully Disclosed (From June 18, 2025)",
+      "mapped_rule_id": "usa_security_vetting_social_media_must_be_public_and_fully_disclosed_from_june_18_2025",
+      "conditional_on": null,
+      "message": "List every platform/handle from the last 5 years, including inactive ones. Omitting an account is a ground for denial and a possible bar."
+    },
+    {
+      "question_id": "usa_social_profiles_public",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Social Media Must Be Public and Fully Disclosed (From June 18, 2025)",
+      "mapped_rule_id": "usa_security_vetting_social_media_must_be_public_and_fully_disclosed_from_june_18_2025",
+      "conditional_on": null,
+      "message": "Since 18 Jun 2025, F/M/J applicants must make all profiles public for vetting. No official deadline is specified, so set them public before submitting and keep them public until a decision is made."
+    },
+    {
+      "question_id": "usa_home_ties_ready",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Non-Immigrant Intent Must Be Demonstrated — Section 214(b)",
+      "mapped_rule_id": "usa_refusal_risk_non_immigrant_intent_must_be_demonstrated_section_214_b",
+      "conditional_on": null,
+      "message": "214(b) is the #1 refusal ground for Pakistani F-1 applicants. The officer PRESUMES you intend to immigrate; you must overcome it with a credible, specific return story — in seconds, verbally."
+    },
+    {
+      "question_id": "usa_interview_booked",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Visa Interview at US Embassy/Consulate Required",
+      "mapped_rule_id": "usa_interview_visa_interview_at_us_embassy_consulate_required",
+      "conditional_on": null,
+      "message": "An interview is required for most applicants 14-79. Book early; wait times vary. 2025-2026 vetting can add 221(g) administrative processing."
+    },
+    {
+      "question_id": "usa_interview_documents_ready",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Visa Interview at US Embassy/Consulate Required",
+      "mapped_rule_id": "usa_interview_visa_interview_at_us_embassy_consulate_required",
+      "conditional_on": null,
+      "message": "Assemble the full set before the day. Missing a core document can end the interview before it starts."
+    },
+    {
+      "question_id": "usa_financial_proof_sufficient",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Proof Must Cover Full Cost on the I-20",
+      "mapped_rule_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "conditional_on": null,
+      "message": "The US sets no fixed figure — you must cover the total cost of attendance stated on YOUR I-20, plus return travel, without unauthorized work. Underfunding is a top 214(b) refusal cause."
+    },
+    {
+      "question_id": "usa_prior_history_disclosed",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Prior Visa Refusals and Immigration Violations Must Be Disclosed",
+      "mapped_rule_id": "usa_immigration_history_prior_visa_refusals_and_immigration_violations_must_be_disclosed",
+      "conditional_on": null,
+      "message": "Failing to disclose a prior refusal or violation on DS-160 is misrepresentation — a permanent-bar risk far worse than the refusal itself."
+    },
+    {
+      "question_id": "usa_passport_validity",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Passport Must Be Valid 6+ Months Beyond Intended Stay",
+      "mapped_rule_id": "usa_documents_passport_must_be_valid_6_months_beyond_intended_stay",
+      "conditional_on": null,
+      "message": "Renew before applying if needed. An insufficiently valid passport blocks visa issuance."
+    },
+    {
+      "question_id": "usa_no_fake_documents",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Application Integrity and Agent Risk",
+      "mapped_rule_id": "usa_integrity_application_integrity_and_agent_risk",
+      "conditional_on": null,
+      "message": "Fabricated bank balances, fake experience letters, or altered transcripts cause refusal AND a permanent misrepresentation bar — even if an agent did it in your name. Verify every document."
+    }
+  ],
+  "high_risk_flags": [
+    {
+      "question_id": "usa_i20_details_accurate",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Form I-20 Mandatory — Must Be Signed and Current",
+      "mapped_rule_id": "usa_documents_form_i_20_mandatory_must_be_signed_and_current",
+      "conditional_on": null,
+      "message": "Mismatches between the I-20, DS-160, admission letter, and financial papers are a classic Pakistani refusal trigger. Cross-check name spelling, funding amount, program, and dates."
+    },
+    {
+      "question_id": "usa_ds160_personally_reviewed",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "DS-160 Online Application Must Be Completed and Consistent",
+      "mapped_rule_id": "usa_application_process_ds_160_online_application_must_be_completed_and_consistent",
+      "conditional_on": null,
+      "message": "Agents sometimes enter wrong job titles, hide refusals, or inflate funding on your DS-160. You are bound by what's submitted in your name — and asked about it under oath. Read every field yourself."
+    },
+    {
+      "question_id": "usa_ds160_consistent_with_docs",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "DS-160 Online Application Must Be Completed and Consistent",
+      "mapped_rule_id": "usa_application_process_ds_160_online_application_must_be_completed_and_consistent",
+      "conditional_on": null,
+      "message": "Inconsistency between DS-160 and your documents reads as misrepresentation. Reconcile funding figures, employment, education dates, and family details before submitting."
+    },
+    {
+      "question_id": "usa_home_ties_evidence",
+      "trigger_if": {
+        "type": "multi_contains",
+        "value": "none"
+      },
+      "mapped_rule": "Non-Immigrant Intent Must Be Demonstrated — Section 214(b)",
+      "mapped_rule_id": "usa_refusal_risk_non_immigrant_intent_must_be_demonstrated_section_214_b",
+      "conditional_on": null,
+      "message": "No ties = near-certain 214(b) refusal. Strongest ties are concrete: property in your name, a family business, a written career/job plan in Pakistan, assets. 'Parents live here' alone is weak."
+    },
+    {
+      "question_id": "usa_why_usa_specific",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Non-Immigrant Intent Must Be Demonstrated — Section 214(b)",
+      "mapped_rule_id": "usa_refusal_risk_non_immigrant_intent_must_be_demonstrated_section_214_b",
+      "conditional_on": null,
+      "message": "Generic answers sink interviews. Name the program, faculty, or specialization and tie it to your background and a Pakistan-based career. A random/agent-picked university is a 214(b) red flag."
+    },
+    {
+      "question_id": "usa_course_career_link",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Non-Immigrant Intent Must Be Demonstrated — Section 214(b)",
+      "mapped_rule_id": "usa_refusal_risk_non_immigrant_intent_must_be_demonstrated_section_214_b",
+      "conditional_on": null,
+      "message": "Show the path: your background -> this US program -> a named role/sector in Pakistan. No logical payoff at home signals immigration intent."
+    },
+    {
+      "question_id": "usa_can_explain_funding",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Interview Readiness — Consistent, Genuine, Unscripted Answers",
+      "mapped_rule_id": "usa_interview_interview_readiness_consistent_genuine_unscripted_answers",
+      "conditional_on": null,
+      "message": "Officers test whether YOU understand who pays and how they earned it. 'My uncle handles it' is weak. Know your sponsor's job, business, and how the money was accumulated."
+    },
+    {
+      "question_id": "usa_answers_unscripted",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Interview Readiness — Consistent, Genuine, Unscripted Answers",
+      "mapped_rule_id": "usa_interview_interview_readiness_consistent_genuine_unscripted_answers",
+      "conditional_on": null,
+      "message": "Officers spot rehearsed agent scripts instantly and it hurts credibility. Practise the content, but answer in your own words."
+    },
+    {
+      "question_id": "usa_financial_documents_available",
+      "trigger_if": {
+        "type": "multi_contains",
+        "value": "none"
+      },
+      "mapped_rule": "Financial Proof Must Cover Full Cost on the I-20",
+      "mapped_rule_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "conditional_on": null,
+      "message": "No documents = automatic financial credibility failure. Bring bank statements (6 months), sponsor income proof, FBR returns, and source-of-funds evidence."
+    },
+    {
+      "question_id": "usa_bank_history_consistent",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Proof Must Cover Full Cost on the I-20",
+      "mapped_rule_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "conditional_on": null,
+      "message": "A balance that appears suddenly before applying signals arranged funds. Consistent history over months is far stronger."
+    },
+    {
+      "question_id": "usa_source_of_funds_documented",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Proof Must Cover Full Cost on the I-20",
+      "mapped_rule_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "conditional_on": null,
+      "message": "Each major deposit needs proof: registered sale deed (property), FBR-declared salary, sanctioned loan letter, or a notarised gift affidavit from a traceable giver."
+    },
+    {
+      "question_id": "usa_sponsor_files_fbr",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Proof Must Cover Full Cost on the I-20",
+      "mapped_rule_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "conditional_on": null,
+      "message": "A sponsor showing big funds but non-filer/no FBR history is a major red flag — it implies undeclared income. Declared income should plausibly support the amount."
+    },
+    {
+      "question_id": "usa_sponsor_income_provable",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Proof Must Cover Full Cost on the I-20",
+      "mapped_rule_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "conditional_on": null,
+      "message": "Verbal claims aren't enough. Salary slips, business registration/NTN, FBR returns, and matching bank inflows make a sponsor credible."
+    },
+    {
+      "question_id": "usa_edu_gap_justified",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Educational Consistency and Study-Plan Logic (214(b)-linked)",
+      "mapped_rule_id": "usa_education_educational_consistency_and_study_plan_logic_214_b_linked",
+      "conditional_on": {
+        "question_id": "usa_edu_gap_over_1yr",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Provide employment letters, salary slips, freelance proof, or transcripts covering the gap. Unevidenced 'I was at home/preparing' is weak and invites doubt at interview."
+    },
+    {
+      "question_id": "usa_drastic_field_change",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Educational Consistency and Study-Plan Logic (214(b)-linked)",
+      "mapped_rule_id": "usa_education_educational_consistency_and_study_plan_logic_214_b_linked",
+      "conditional_on": null,
+      "message": "A big, unexplained field switch (e.g. completed Bachelors then an unrelated junior program) is a 214(b) trigger. If yes, be ready to explain the logic credibly."
+    },
+    {
+      "question_id": "usa_program_suits_background",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Educational Consistency and Study-Plan Logic (214(b)-linked)",
+      "mapped_rule_id": "usa_education_educational_consistency_and_study_plan_logic_214_b_linked",
+      "conditional_on": null,
+      "message": "Officers question progression that doesn't add up — e.g. a Masters-holder enrolling in a lower diploma. A downgrade looks like a visa-shopping move."
+    },
+    {
+      "question_id": "usa_academics_verifiable",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Educational Consistency and Study-Plan Logic (214(b)-linked)",
+      "mapped_rule_id": "usa_education_educational_consistency_and_study_plan_logic_214_b_linked",
+      "conditional_on": null,
+      "message": "Inconsistent or unverifiable academics (mismatched names/dates, missing transcripts) raise fraud concerns. Have complete, attested records ready."
+    },
+    {
+      "question_id": "usa_prior_refusals",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Prior Visa Refusals and Immigration Violations Must Be Disclosed",
+      "mapped_rule_id": "usa_immigration_history_prior_visa_refusals_and_immigration_violations_must_be_disclosed",
+      "conditional_on": null,
+      "message": "Prior refusals are visible and probed. A refusal is survivable IF disclosed and explained — concealment on DS-160 is misrepresentation with a permanent-bar risk."
+    },
+    {
+      "question_id": "usa_overstay_or_removal",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Prior Visa Refusals and Immigration Violations Must Be Disclosed",
+      "mapped_rule_id": "usa_immigration_history_prior_visa_refusals_and_immigration_violations_must_be_disclosed",
+      "conditional_on": null,
+      "message": "Overstays/removals strongly conflict with 'genuine temporary student' and must be disclosed and addressed candidly."
+    },
+    {
+      "question_id": "usa_asylum_history",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Prior Visa Refusals and Immigration Violations Must Be Disclosed",
+      "mapped_rule_id": "usa_immigration_history_prior_visa_refusals_and_immigration_violations_must_be_disclosed",
+      "conditional_on": null,
+      "message": "An asylum history conflicts with intent to return and must be addressed candidly, ideally with legal advice."
+    },
+    {
+      "question_id": "usa_agent_advised_hiding",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Application Integrity and Agent Risk",
+      "mapped_rule_id": "usa_integrity_application_integrity_and_agent_risk",
+      "conditional_on": null,
+      "message": "If an agent told you to conceal something, that is a path to a misrepresentation bar. Disclose truthfully; drop the agent's advice."
+    }
+  ],
+  "soft_warnings": [
+    {
+      "question_id": "usa_social_content_reviewed",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Social Media Must Be Public and Fully Disclosed (From June 18, 2025)",
+      "mapped_rule_id": "usa_security_vetting_social_media_must_be_public_and_fully_disclosed_from_june_18_2025",
+      "conditional_on": null,
+      "message": "Officers may review your public presence. This is about safety/security risk and consistency with your application — not ordinary opinions. Check for content contradicting your study/return story."
+    },
+    {
+      "question_id": "usa_post_study_plan",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Non-Immigrant Intent Must Be Demonstrated — Section 214(b)",
+      "mapped_rule_id": "usa_refusal_risk_non_immigrant_intent_must_be_demonstrated_section_214_b",
+      "conditional_on": null,
+      "message": "Vague 'I'll find a good job' is weak. Have a concrete plan: target employer/sector, family business role, or further step in Pakistan."
+    },
+    {
+      "question_id": "usa_can_handle_refusal_questions",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Interview Readiness — Consistent, Genuine, Unscripted Answers",
+      "mapped_rule_id": "usa_interview_interview_readiness_consistent_genuine_unscripted_answers",
+      "conditional_on": {
+        "question_id": "usa_prior_refusals",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Don't hide or over-explain a past refusal. State what changed since then (stronger ties/finances/clearer plan)."
+    },
+    {
+      "question_id": "usa_sponsor_immediate_family",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Proof Must Cover Full Cost on the I-20",
+      "mapped_rule_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "conditional_on": null,
+      "message": "Immediate-family sponsorship (father, mother, brother) is expected. Uncle/aunt/grandfather or 'family friend' sponsors raise scrutiny and need a strong relationship + funds explanation."
+    },
+    {
+      "question_id": "usa_funding_covers_full_program",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Financial Proof Must Cover Full Cost on the I-20",
+      "mapped_rule_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "conditional_on": null,
+      "message": "Funding that barely covers year one with no plan for later years is a 214(b) concern. Show how the whole program is covered."
+    },
+    {
+      "question_id": "usa_entry_within_30_days",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Cannot Enter the US More Than 30 Days Before Program Start",
+      "mapped_rule_id": "usa_status_entry_cannot_enter_the_us_more_than_30_days_before_program_start",
+      "conditional_on": null,
+      "message": "New F-1 students arriving earlier than 30 days before the start date are denied entry. Plan travel accordingly."
+    },
+    {
+      "question_id": "usa_full_time_understanding",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Full-Time Enrolment Mandatory Throughout Program",
+      "mapped_rule_id": "usa_maintaining_status_full_time_enrolment_mandatory_throughout_program",
+      "conditional_on": null,
+      "message": "Dropping below full-time without DSO approval terminates status. Understand this before you go."
+    },
+    {
+      "question_id": "usa_work_auth_understanding",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "No Work Without Proper Authorization — Zero Tolerance",
+      "mapped_rule_id": "usa_work_rights_no_work_without_proper_authorization_zero_tolerance",
+      "conditional_on": null,
+      "message": "Unauthorized work permanently terminates F-1 status and risks deportation and future bars. On-campus/CPT/OPT have specific rules."
+    },
+    {
+      "question_id": "usa_f2_work_understanding",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "F-2 Dependants Cannot Work Under Any Circumstances",
+      "mapped_rule_id": "usa_dependants_f_2_dependants_cannot_work_under_any_circumstances",
+      "conditional_on": {
+        "question_id": "usa_has_dependants",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "F-2 dependants are absolutely barred from working. Violation ends F-2 status. (F-2 funds also add to what you must show.)"
+    }
+  ]
+}

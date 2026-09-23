@@ -1,0 +1,924 @@
+{
+  "country": "USA",
+  "visa_route": "F-1 Student Visa",
+  "version": "2026-06-06",
+  "source": "extracted_from_scoring_json",
+  "total_blockers": 38,
+  "critical_count": 17,
+  "high_count": 21,
+  "last_verified": "2026-05-29",
+  "blockers": [
+    {
+      "blocker_id": "usa_blocker_sevp_not_confirmed",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "eligibility_check",
+      "question_id": "usa_sevp_school_confirmed",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "SEVP-certification of school not confirmed",
+      "user_message": "Only SEVP-certified schools can issue an I-20. Verify the school yourself — agents sometimes push non-SEVP or low-credibility schools that wreck your 214(b) case.",
+      "recommended_next_step": "Verify your school is SEVP-certified at studyinthestates.dhs.gov before proceeding.",
+      "rule_source_id": "usa_eligibility_must_be_accepted_at_an_sevp_certified_school",
+      "rule_source_name": "Must Be Accepted at an SEVP-Certified School",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_i20_missing",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "usa_has_i20",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Form I-20 not yet received",
+      "user_message": "The I-20 (Certificate of Eligibility) is issued by the school's DSO after you're entered in SEVIS. No I-20 = no F-1 application.",
+      "recommended_next_step": "Contact your school's DSO to obtain your I-20. The visa application cannot proceed without it.",
+      "rule_source_id": "usa_documents_form_i_20_mandatory_must_be_signed_and_current",
+      "rule_source_name": "Form I-20 Mandatory — Must Be Signed and Current",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_i20_unsigned",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_i20_signed",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Form I-20 is not fully signed",
+      "user_message": "An unsigned I-20 is invalid. Sign it and confirm the DSO signature is present.",
+      "recommended_next_step": "Confirm both the DSO signature and your own signature are present on the I-20 before applying.",
+      "rule_source_id": "usa_documents_form_i_20_mandatory_must_be_signed_and_current",
+      "rule_source_name": "Form I-20 Mandatory — Must Be Signed and Current",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_i20_school_mismatch",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_i20_school_matches",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "School on I-20 does not match visa application",
+      "user_message": "For your first US entry the school on the visa must match the I-20. If you change schools before the visa, get an updated visa.",
+      "recommended_next_step": "If you changed schools, obtain an updated I-20 from the new school before applying.",
+      "rule_source_id": "usa_documents_form_i_20_mandatory_must_be_signed_and_current",
+      "rule_source_name": "Form I-20 Mandatory — Must Be Signed and Current",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_sevis_fee_unpaid",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "usa_sevis_fee_paid",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "SEVIS I-901 fee not paid",
+      "user_message": "The SEVIS fee (USD 350 for F-1) must be paid BEFORE the visa is issued. Pay only at fmjfee.com — beware fake payment sites pushed by agents. No paid fee on record = refusal on the day, no same-day fix.",
+      "recommended_next_step": "Pay the USD 350 SEVIS fee at fmjfee.com before your interview. No payment = refusal on the day.",
+      "rule_source_id": "usa_application_process_sevis_i_901_fee_must_be_paid_before_visa_is_issued",
+      "rule_source_name": "SEVIS I-901 Fee Must Be Paid Before Visa Is Issued",
+      "source_url": "https://www.ice.gov/sevis/i901",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_sevis_id_mismatch",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_sevis_receipt_matches",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "SEVIS ID on fee receipt does not match I-20",
+      "user_message": "Pay using the exact SEVIS ID on your I-20. A mismatch means the system can't confirm your payment at the interview.",
+      "recommended_next_step": "Ensure you paid using the exact SEVIS ID on your I-20. A mismatch prevents fee confirmation at interview.",
+      "rule_source_id": "usa_application_process_sevis_i_901_fee_must_be_paid_before_visa_is_issued",
+      "rule_source_name": "SEVIS I-901 Fee Must Be Paid Before Visa Is Issued",
+      "source_url": "https://www.ice.gov/sevis/i901",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_ds160_not_completed",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "usa_ds160_completed",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "DS-160 online application not completed",
+      "user_message": "The DS-160 is mandatory before the interview. Complete it carefully — it is the spine of your case and everything you say at interview must match it.",
+      "recommended_next_step": "Complete the DS-160 at ceac.state.gov before your interview. It is a mandatory step.",
+      "rule_source_id": "usa_application_process_ds_160_online_application_must_be_completed_and_consistent",
+      "rule_source_name": "DS-160 Online Application Must Be Completed and Consistent",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_ds160_barcode_missing",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_ds160_confirmation_printed",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "DS-160 confirmation barcode page not printed",
+      "user_message": "Bring the printed DS-160 confirmation barcode page to the interview. Without it you can be turned away.",
+      "recommended_next_step": "Print the DS-160 confirmation page including the barcode and bring it to your interview.",
+      "rule_source_id": "usa_application_process_ds_160_online_application_must_be_completed_and_consistent",
+      "rule_source_name": "DS-160 Online Application Must Be Completed and Consistent",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_social_media_not_disclosed",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "usa_ds160_social_media_disclosed",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Social media handles not fully disclosed on DS-160",
+      "user_message": "List every platform/handle from the last 5 years, including inactive ones. Omitting an account is a ground for denial and a possible bar.",
+      "recommended_next_step": "List every social media account used in the last 5 years on the DS-160. Any omission is a ground for denial.",
+      "rule_source_id": "usa_security_vetting_social_media_must_be_public_and_fully_disclosed_from_june_18_2025",
+      "rule_source_name": "Social Media Must Be Public and Fully Disclosed (From June 18, 2025)",
+      "source_url": "https://www.state.gov/",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_social_profiles_not_public",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "usa_social_profiles_public",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Social media profiles not set to public",
+      "user_message": "Since 18 Jun 2025, F/M/J applicants must make all profiles public for vetting. No official deadline is specified, so set them public before submitting and keep them public until a decision is made.",
+      "recommended_next_step": "Set all social media profiles to public before applying. This has been required for F/M/J applicants since 18 June 2025.",
+      "rule_source_id": "usa_security_vetting_social_media_must_be_public_and_fully_disclosed_from_june_18_2025",
+      "rule_source_name": "Social Media Must Be Public and Fully Disclosed (From June 18, 2025)",
+      "source_url": "https://www.state.gov/",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_214b_no_ties_demonstrated",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "eligibility_check",
+      "question_id": "usa_home_ties_ready",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Unable to demonstrate ties to Pakistan (214(b) risk)",
+      "user_message": "214(b) is the #1 refusal ground for Pakistani F-1 applicants. The officer PRESUMES you intend to immigrate; you must overcome it with a credible, specific return story — in seconds, verbally.",
+      "recommended_next_step": "Identify and document concrete ties to Pakistan before proceeding. Without them, a 214(b) refusal is very likely.",
+      "rule_source_id": "usa_refusal_risk_non_immigrant_intent_must_be_demonstrated_section_214_b",
+      "rule_source_name": "Non-Immigrant Intent Must Be Demonstrated — Section 214(b)",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_interview_not_booked",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "usa_interview_booked",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Visa interview not yet booked",
+      "user_message": "An interview is required for most applicants 14-79. Book early; wait times vary. 2025-2026 vetting can add 221(g) administrative processing.",
+      "recommended_next_step": "Book your interview at the US Embassy or Consulate. An interview is required for most F-1 applicants aged 14–79.",
+      "rule_source_id": "usa_interview_visa_interview_at_us_embassy_consulate_required",
+      "rule_source_name": "Visa Interview at US Embassy/Consulate Required",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_interview_documents_incomplete",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_interview_documents_ready",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Core interview documents not fully assembled",
+      "user_message": "Assemble the full set before the day. Missing a core document can end the interview before it starts.",
+      "recommended_next_step": "Assemble all required documents: valid passport, I-20, DS-160 confirmation, SEVIS receipt, and financial evidence.",
+      "rule_source_id": "usa_interview_visa_interview_at_us_embassy_consulate_required",
+      "rule_source_name": "Visa Interview at US Embassy/Consulate Required",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_financial_proof_insufficient",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "official_requirement",
+      "question_id": "usa_financial_proof_sufficient",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Financial evidence may not cover full I-20 cost",
+      "user_message": "The US sets no fixed figure — you must cover the total cost of attendance stated on YOUR I-20, plus return travel, without unauthorized work. Underfunding is a top 214(b) refusal cause.",
+      "recommended_next_step": "Ensure your financial evidence covers the full cost of attendance on your I-20 plus return travel.",
+      "rule_source_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "rule_source_name": "Financial Proof Must Cover Full Cost on the I-20",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_immigration_history_not_disclosed",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "integrity_check",
+      "question_id": "usa_prior_history_disclosed",
+      "trigger": {
+        "operator": "eq",
+        "value": "no"
+      },
+      "condition": null,
+      "title": "Prior immigration history may not be fully disclosed on DS-160",
+      "user_message": "Failing to disclose a prior refusal or violation on DS-160 is misrepresentation — a permanent-bar risk far worse than the refusal itself.",
+      "recommended_next_step": "Disclose all prior refusals and immigration violations accurately on the DS-160.",
+      "rule_source_id": "usa_immigration_history_prior_visa_refusals_and_immigration_violations_must_be_disclosed",
+      "rule_source_name": "Prior Visa Refusals and Immigration Violations Must Be Disclosed",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_passport_validity_insufficient",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_passport_validity",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Passport validity may be insufficient (under 6 months beyond stay)",
+      "user_message": "Renew before applying if needed. An insufficiently valid passport blocks visa issuance.",
+      "recommended_next_step": "Renew your passport before applying so it is valid for at least 6 months beyond your intended US stay.",
+      "rule_source_id": "usa_documents_passport_must_be_valid_6_months_beyond_intended_stay",
+      "rule_source_name": "Passport Must Be Valid 6+ Months Beyond Intended Stay",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_document_authenticity_risk",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "critical",
+      "blocker_type": "integrity_check",
+      "question_id": "usa_no_fake_documents",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Document authenticity not confirmed",
+      "user_message": "Fabricated bank balances, fake experience letters, or altered transcripts cause refusal AND a permanent misrepresentation bar — even if an agent did it in your name. Verify every document.",
+      "recommended_next_step": "Personally verify every document in your application. Remove or replace any document that may be false or altered.",
+      "rule_source_id": "usa_integrity_application_integrity_and_agent_risk",
+      "rule_source_name": "Application Integrity and Agent Risk",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": false,
+      "score_cap": 40,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_i20_details_inconsistent",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_i20_details_accurate",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "I-20 details may not be consistent with other documents",
+      "user_message": "Mismatches between the I-20, DS-160, admission letter, and financial papers are a classic Pakistani refusal trigger. Cross-check name spelling, funding amount, program, and dates.",
+      "recommended_next_step": "Cross-check all I-20 details — personal information, programme, funding — against your DS-160, admission letter, and financial papers.",
+      "rule_source_id": "usa_documents_form_i_20_mandatory_must_be_signed_and_current",
+      "rule_source_name": "Form I-20 Mandatory — Must Be Signed and Current",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_ds160_not_personally_reviewed",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "integrity_check",
+      "question_id": "usa_ds160_personally_reviewed",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "DS-160 not personally reviewed by the applicant",
+      "user_message": "Agents sometimes enter wrong job titles, hide refusals, or inflate funding on your DS-160. You are bound by what's submitted in your name — and asked about it under oath. Read every field yourself.",
+      "recommended_next_step": "Review every DS-160 answer yourself before submission. You are legally responsible for all content regardless of who prepared it.",
+      "rule_source_id": "usa_application_process_ds_160_online_application_must_be_completed_and_consistent",
+      "rule_source_name": "DS-160 Online Application Must Be Completed and Consistent",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_ds160_inconsistent",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_ds160_consistent_with_docs",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "DS-160 may not be consistent with supporting documents",
+      "user_message": "Inconsistency between DS-160 and your documents reads as misrepresentation. Reconcile funding figures, employment, education dates, and family details before submitting.",
+      "recommended_next_step": "Reconcile all DS-160 answers with your I-20, admission letter, and financial papers before submitting.",
+      "rule_source_id": "usa_application_process_ds_160_online_application_must_be_completed_and_consistent",
+      "rule_source_name": "DS-160 Online Application Must Be Completed and Consistent",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_home_ties_insufficient",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "eligibility_check",
+      "question_id": "usa_home_ties_evidence",
+      "trigger": {
+        "operator": "multi_contains",
+        "value": "none"
+      },
+      "condition": null,
+      "title": "No demonstrable ties to Pakistan",
+      "user_message": "No ties = near-certain 214(b) refusal. Strongest ties are concrete: property in your name, a family business, a written career/job plan in Pakistan, assets. 'Parents live here' alone is weak.",
+      "recommended_next_step": "Document at least one concrete tie — property, family business, written career plan, or financial assets in Pakistan.",
+      "rule_source_id": "usa_refusal_risk_non_immigrant_intent_must_be_demonstrated_section_214_b",
+      "rule_source_name": "Non-Immigrant Intent Must Be Demonstrated — Section 214(b)",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_usa_choice_not_explained",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "readiness_check",
+      "question_id": "usa_why_usa_specific",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Cannot specifically explain choice of USA and university",
+      "user_message": "Generic answers sink interviews. Name the program, faculty, or specialization and tie it to your background and a Pakistan-based career. A random/agent-picked university is a 214(b) red flag.",
+      "recommended_next_step": "Prepare a specific, personal explanation for why this university and programme connect to your background and career plans in Pakistan.",
+      "rule_source_id": "usa_refusal_risk_non_immigrant_intent_must_be_demonstrated_section_214_b",
+      "rule_source_name": "Non-Immigrant Intent Must Be Demonstrated — Section 214(b)",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_course_career_link_unclear",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "readiness_check",
+      "question_id": "usa_course_career_link",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "No clear career pathway back to Pakistan from this course",
+      "user_message": "Show the path: your background -> this US program -> a named role/sector in Pakistan. No logical payoff at home signals immigration intent.",
+      "recommended_next_step": "Be ready to state the specific role, sector, or employer in Pakistan this US programme prepares you for.",
+      "rule_source_id": "usa_refusal_risk_non_immigrant_intent_must_be_demonstrated_section_214_b",
+      "rule_source_name": "Non-Immigrant Intent Must Be Demonstrated — Section 214(b)",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_funding_explanation_insufficient",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "readiness_check",
+      "question_id": "usa_can_explain_funding",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Cannot explain sponsor funding in own words",
+      "user_message": "Officers test whether YOU understand who pays and how they earned it. 'My uncle handles it' is weak. Know your sponsor's job, business, and how the money was accumulated.",
+      "recommended_next_step": "Know your sponsor's job, business type, and how funds were accumulated. Officers test this directly.",
+      "rule_source_id": "usa_interview_interview_readiness_consistent_genuine_unscripted_answers",
+      "rule_source_name": "Interview Readiness — Consistent, Genuine, Unscripted Answers",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_answers_appear_scripted",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "readiness_check",
+      "question_id": "usa_answers_unscripted",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Answers may appear rehearsed or scripted at interview",
+      "user_message": "Officers spot rehearsed agent scripts instantly and it hurts credibility. Practise the content, but answer in your own words.",
+      "recommended_next_step": "Practise your content but answer naturally in your own words. Scripted answers are easily identified and damage credibility.",
+      "rule_source_id": "usa_interview_interview_readiness_consistent_genuine_unscripted_answers",
+      "rule_source_name": "Interview Readiness — Consistent, Genuine, Unscripted Answers",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_financial_documents_missing",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_financial_documents_available",
+      "trigger": {
+        "operator": "multi_contains",
+        "value": "none"
+      },
+      "condition": null,
+      "title": "Insufficient financial documents available",
+      "user_message": "No documents = automatic financial credibility failure. Bring bank statements (6 months), sponsor income proof, FBR returns, and source-of-funds evidence.",
+      "recommended_next_step": "Assemble bank statements, sponsor income proof, FBR returns, and source-of-funds evidence before the interview.",
+      "rule_source_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "rule_source_name": "Financial Proof Must Cover Full Cost on the I-20",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_bank_history_inconsistent",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_bank_history_consistent",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Bank statements do not show consistent balance history",
+      "user_message": "A balance that appears suddenly before applying signals arranged funds. Consistent history over months is far stronger.",
+      "recommended_next_step": "Ensure bank statements show a stable balance over at least 6 months. A sudden lump sum before applying is a credibility concern.",
+      "rule_source_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "rule_source_name": "Financial Proof Must Cover Full Cost on the I-20",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_funds_source_undocumented",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_source_of_funds_documented",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Source of funds not fully documented",
+      "user_message": "Each major deposit needs proof: registered sale deed (property), FBR-declared salary, sanctioned loan letter, or a notarised gift affidavit from a traceable giver.",
+      "recommended_next_step": "Provide documentary proof for every major deposit — sale deeds, salary slips, loan letters, or notarised gift affidavits.",
+      "rule_source_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "rule_source_name": "Financial Proof Must Cover Full Cost on the I-20",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_sponsor_fbr_absent",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_sponsor_files_fbr",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Sponsor lacks FBR filing history consistent with funds",
+      "user_message": "A sponsor showing big funds but non-filer/no FBR history is a major red flag — it implies undeclared income. Declared income should plausibly support the amount.",
+      "recommended_next_step": "The sponsor's declared income should plausibly support the amount provided. Large undeclared funds raise credibility concerns.",
+      "rule_source_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "rule_source_name": "Financial Proof Must Cover Full Cost on the I-20",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_sponsor_income_not_provable",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_sponsor_income_provable",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Sponsor income cannot be proven with documentary evidence",
+      "user_message": "Verbal claims aren't enough. Salary slips, business registration/NTN, FBR returns, and matching bank inflows make a sponsor credible.",
+      "recommended_next_step": "Gather salary slips, business registration, NTN certificate, or FBR returns to make the sponsor's income credible.",
+      "rule_source_id": "usa_financial_financial_proof_must_cover_full_cost_on_the_i_20",
+      "rule_source_name": "Financial Proof Must Cover Full Cost on the I-20",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_education_gap_unjustified",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_edu_gap_justified",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": {
+        "question_id": "usa_edu_gap_over_1yr",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "title": "Education gap of over 12 months not evidenced",
+      "user_message": "Provide employment letters, salary slips, freelance proof, or transcripts covering the gap. Unevidenced 'I was at home/preparing' is weak and invites doubt at interview.",
+      "recommended_next_step": "Provide employment letters, salary slips, freelance contracts, or academic transcripts covering the gap period.",
+      "rule_source_id": "usa_education_educational_consistency_and_study_plan_logic_214_b_linked",
+      "rule_source_name": "Educational Consistency and Study-Plan Logic (214(b)-linked)",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_drastic_field_change",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "eligibility_check",
+      "question_id": "usa_drastic_field_change",
+      "trigger": {
+        "operator": "eq",
+        "value": "yes"
+      },
+      "condition": null,
+      "title": "Significant unexplained change of academic field",
+      "user_message": "A big, unexplained field switch (e.g. completed Bachelors then an unrelated junior program) is a 214(b) trigger. If yes, be ready to explain the logic credibly.",
+      "recommended_next_step": "Prepare a credible academic narrative explaining the field switch and its connection to your career plans in Pakistan.",
+      "rule_source_id": "usa_education_educational_consistency_and_study_plan_logic_214_b_linked",
+      "rule_source_name": "Educational Consistency and Study-Plan Logic (214(b)-linked)",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_programme_level_regression",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "eligibility_check",
+      "question_id": "usa_program_suits_background",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Programme may represent an unexplained academic downgrade",
+      "user_message": "Officers question progression that doesn't add up — e.g. a Masters-holder enrolling in a lower diploma. A downgrade looks like a visa-shopping move.",
+      "recommended_next_step": "Ensure the US programme is a logical step forward from your existing qualification. Explain any apparent regression clearly.",
+      "rule_source_id": "usa_education_educational_consistency_and_study_plan_logic_214_b_linked",
+      "rule_source_name": "Educational Consistency and Study-Plan Logic (214(b)-linked)",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_academic_records_unverifiable",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "documentation_check",
+      "question_id": "usa_academics_verifiable",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Academic records may not be complete or verifiable",
+      "user_message": "Inconsistent or unverifiable academics (mismatched names/dates, missing transcripts) raise fraud concerns. Have complete, attested records ready.",
+      "recommended_next_step": "Have all transcripts and degrees verified, consistently named, and attested where required before the interview.",
+      "rule_source_id": "usa_education_educational_consistency_and_study_plan_logic_214_b_linked",
+      "rule_source_name": "Educational Consistency and Study-Plan Logic (214(b)-linked)",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_prior_refusal_present",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "eligibility_check",
+      "question_id": "usa_prior_refusals",
+      "trigger": {
+        "operator": "eq",
+        "value": "yes"
+      },
+      "condition": null,
+      "title": "Prior visa refusal identified",
+      "user_message": "Prior refusals are visible and probed. A refusal is survivable IF disclosed and explained — concealment on DS-160 is misrepresentation with a permanent-bar risk.",
+      "recommended_next_step": "Disclose each refusal accurately on the DS-160 and prepare a clear explanation of what has changed since then.",
+      "rule_source_id": "usa_immigration_history_prior_visa_refusals_and_immigration_violations_must_be_disclosed",
+      "rule_source_name": "Prior Visa Refusals and Immigration Violations Must Be Disclosed",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_immigration_breach_history",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "eligibility_check",
+      "question_id": "usa_overstay_or_removal",
+      "trigger": {
+        "operator": "eq",
+        "value": "yes"
+      },
+      "condition": null,
+      "title": "Prior immigration breach (overstay or removal) identified",
+      "user_message": "Overstays/removals strongly conflict with 'genuine temporary student' and must be disclosed and addressed candidly.",
+      "recommended_next_step": "Disclose this history candidly on the DS-160 and at interview. Concealment is a misrepresentation ground.",
+      "rule_source_id": "usa_immigration_history_prior_visa_refusals_and_immigration_violations_must_be_disclosed",
+      "rule_source_name": "Prior Visa Refusals and Immigration Violations Must Be Disclosed",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_asylum_claim_history",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "eligibility_check",
+      "question_id": "usa_asylum_history",
+      "trigger": {
+        "operator": "eq",
+        "value": "yes"
+      },
+      "condition": null,
+      "title": "Prior asylum claim identified",
+      "user_message": "An asylum history conflicts with intent to return and must be addressed candidly, ideally with legal advice.",
+      "recommended_next_step": "Disclose your asylum history fully. Consider seeking legal advice before applying given the impact on temporary-student intent.",
+      "rule_source_id": "usa_immigration_history_prior_visa_refusals_and_immigration_violations_must_be_disclosed",
+      "rule_source_name": "Prior Visa Refusals and Immigration Violations Must Be Disclosed",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    },
+    {
+      "blocker_id": "usa_blocker_agent_concealment_advice",
+      "country": "USA",
+      "visa_route": "F-1 Student Visa",
+      "severity": "high",
+      "blocker_type": "integrity_check",
+      "question_id": "usa_agent_advised_hiding",
+      "trigger": {
+        "operator": "in",
+        "value": [
+          "yes",
+          "unknown"
+        ]
+      },
+      "condition": null,
+      "title": "Agent has advised concealing information",
+      "user_message": "If an agent told you to conceal something, that is a path to a misrepresentation bar. Disclose truthfully; drop the agent's advice.",
+      "recommended_next_step": "Disclose everything accurately. Following advice to conceal information creates a permanent misrepresentation risk.",
+      "rule_source_id": "usa_integrity_application_integrity_and_agent_risk",
+      "rule_source_name": "Application Integrity and Agent Risk",
+      "source_url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html",
+      "scoring_should_continue": true,
+      "score_cap": 65,
+      "needs_rule_confirmation": false
+    }
+  ]
+}

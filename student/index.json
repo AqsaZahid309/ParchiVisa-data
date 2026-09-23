@@ -1,0 +1,60 @@
+{
+  "visa_type": "student",
+  "schema_version": "1.0.0",
+  "generated_at": "2026-06-06",
+  "description": "Index of all student visa country datasets in ParchiVisa. Paths are relative to this file.",
+  "countries": [
+    {
+      "country": "Australia",
+      "country_code": "australia",
+      "visa_route": "Student Visa (Subclass 500)",
+      "visa_route_slug": "student_visa_subclass_500",
+      "questions_path": "australia/questions.json",
+      "scoring_path": "australia/scoring.json",
+      "rules_path": "australia/rules.json",
+      "question_count": 58,
+      "rule_count": 15,
+      "last_verified": "2026-05-29",
+      "status": "active"
+    },
+    {
+      "country": "Canada",
+      "country_code": "canada",
+      "visa_route": "Study Permit",
+      "visa_route_slug": "study_permit",
+      "questions_path": "canada/questions.json",
+      "scoring_path": "canada/scoring.json",
+      "rules_path": "canada/rules.json",
+      "question_count": 65,
+      "rule_count": 20,
+      "last_verified": "2026-05-29",
+      "status": "active"
+    },
+    {
+      "country": "UK",
+      "country_code": "uk",
+      "visa_route": "Student Visa (formerly Tier 4 General)",
+      "visa_route_slug": "student_visa_tier4",
+      "questions_path": "uk/questions.json",
+      "scoring_path": "uk/scoring.json",
+      "rules_path": "uk/rules.json",
+      "question_count": 63,
+      "rule_count": 22,
+      "last_verified": "2026-05-29",
+      "status": "active"
+    },
+    {
+      "country": "USA",
+      "country_code": "usa",
+      "visa_route": "F-1 Student Visa",
+      "visa_route_slug": "f1_student_visa",
+      "questions_path": "usa/questions.json",
+      "scoring_path": "usa/scoring.json",
+      "rules_path": "usa/rules.json",
+      "question_count": 55,
+      "rule_count": 17,
+      "last_verified": "2026-05-29",
+      "status": "active"
+    }
+  ]
+}

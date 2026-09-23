@@ -1,0 +1,846 @@
+{
+  "country": "Canada",
+  "visa_route": "Study Permit",
+  "last_verified": "2026-05-29",
+  "applicant_profile": "Pakistani nationals applying for a Canadian Study Permit (regular stream; SDS closed Nov 2024).",
+  "framing_disclaimer": "Measures DOCUMENTED READINESS and RISK EXPOSURE. Does NOT predict the officer's decision and is not legal/immigration advice. Canada has NO country 'evidence level' system. Verify current figures at canada.ca before applying.",
+  "config": {
+    "currency": "CAD",
+    "living_cost_single_outside_quebec": 22895,
+    "living_cost_2_persons": 28502,
+    "living_cost_3_persons": 35040,
+    "living_cost_each_additional_person_estimate": 4000,
+    "quebec_single_adult": 24617,
+    "quebec_note": "Quebec uses its own (much higher) thresholds from 2026-01-01 and requires a CAQ; handled separately.",
+    "return_transport_estimate": 1500,
+    "study_permit_application_fee": 150,
+    "biometrics_fee": 85,
+    "gic_typical_amount": 22895,
+    "bank_statement_months_min": 4,
+    "effective_date_living_cost": "2025-09-01",
+    "evidence_level_system": "NONE — Canada does not use Australia's SSVF country evidence levels. Do not display one.",
+    "last_verified": "2026-05-29",
+    "MUST_VERIFY_AT_SOURCE": true,
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "note": "Outside-Quebec single living-cost requirement = CAD 22,895 from 2025-09-01 (LICO-indexed, reviewed annually). Confirm the live figure on the IRCC page on the day of application; IRCC has signalled a move toward a dynamic cost-of-living model."
+  },
+  "score_bands": [
+    {
+      "min": 85,
+      "max": 100,
+      "label": "Strong Readiness",
+      "description": "Documented file is well-prepared with low visible risk. NOT a prediction or guarantee of approval — bona-fide assessment is officer-dependent. Re-verify figures and submit once minor items are closed."
+    },
+    {
+      "min": 70,
+      "max": 84,
+      "label": "Moderate Risk — Improve Before Lodging",
+      "description": "Eligible but with weak points an officer will probe (ties, funds history, study-plan logic). Close flagged items before applying."
+    },
+    {
+      "min": 50,
+      "max": 69,
+      "label": "High Refusal Risk",
+      "description": "Serious gaps. Applying now with these gaps unaddressed indicates serious unresolved readiness issues. Resolve all high-risk flags first."
+    },
+    {
+      "min": 0,
+      "max": 49,
+      "label": "Critical Refusal Risk",
+      "description": "Mandatory items missing or integrity flags present. Do not apply — critical readiness gaps that are grounds for refusal or a returned application, and misrepresentation can trigger a 5-year A40 bar."
+    }
+  ],
+  "scoring_categories": [
+    {
+      "category_id": "bona_fide_intent",
+      "label": "Bona Fide Student & Intent to Leave",
+      "max_points": 22,
+      "question_ids": [
+        "can_has_letter_of_explanation",
+        "can_home_country_ties",
+        "can_study_rationale_specific",
+        "can_why_canada_vs_cheaper",
+        "can_course_aligns_career",
+        "can_return_intent_evidence"
+      ]
+    },
+    {
+      "category_id": "financial_legitimacy",
+      "label": "Financial Legitimacy",
+      "max_points": 22,
+      "question_ids": [
+        "can_tuition_amount",
+        "can_living_funds_available",
+        "can_total_funds_available",
+        "can_four_month_bank_statements",
+        "can_funds_held_consistent",
+        "can_funds_source",
+        "can_large_recent_deposits",
+        "can_source_of_funds_documented",
+        "can_sponsor_immediate_family",
+        "can_sponsor_files_fbr",
+        "can_property_sale_documented",
+        "can_loan_sanctioned",
+        "can_return_transport_funds",
+        "can_has_gic",
+        "can_gic_from_participating_bank",
+        "can_gic_not_only_proof"
+      ]
+    },
+    {
+      "category_id": "education_consistency",
+      "label": "Educational Consistency",
+      "max_points": 12,
+      "question_ids": [
+        "can_edu_gap_over_1yr",
+        "can_edu_gap_justified",
+        "can_drastic_field_change",
+        "can_transcripts_authenticated"
+      ]
+    },
+    {
+      "category_id": "immigration_history",
+      "label": "Immigration History & Truthfulness",
+      "max_points": 12,
+      "question_ids": [
+        "can_previous_refusals_or_violations",
+        "can_refusal_countries",
+        "can_asylum_history",
+        "can_all_docs_truthful"
+      ]
+    },
+    {
+      "category_id": "documents",
+      "label": "Core Documents (DLI/LOA/PAL/CAQ)",
+      "max_points": 12,
+      "question_ids": [
+        "can_study_province",
+        "can_has_dli_loa",
+        "can_verified_dli_on_official_list",
+        "can_dli_number_available",
+        "can_loa_uploaded_correct_section",
+        "can_school_will_validate_loa",
+        "can_is_quebec_applicant",
+        "can_masters_doctoral_public_dli_exemption",
+        "can_has_pal_tal",
+        "can_pal_tal_submitted_with_application",
+        "can_has_caq",
+        "can_caq_has_allocation_line"
+      ]
+    },
+    {
+      "category_id": "health_security",
+      "label": "Health, Biometrics & Security",
+      "max_points": 8,
+      "question_ids": [
+        "can_stay_six_months_or_more",
+        "can_medical_exam_required_completed",
+        "can_medical_panel_physician",
+        "can_biometrics_fee_paid",
+        "can_biometrics_completed",
+        "can_has_bil"
+      ]
+    },
+    {
+      "category_id": "agent_integrity",
+      "label": "Application Integrity / Agent Risk",
+      "max_points": 5,
+      "question_ids": [
+        "can_agent_prepared_docs",
+        "can_personally_reviewed_all",
+        "can_agent_registered"
+      ]
+    },
+    {
+      "category_id": "general_awareness",
+      "label": "General Awareness (Work/Conditions/PGWP)",
+      "max_points": 7,
+      "question_ids": [
+        "can_applicant_age",
+        "can_understands_sds_closed",
+        "can_plans_change_school",
+        "can_understands_new_permit_for_school_change",
+        "can_program_started_before_work",
+        "can_understands_24_hour_work_limit",
+        "can_has_sin_plan",
+        "can_authorized_leave_understands",
+        "can_extension_before_expiry",
+        "can_brings_spouse",
+        "can_spouse_owp_eligible_program",
+        "can_pgwp_goal",
+        "can_pgwp_eligible_dli",
+        "can_non_degree_cip_checked"
+      ]
+    }
+  ],
+  "evaluation_model": {
+    "tiers": {
+      "hard_blocker": "Any triggered hard blocker forces result 'Critical Refusal Risk'; score skipped. These are legally mandatory items or integrity grounds.",
+      "high_risk_flag": "Each triggered high-risk flag deducts impact AND caps the max band: 1-2 flags => cap 'High Refusal Risk'; 3+ => 'Critical Refusal Risk'. Prevents proportional averaging from hiding serious risk.",
+      "soft_warning": "Each triggered soft warning deducts impact within the band; does not cap the band."
+    },
+    "calculation_logic": {
+      "method": "tiered_weighted_with_band_caps",
+      "step_1": "Evaluate hard blockers. If ANY triggers -> 'Critical Refusal Risk'; stop.",
+      "step_2": "Per category: category_score = (sum score_impact of PASSING scored questions / sum score_impact of ALL scored questions) x max_points. 'info' questions (trigger_if=never) are routing-only, excluded from pass/fail.",
+      "step_3": "total_score = sum of category scores, rounded to nearest integer.",
+      "step_4": "Count triggered high-risk flags; apply band cap (1-2 => High; 3+ => Critical).",
+      "step_5": "Map total to a band, then final band = worse of score-band and cap-band.",
+      "passing_definition": "A question PASSES when the answer satisfies pass_if. Computed financial passes: living funds >= 22895 (+dependants/Quebec); total funds >= living + first-year tuition + transport.",
+      "rounding": "Category to 1 decimal; total to nearest integer."
+    }
+  },
+  "result_payload_template": {
+    "label": "<band label>",
+    "total_score": "<0-100>",
+    "estimated_refusal_concerns": "<triggered hard blockers + high-risk flags in plain English>",
+    "recommended_improvements": "<soft warnings + how to close each flag>",
+    "priority_action_list": "<hard blockers first, then high-risk flags, then soft warnings>",
+    "risk_explanation": "<why this band, referencing bona-fide/financial scrutiny>",
+    "disclaimer": "Readiness assessment, not an approval prediction or legal advice. Verify all figures at canada.ca before applying."
+  },
+  "critical_blockers_hard": [
+    {
+      "question_id": "can_has_dli_loa",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Must Be Enrolled at a Designated Learning Institution (DLI)",
+      "mapped_rule_id": "can_eligibility_must_be_enrolled_at_a_designated_learning_institution_dli",
+      "conditional_on": null,
+      "message": "You cannot apply without an LOA from a DLI. An admission/offer email is not enough — you need the official LOA. Beware agents enrolling you at non-DLI 'colleges'."
+    },
+    {
+      "question_id": "can_verified_dli_on_official_list",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Must Be Enrolled at a Designated Learning Institution (DLI)",
+      "mapped_rule_id": "can_eligibility_must_be_enrolled_at_a_designated_learning_institution_dli",
+      "conditional_on": null,
+      "message": "Check the DLI number on the government list yourself. Many Pakistani students are mis-sold into institutions that are not DLIs or have lost PGWP eligibility."
+    },
+    {
+      "question_id": "can_dli_number_available",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Must Be Enrolled at a Designated Learning Institution (DLI)",
+      "mapped_rule_id": "can_eligibility_must_be_enrolled_at_a_designated_learning_institution_dli",
+      "conditional_on": null,
+      "message": "The DLI number (starts with 'O') is required in the application. It is on your LOA."
+    },
+    {
+      "question_id": "can_loa_uploaded_correct_section",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Letter of Acceptance (LOA) Required — Must Be Uploaded Correctly",
+      "mapped_rule_id": "can_documents_letter_of_acceptance_loa_required_must_be_uploaded_correctly",
+      "conditional_on": null,
+      "message": "An LOA in the wrong field can cause the system not to register it. Follow the document checklist exactly."
+    },
+    {
+      "question_id": "can_school_will_validate_loa",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Letter of Acceptance (LOA) Required — Must Be Uploaded Correctly",
+      "mapped_rule_id": "can_documents_letter_of_acceptance_loa_required_must_be_uploaded_correctly",
+      "conditional_on": null,
+      "message": "Since the LOA-verification system, IRCC checks LOAs directly with institutions. A fake or unverifiable LOA = refusal and a misrepresentation finding."
+    },
+    {
+      "question_id": "can_has_letter_of_explanation",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+      "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+      "conditional_on": null,
+      "message": "Canada has no 'GS form' like Australia — your study plan/Letter of Explanation IS your case for being a genuine student who will leave on expiry. Weak SOPs and weak home ties are the top Pakistani refusal reasons."
+    },
+    {
+      "question_id": "can_has_pal_tal",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Provincial Attestation Letter (PAL) or Territorial Attestation Letter (TAL) Required",
+      "mapped_rule_id": "can_documents_provincial_attestation_letter_pal_or_territorial_attestation_letter_tal_required",
+      "conditional_on": {
+        "operator": "and",
+        "conditions": [
+          {
+            "question_id": "can_is_quebec_applicant",
+            "operator": "eq",
+            "value": "no"
+          },
+          {
+            "question_id": "can_masters_doctoral_public_dli_exemption",
+            "operator": "eq",
+            "value": "no"
+          }
+        ]
+      },
+      "message": "Most non-Quebec post-secondary applicants must include a PAL/TAL or the application is returned. It is issued by the province after you have an LOA."
+    },
+    {
+      "question_id": "can_pal_tal_submitted_with_application",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Provincial Attestation Letter (PAL) or Territorial Attestation Letter (TAL) Required",
+      "mapped_rule_id": "can_documents_provincial_attestation_letter_pal_or_territorial_attestation_letter_tal_required",
+      "conditional_on": null,
+      "message": "The PAL/TAL must be in the initial submission. Sending it later does not fix a returned application."
+    },
+    {
+      "question_id": "can_has_caq",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Quebec Applicants Need Certificat d'acceptation du Québec (CAQ)",
+      "mapped_rule_id": "can_documents_quebec_applicants_need_certificat_d_acceptation_du_qu_bec_caq",
+      "conditional_on": {
+        "question_id": "can_is_quebec_applicant",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Quebec study requires a CAQ from the province before/with the federal study permit. No CAQ = cannot proceed for Quebec."
+    },
+    {
+      "question_id": "can_caq_has_allocation_line",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Quebec Applicants Need Certificat d'acceptation du Québec (CAQ)",
+      "mapped_rule_id": "can_documents_quebec_applicants_need_certificat_d_acceptation_du_qu_bec_caq",
+      "conditional_on": {
+        "question_id": "can_is_quebec_applicant",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "The CAQ must reflect Quebec's attestation/allocation. An incomplete CAQ will not satisfy IRCC."
+    },
+    {
+      "question_id": "can_living_funds_available",
+      "trigger_if": {
+        "type": "computed_living_short"
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": null,
+      "message": "Outside Quebec, a single applicant must show CAD 22,895 for living costs (from Sept 2025), separate from tuition and travel. More for dependants; Quebec is higher."
+    },
+    {
+      "question_id": "can_total_funds_available",
+      "trigger_if": {
+        "type": "computed_total_short"
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": null,
+      "message": "Total must cover CAD 22,895 living + first-year tuition + ~CAD 1,500 return transport (plus dependants). Funds must be genuine and accessible, not a paper figure."
+    },
+    {
+      "question_id": "can_medical_exam_required_completed",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Medical Exam Required for Stays of 6+ Months",
+      "mapped_rule_id": "can_medical_medical_exam_required_for_stays_of_6_months",
+      "conditional_on": {
+        "question_id": "can_stay_six_months_or_more",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "An IME is required for 6+ month stays. Pakistani applicants typically need TB screening (chest X-ray)."
+    },
+    {
+      "question_id": "can_medical_panel_physician",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Medical Exam Required for Stays of 6+ Months",
+      "mapped_rule_id": "can_medical_medical_exam_required_for_stays_of_6_months",
+      "conditional_on": {
+        "question_id": "can_stay_six_months_or_more",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Only exams by IRCC panel physicians count. A cheaper local clinic's report is worthless for the permit."
+    },
+    {
+      "question_id": "can_all_docs_truthful",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "All Documents and Statements Must Be Truthful (Misrepresentation Bar)",
+      "mapped_rule_id": "can_integrity_all_documents_and_statements_must_be_truthful_misrepresentation_bar",
+      "conditional_on": null,
+      "message": "Misrepresentation (fake bank balances, altered transcripts, hidden refusals) causes refusal AND a 5-year ban under A40. This applies even if an agent did it in your name."
+    }
+  ],
+  "high_risk_flags": [
+    {
+      "question_id": "can_home_country_ties",
+      "trigger_if": {
+        "type": "multi_contains",
+        "value": "none"
+      },
+      "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+      "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+      "conditional_on": null,
+      "message": "Officers weigh DOCUMENTABLE ties most: property in your name, a family business, a written return job offer. 'My parents live here' alone is weak."
+    },
+    {
+      "question_id": "can_study_rationale_specific",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+      "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+      "conditional_on": null,
+      "message": "Generic 'Canada has good education' reasoning gets refused. Tie the exact program/curriculum to your background and a Pakistan-based career outcome."
+    },
+    {
+      "question_id": "can_why_canada_vs_cheaper",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+      "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+      "conditional_on": null,
+      "message": "Officers probe whether study is the real purpose. Have a defensible reason tied to program quality/accreditation — not work or immigration."
+    },
+    {
+      "question_id": "can_course_aligns_career",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+      "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+      "conditional_on": null,
+      "message": "A drastic, unexplained downgrade or field-switch (e.g. completed Bachelors then a junior diploma) is a classic refusal trigger and signals non-genuine study."
+    },
+    {
+      "question_id": "can_edu_gap_justified",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Educational Consistency and Study-Plan Logic (Bona Fide-linked)",
+      "mapped_rule_id": "can_education_educational_consistency_and_study_plan_logic_bona_fide_linked",
+      "conditional_on": {
+        "question_id": "can_edu_gap_over_1yr",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Provide employment letters, salary slips, freelance/contract proof, or transcripts covering the gap. Unevidenced 'I was preparing/at home' is weak and invites refusal."
+    },
+    {
+      "question_id": "can_drastic_field_change",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Educational Consistency and Study-Plan Logic (Bona Fide-linked)",
+      "mapped_rule_id": "can_education_educational_consistency_and_study_plan_logic_bona_fide_linked",
+      "conditional_on": null,
+      "message": "Allowed, but a large switch is scrutinised for genuineness. If yes, your Letter of Explanation must connect old and new fields with a credible career story."
+    },
+    {
+      "question_id": "can_transcripts_authenticated",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Educational Consistency and Study-Plan Logic (Bona Fide-linked)",
+      "mapped_rule_id": "can_education_educational_consistency_and_study_plan_logic_bona_fide_linked",
+      "conditional_on": null,
+      "message": "Provide HEC-attested degrees and IBCC-attested FSc/Matric where applicable, plus certified English translations. Unverifiable academics are a refusal/misrepresentation risk."
+    },
+    {
+      "question_id": "can_four_month_bank_statements",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": null,
+      "message": "IRCC expects ~4 months of statement history, not a fresh lump sum. A balance that appears suddenly before applying signals arranged funds."
+    },
+    {
+      "question_id": "can_funds_held_consistent",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": null,
+      "message": "Consistency beats a recent injection. Erratic statements trigger doubts about whether funds are genuinely yours/accessible."
+    },
+    {
+      "question_id": "can_source_of_funds_documented",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": null,
+      "message": "The core legitimacy test. Each major deposit needs proof: registered sale deed for property, FBR-declared salary, sanctioned loan letter, or a notarised gift affidavit from a traceable giver."
+    },
+    {
+      "question_id": "can_sponsor_files_fbr",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": null,
+      "message": "A sponsor showing large funds but no FBR tax history is a major red flag — it implies undeclared/untraceable income. Declared income should plausibly support the amount."
+    },
+    {
+      "question_id": "can_previous_refusals_or_violations",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Immigration History and Full Disclosure",
+      "mapped_rule_id": "can_immigration_history_immigration_history_and_full_disclosure",
+      "conditional_on": null,
+      "message": "Prior refusals are visible and heavily weighed. A refusal is survivable IF disclosed and explained — concealment is fatal and is misrepresentation."
+    },
+    {
+      "question_id": "can_asylum_history",
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "mapped_rule": "Immigration History and Full Disclosure",
+      "mapped_rule_id": "can_immigration_history_immigration_history_and_full_disclosure",
+      "conditional_on": null,
+      "message": "An asylum history strongly conflicts with 'temporary student who will leave' and must be addressed candidly, ideally with legal advice."
+    },
+    {
+      "question_id": "can_personally_reviewed_all",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Application Integrity and Agent Risk",
+      "mapped_rule_id": "can_integrity_application_integrity_and_agent_risk",
+      "conditional_on": null,
+      "message": "Some agents inflate bank balances, fake experience letters, or alter transcripts. If an agent fabricated anything, YOU face refusal AND a 5-year misrepresentation ban (A40). Verify every line yourself."
+    }
+  ],
+  "soft_warnings": [
+    {
+      "question_id": "can_return_intent_evidence",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+      "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+      "conditional_on": null,
+      "message": "Attach what you can: property papers, family business registration, a conditional return offer. Dual intent is allowed, but you must still show you would leave if not granted PR."
+    },
+    {
+      "question_id": "can_sponsor_immediate_family",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": null,
+      "message": "Immediate-family sponsorship is expected and trusted. Distant relatives or 'family friends' as sponsors raise scrutiny and need a strong relationship + funds explanation."
+    },
+    {
+      "question_id": "can_property_sale_documented",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": {
+        "question_id": "can_funds_source",
+        "operator": "multi_contains",
+        "value": "property_sale"
+      },
+      "message": "Property-sale funding is fine if the deed is registered and proceeds entered the account via banking channel — not cash."
+    },
+    {
+      "question_id": "can_loan_sanctioned",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": {
+        "question_id": "can_funds_source",
+        "operator": "multi_contains",
+        "value": "bank_loan_sanctioned"
+      },
+      "message": "Education loans are accepted with a formal sanction letter from a recognised institution. Informal/family loans carry less weight."
+    },
+    {
+      "question_id": "can_return_transport_funds",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+      "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+      "conditional_on": null,
+      "message": "Return travel cost must be covered on top of living + tuition."
+    },
+    {
+      "question_id": "can_gic_from_participating_bank",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Guaranteed Investment Certificate (GIC) Still Accepted as Financial Evidence",
+      "mapped_rule_id": "can_financial_guaranteed_investment_certificate_gic_still_accepted_as_financial_evidence",
+      "conditional_on": {
+        "question_id": "can_has_gic",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Only GICs from participating institutions are recognised. Verify before buying."
+    },
+    {
+      "question_id": "can_gic_not_only_proof",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Guaranteed Investment Certificate (GIC) Still Accepted as Financial Evidence",
+      "mapped_rule_id": "can_financial_guaranteed_investment_certificate_gic_still_accepted_as_financial_evidence",
+      "conditional_on": {
+        "question_id": "can_has_gic",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "A GIC covers part of living costs; you must still evidence tuition payment and transport separately."
+    },
+    {
+      "question_id": "can_biometrics_fee_paid",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Biometrics Required for Most Applicants Aged 14–79",
+      "mapped_rule_id": "can_biometrics_biometrics_required_for_most_applicants_aged_14_79",
+      "conditional_on": null,
+      "message": "Biometrics (CAD ~85) apply to most applicants aged 14–79. Pay it and book at a VAC in Pakistan."
+    },
+    {
+      "question_id": "can_biometrics_completed",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Biometrics Required for Most Applicants Aged 14–79",
+      "mapped_rule_id": "can_biometrics_biometrics_required_for_most_applicants_aged_14_79",
+      "conditional_on": null,
+      "message": "Complete biometrics at a VAC after receiving the Biometrics Instruction Letter (BIL). Delays here slow processing."
+    },
+    {
+      "question_id": "can_understands_sds_closed",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Student Direct Stream (SDS) Ended — November 8, 2024",
+      "mapped_rule_id": "can_application_stream_student_direct_stream_sds_ended_november_8_2024",
+      "conditional_on": null,
+      "message": "SDS ended 8 Nov 2024. There is no fast GIC+IELTS shortcut now — everyone uses the regular study permit stream."
+    },
+    {
+      "question_id": "can_understands_new_permit_for_school_change",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Changing Schools Requires a New Study Permit (From November 8, 2024)",
+      "mapped_rule_id": "can_conditions_changing_schools_requires_a_new_study_permit_from_november_8_2024",
+      "conditional_on": {
+        "question_id": "can_plans_change_school",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Switching DLI without a new permit breaches your conditions. Plan your program carefully before applying."
+    },
+    {
+      "question_id": "can_program_started_before_work",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Off-Campus Work Limited to 24 Hours Per Week",
+      "mapped_rule_id": "can_work_rights_off_campus_work_limited_to_24_hours_per_week",
+      "conditional_on": null,
+      "message": "Off-campus work is only allowed after studies begin, not on arrival."
+    },
+    {
+      "question_id": "can_understands_24_hour_work_limit",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Off-Campus Work Limited to 24 Hours Per Week",
+      "mapped_rule_id": "can_work_rights_off_campus_work_limited_to_24_hours_per_week",
+      "conditional_on": null,
+      "message": "Off-campus work is capped at 24 hrs/week while classes are in session (full-time during scheduled breaks). Over-working breaches your permit."
+    },
+    {
+      "question_id": "can_authorized_leave_understands",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Authorized Leave Cannot Exceed 150 Days",
+      "mapped_rule_id": "can_conditions_authorized_leave_cannot_exceed_150_days",
+      "conditional_on": null,
+      "message": "Stopping studies beyond 150 days without authorisation can lead to loss of status."
+    },
+    {
+      "question_id": "can_extension_before_expiry",
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "mapped_rule": "Must Apply to Extend Study Permit Before It Expires",
+      "mapped_rule_id": "can_conditions_must_apply_to_extend_study_permit_before_it_expires",
+      "conditional_on": null,
+      "message": "Apply to extend at least 30 days before expiry to keep maintained status."
+    },
+    {
+      "question_id": "can_spouse_owp_eligible_program",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Spousal Open Work Permit Now Restricted to Masters (16+ Months) and Doctoral Students",
+      "mapped_rule_id": "can_dependants_spousal_open_work_permit_now_restricted_to_masters_16_months_and_doctoral_students",
+      "conditional_on": {
+        "question_id": "can_brings_spouse",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "From Jan 2025, spousal OWPs are limited mainly to spouses of Masters (16+ months)/doctoral and select students. Undergrad/college spouses are generally ineligible."
+    },
+    {
+      "question_id": "can_pgwp_eligible_dli",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "PGWP Requires PGWP-Eligible DLI and Qualifying Field of Study (Non-Degree Programs)",
+      "mapped_rule_id": "can_pgwp_pgwp_requires_pgwp_eligible_dli_and_qualifying_field_of_study_non_degree_programs",
+      "conditional_on": {
+        "question_id": "can_pgwp_goal",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Confirm PGWP eligibility before enrolling. Some programs/DLIs do not qualify — a common trap sold by agents."
+    },
+    {
+      "question_id": "can_non_degree_cip_checked",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "PGWP Requires PGWP-Eligible DLI and Qualifying Field of Study (Non-Degree Programs)",
+      "mapped_rule_id": "can_pgwp_pgwp_requires_pgwp_eligible_dli_and_qualifying_field_of_study_non_degree_programs",
+      "conditional_on": {
+        "question_id": "can_pgwp_goal",
+        "operator": "eq",
+        "value": "yes"
+      },
+      "message": "Non-degree (college diploma) PGWP eligibility is now tied to fields linked to labour shortages. Verify your program's field."
+    },
+    {
+      "question_id": "can_agent_registered",
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      },
+      "mapped_rule": "Application Integrity and Agent Risk",
+      "mapped_rule_id": "can_integrity_application_integrity_and_agent_risk",
+      "conditional_on": null,
+      "message": "Prefer institution-authorised reps or an ICCRC/CICC-regulated consultant. 'Guaranteed visa' middlemen cause most fraud-related refusals."
+    }
+  ]
+}

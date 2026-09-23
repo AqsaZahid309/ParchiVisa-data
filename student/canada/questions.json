@@ -1,0 +1,3161 @@
+[
+  {
+    "id": "can_applicant_age",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Profile",
+    "question": "What is your age (in years)?",
+    "help_text": "Informational. Biometrics apply to ages 14–79; police clearances matter from 18. Routes later questions.",
+    "input_type": "number",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "gte",
+        "value": 1
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Biometrics Required for Most Applicants Aged 14–79",
+    "mapped_rule_id": "can_biometrics_biometrics_required_for_most_applicants_aged_14_79",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "numeric",
+    "error_message": "Enter your age in years. Biometrics apply to most applicants aged 14–79; this field is required to route your application correctly.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/biometrics.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_study_province",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Profile",
+    "question": "Which province/territory will you study in?",
+    "help_text": "Province determines PAL vs TAL and whether Quebec's CAQ + higher Quebec funds apply.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Ontario",
+        "value": "ontario"
+      },
+      {
+        "label": "British Columbia",
+        "value": "british_columbia"
+      },
+      {
+        "label": "Quebec",
+        "value": "quebec"
+      },
+      {
+        "label": "Alberta",
+        "value": "alberta"
+      },
+      {
+        "label": "Manitoba",
+        "value": "manitoba"
+      },
+      {
+        "label": "Saskatchewan",
+        "value": "saskatchewan"
+      },
+      {
+        "label": "Nova Scotia",
+        "value": "nova_scotia"
+      },
+      {
+        "label": "New Brunswick",
+        "value": "new_brunswick"
+      },
+      {
+        "label": "Newfoundland and Labrador",
+        "value": "newfoundland_labrador"
+      },
+      {
+        "label": "Prince Edward Island",
+        "value": "pei"
+      },
+      {
+        "label": "Other / Territory",
+        "value": "other_territory"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Provincial Attestation Letter (PAL) or Territorial Attestation Letter (TAL) Required",
+    "mapped_rule_id": "can_documents_provincial_attestation_letter_pal_or_territorial_attestation_letter_tal_required",
+    "scoring_key": "documents",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Select the province or territory where you will study. Your province determines whether you need a PAL or CAQ and affects the financial thresholds that apply.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_has_dli_loa",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "DLI and LOA",
+    "question": "Do you have a Letter of Acceptance (LOA) from a Designated Learning Institution (DLI)?",
+    "help_text": "You cannot apply without an LOA from a DLI. An admission/offer email is not enough — you need the official LOA. Beware agents enrolling you at non-DLI 'colleges'.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Must Be Enrolled at a Designated Learning Institution (DLI)",
+    "mapped_rule_id": "can_eligibility_must_be_enrolled_at_a_designated_learning_institution_dli",
+    "scoring_key": "documents",
+    "score_impact": 10,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A valid Letter of Acceptance from a Designated Learning Institution (DLI) is mandatory. Your study permit application cannot proceed without one.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_verified_dli_on_official_list",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "DLI and LOA",
+    "question": "Have you personally verified your institution is on the official DLI list at canada.ca?",
+    "help_text": "Check the DLI number on the government list yourself. Many Pakistani students are mis-sold into institutions that are not DLIs or have lost PGWP eligibility.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Must Be Enrolled at a Designated Learning Institution (DLI)",
+    "mapped_rule_id": "can_eligibility_must_be_enrolled_at_a_designated_learning_institution_dli",
+    "scoring_key": "documents",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "You must personally verify your institution appears on the official DLI list at canada.ca. Agents sometimes direct students to unlisted or PGWP-ineligible institutions.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_dli_number_available",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "DLI and LOA",
+    "question": "Do you have your institution's DLI number ready?",
+    "help_text": "The DLI number (starts with 'O') is required in the application. It is on your LOA.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Must Be Enrolled at a Designated Learning Institution (DLI)",
+    "mapped_rule_id": "can_eligibility_must_be_enrolled_at_a_designated_learning_institution_dli",
+    "scoring_key": "documents",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your DLI number (starting with 'O') must be entered in your study permit application. It is printed on your Letter of Acceptance.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_loa_uploaded_correct_section",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "DLI and LOA",
+    "question": "Will you upload the LOA in the correct section of the application?",
+    "help_text": "An LOA in the wrong field can cause the system not to register it. Follow the document checklist exactly.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Letter of Acceptance (LOA) Required — Must Be Uploaded Correctly",
+    "mapped_rule_id": "can_documents_letter_of_acceptance_loa_required_must_be_uploaded_correctly",
+    "scoring_key": "documents",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your LOA must be uploaded in the correct document section. An LOA placed in the wrong field may not be registered by IRCC.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_school_will_validate_loa",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "DLI and LOA",
+    "question": "Will your DLI confirm/validate your LOA with IRCC if asked?",
+    "help_text": "Since the LOA-verification system, IRCC checks LOAs directly with institutions. A fake or unverifiable LOA = refusal and a misrepresentation finding.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Letter of Acceptance (LOA) Required — Must Be Uploaded Correctly",
+    "mapped_rule_id": "can_documents_letter_of_acceptance_loa_required_must_be_uploaded_correctly",
+    "scoring_key": "documents",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "IRCC verifies LOAs directly with institutions. A fake or unverifiable LOA results in refusal and a 5-year misrepresentation bar under A40.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_has_letter_of_explanation",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Bona Fide Student",
+    "question": "Have you prepared a strong Letter of Explanation / Statement of Purpose?",
+    "help_text": "Canada has no 'GS form' like Australia — your study plan/Letter of Explanation IS your case for being a genuine student who will leave on expiry. Weak SOPs and weak home ties are the top Pakistani refusal reasons.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+    "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+    "scoring_key": "bona_fide_intent",
+    "score_impact": 8,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A Letter of Explanation (study plan/statement of purpose) is essential. Canada has no GS form — your LOE is your primary evidence of genuine study intent.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_home_country_ties",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Bona Fide Student",
+    "question": "Which ties to Pakistan can you actually PROVE (not just claim)?",
+    "help_text": "Officers weigh DOCUMENTABLE ties most: property in your name, a family business, a written return job offer. 'My parents live here' alone is weak.",
+    "input_type": "multi_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Family ties (parents, spouse, children)",
+        "value": "family_ties"
+      },
+      {
+        "label": "Property or financial assets",
+        "value": "property_or_assets"
+      },
+      {
+        "label": "Employment or family business",
+        "value": "employment_or_business"
+      },
+      {
+        "label": "Career plan in Pakistan",
+        "value": "career_plan_in_pakistan"
+      },
+      {
+        "label": "Community obligations",
+        "value": "community_obligations"
+      },
+      {
+        "label": "None of the above",
+        "value": "none"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "multi_has_any",
+        "value": [
+          "property_or_assets",
+          "employment_or_business",
+          "career_plan_in_pakistan",
+          "family_ties",
+          "community_obligations"
+        ]
+      },
+      "trigger_if": {
+        "type": "multi_contains",
+        "value": "none"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+    "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+    "scoring_key": "bona_fide_intent",
+    "score_impact": 6,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "array_of_strings",
+    "error_message": "No documentable ties to Pakistan significantly weakens your bona fide student case. IRCC weighs concrete ties — property, business, employment — over verbal claims.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_study_rationale_specific",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Bona Fide Student",
+    "question": "Can you give a specific, credible reason for THIS program at THIS school (not generic)?",
+    "help_text": "Generic 'Canada has good education' reasoning gets refused. Tie the exact program/curriculum to your background and a Pakistan-based career outcome.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+    "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+    "scoring_key": "bona_fide_intent",
+    "score_impact": 6,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A generic study rationale is a leading refusal cause. Name the specific program, connect it to your background, and link it to a Pakistan-based career outcome.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_why_canada_vs_cheaper",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Bona Fide Student",
+    "question": "Can you justify choosing Canada over cheaper/closer options (local universities, Gulf, Malaysia)?",
+    "help_text": "Officers probe whether study is the real purpose. Have a defensible reason tied to program quality/accreditation — not work or immigration.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+    "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+    "scoring_key": "bona_fide_intent",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "You should be able to justify choosing Canada over cheaper alternatives. Officers probe whether study is the genuine purpose of travel.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_course_aligns_career",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Bona Fide Student",
+    "question": "Does this program logically follow your past education/work, or can you justify a switch?",
+    "help_text": "A drastic, unexplained downgrade or field-switch (e.g. completed Bachelors then a junior diploma) is a classic refusal trigger and signals non-genuine study.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+    "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+    "scoring_key": "bona_fide_intent",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A drastic or unexplained field switch is a classic bona fide refusal trigger. Your Letter of Explanation must connect your previous qualification to this program.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_return_intent_evidence",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Bona Fide Student",
+    "question": "Do you have documents (not just words) supporting your plan to return to Pakistan?",
+    "help_text": "Attach what you can: property papers, family business registration, a conditional return offer. Dual intent is allowed, but you must still show you would leave if not granted PR.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Bona Fide Student — Must Prove Intent to Leave Canada on Expiry",
+    "mapped_rule_id": "can_bona_fide_student_bona_fide_student_must_prove_intent_to_leave_canada_on_expiry",
+    "scoring_key": "bona_fide_intent",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Documents supporting your plan to return to Pakistan strengthen your bona fide case. Attach property papers, business registration, or a conditional return offer where possible.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_is_quebec_applicant",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "PAL/TAL/CAQ",
+    "question": "Are you applying to study in Quebec?",
+    "help_text": "Quebec requires a CAQ (and higher funds from 2026). Non-Quebec provinces require a PAL/TAL instead. Routes the next questions.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Quebec Applicants Need Certificat d'acceptation du Québec (CAQ)",
+    "mapped_rule_id": "can_documents_quebec_applicants_need_certificat_d_acceptation_du_qu_bec_caq",
+    "scoring_key": "documents",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Select whether you are applying to study in Quebec. Quebec applicants require a CAQ and face higher financial thresholds from 2026.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_masters_doctoral_public_dli_exemption",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "PAL/TAL/CAQ",
+    "question": "Are you a Masters/Doctoral student at a PUBLIC DLI (PAL/TAL-exempt from 2026)?",
+    "help_text": "From 2026-01-01, Masters and doctoral students at public DLIs are exempt from the PAL/TAL requirement. If this is you, the PAL/TAL questions are not applicable.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Provincial Attestation Letter (PAL) or Territorial Attestation Letter (TAL) Required",
+    "mapped_rule_id": "can_documents_provincial_attestation_letter_pal_or_territorial_attestation_letter_tal_required",
+    "scoring_key": "documents",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Masters and doctoral students at public DLIs are exempt from the PAL/TAL requirement from 2026-01-01. Indicate whether this exemption applies to you.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_has_pal_tal",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "PAL/TAL/CAQ",
+    "question": "If required, do you have your Provincial/Territorial Attestation Letter (PAL/TAL)?",
+    "help_text": "Most non-Quebec post-secondary applicants must include a PAL/TAL or the application is returned. It is issued by the province after you have an LOA.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "operator": "and",
+      "conditions": [
+        {
+          "question_id": "can_is_quebec_applicant",
+          "operator": "eq",
+          "value": "no"
+        },
+        {
+          "question_id": "can_masters_doctoral_public_dli_exemption",
+          "operator": "eq",
+          "value": "no"
+        }
+      ]
+    },
+    "mapped_rule": "Provincial Attestation Letter (PAL) or Territorial Attestation Letter (TAL) Required",
+    "mapped_rule_id": "can_documents_provincial_attestation_letter_pal_or_territorial_attestation_letter_tal_required",
+    "scoring_key": "documents",
+    "score_impact": 8,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Most non-Quebec post-secondary applicants must submit a PAL/TAL with their application or it will be returned. It is issued by the province after you receive your LOA.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_pal_tal_submitted_with_application",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "PAL/TAL/CAQ",
+    "question": "Will you submit the PAL/TAL WITH the application (not after)?",
+    "help_text": "The PAL/TAL must be in the initial submission. Sending it later does not fix a returned application.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Provincial Attestation Letter (PAL) or Territorial Attestation Letter (TAL) Required",
+    "mapped_rule_id": "can_documents_provincial_attestation_letter_pal_or_territorial_attestation_letter_tal_required",
+    "scoring_key": "documents",
+    "score_impact": 5,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "The PAL/TAL must be included in your initial application submission. Sending it after the fact does not fix a returned application.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_has_caq",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "PAL/TAL/CAQ",
+    "question": "If studying in Quebec, do you have your CAQ?",
+    "help_text": "Quebec study requires a CAQ from the province before/with the federal study permit. No CAQ = cannot proceed for Quebec.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "can_is_quebec_applicant",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Quebec Applicants Need Certificat d'acceptation du Québec (CAQ)",
+    "mapped_rule_id": "can_documents_quebec_applicants_need_certificat_d_acceptation_du_qu_bec_caq",
+    "scoring_key": "documents",
+    "score_impact": 8,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Quebec study requires a Certificat d'acceptation du Québec (CAQ) from the province before the federal study permit can be issued. Without it the application cannot proceed.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_caq_has_allocation_line",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "PAL/TAL/CAQ",
+    "question": "Does your CAQ include the required attestation/allocation confirmation?",
+    "help_text": "The CAQ must reflect Quebec's attestation/allocation. An incomplete CAQ will not satisfy IRCC.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "can_is_quebec_applicant",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Quebec Applicants Need Certificat d'acceptation du Québec (CAQ)",
+    "mapped_rule_id": "can_documents_quebec_applicants_need_certificat_d_acceptation_du_qu_bec_caq",
+    "scoring_key": "documents",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your CAQ must include Quebec's required attestation and allocation confirmation. An incomplete CAQ will not satisfy IRCC.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/provincial-attestation-letter.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_edu_gap_over_1yr",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Education",
+    "question": "Do you have an education/employment gap longer than 12 months since Matric/FSc/A-Levels/Bachelors?",
+    "help_text": "Gaps are common in Pakistan (exam delays, work, family). A gap alone is fine — an UNEXPLAINED gap is the problem. Routes to the next question.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Study-Plan Logic (Bona Fide-linked)",
+    "mapped_rule_id": "can_education_educational_consistency_and_study_plan_logic_bona_fide_linked",
+    "scoring_key": "education_consistency",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "An education or employment gap of over 12 months must be explained and evidenced in your application. An unexplained gap is a bona fide student risk factor.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_edu_gap_justified",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Education",
+    "question": "If you have a 12+ month gap, can you justify it with evidence (job letters, transcripts, valid reasons)?",
+    "help_text": "Provide employment letters, salary slips, freelance/contract proof, or transcripts covering the gap. Unevidenced 'I was preparing/at home' is weak and invites refusal.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "can_edu_gap_over_1yr",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Educational Consistency and Study-Plan Logic (Bona Fide-linked)",
+    "mapped_rule_id": "can_education_educational_consistency_and_study_plan_logic_bona_fide_linked",
+    "scoring_key": "education_consistency",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "An unexplained gap of over 12 months weakens your bona fide case. Provide employment letters, salary slips, freelance contracts, or transcripts covering the gap period.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_drastic_field_change",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Education",
+    "question": "Is your Canadian program in a substantially different field from your last qualification?",
+    "help_text": "Allowed, but a large switch is scrutinised for genuineness. If yes, your Letter of Explanation must connect old and new fields with a credible career story.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Study-Plan Logic (Bona Fide-linked)",
+    "mapped_rule_id": "can_education_educational_consistency_and_study_plan_logic_bona_fide_linked",
+    "scoring_key": "education_consistency",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A significant unexplained field switch is a bona fide refusal trigger. Your Letter of Explanation must connect your previous qualification to this program with a credible career narrative.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_transcripts_authenticated",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Education",
+    "question": "Are your transcripts/degrees verifiable and attested where needed (HEC/IBCC) with certified translations?",
+    "help_text": "Provide HEC-attested degrees and IBCC-attested FSc/Matric where applicable, plus certified English translations. Unverifiable academics are a refusal/misrepresentation risk.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Study-Plan Logic (Bona Fide-linked)",
+    "mapped_rule_id": "can_education_educational_consistency_and_study_plan_logic_bona_fide_linked",
+    "scoring_key": "education_consistency",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Inconsistent or unverifiable academic records raise fraud concerns. Provide HEC-attested degrees and IBCC-attested Matric/FSc results with certified English translations.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_tuition_amount",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "What is your first-year tuition (in CAD), per your LOA?",
+    "help_text": "Enter the CAD tuition from your LOA. The tool adds living costs (CAD 22,895) and transport to compute required funds.",
+    "input_type": "currency_amount",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "gt",
+        "value": 0
+      },
+      "trigger_if": {
+        "type": "lte",
+        "value": 0
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "numeric_cad",
+    "error_message": "Enter your first-year tuition amount in CAD as shown on your LOA. This is used to calculate the total funds required for your application.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_living_funds_available",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "How much do you have available for living costs (in CAD), excluding tuition/transport?",
+    "help_text": "Outside Quebec, a single applicant must show CAD 22,895 for living costs (from Sept 2025), separate from tuition and travel. More for dependants; Quebec is higher.",
+    "input_type": "currency_amount",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "computed_living_ok",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "computed_living_short",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 8,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "numeric_cad",
+    "error_message": "Outside Quebec, a single applicant must show CAD 22,895 for living costs (from September 2025), separate from tuition and return transport. Insufficient funds is a top refusal cause.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_total_funds_available",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "What is your TOTAL available funding (in CAD): living + first-year tuition + return transport?",
+    "help_text": "Total must cover CAD 22,895 living + first-year tuition + ~CAD 1,500 return transport (plus dependants). Funds must be genuine and accessible, not a paper figure.",
+    "input_type": "currency_amount",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "computed_total_ok",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "computed_total_short",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 10,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "numeric_cad",
+    "error_message": "Your total evidence must cover living costs plus first-year tuition plus return transport (~CAD 1,500). Funds must be genuine, accessible, and consistently held.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_four_month_bank_statements",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "Do you have at least 4 months of bank statements showing a consistent balance?",
+    "help_text": "IRCC expects ~4 months of statement history, not a fresh lump sum. A balance that appears suddenly before applying signals arranged funds.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 6,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "IRCC expects approximately 4 months of statement history showing a consistent balance. A lump sum appearing shortly before application is treated as arranged funds.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_funds_held_consistent",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "Has the money been held steadily (no sudden large jump just before applying)?",
+    "help_text": "Consistency beats a recent injection. Erratic statements trigger doubts about whether funds are genuinely yours/accessible.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Erratic or suddenly inflated balances raise doubts about whether funds are genuinely yours. Consistent statement history over several months is far stronger evidence.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_funds_source",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "What is the MAIN source of your funds?",
+    "help_text": "Each source needs its own paper trail. Follow-up questions check whether that trail is documented.",
+    "input_type": "multi_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Own savings",
+        "value": "own_savings"
+      },
+      {
+        "label": "Parent / guardian sponsor",
+        "value": "parent_guardian_sponsor"
+      },
+      {
+        "label": "Spouse sponsor",
+        "value": "spouse_sponsor"
+      },
+      {
+        "label": "Property sale proceeds",
+        "value": "property_sale"
+      },
+      {
+        "label": "Bank loan (sanctioned)",
+        "value": "bank_loan_sanctioned"
+      },
+      {
+        "label": "Scholarship or funding letter",
+        "value": "scholarship"
+      },
+      {
+        "label": "GIC (Guaranteed Investment Certificate)",
+        "value": "gic"
+      },
+      {
+        "label": "Business income",
+        "value": "business_income"
+      },
+      {
+        "label": "Other",
+        "value": "other"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "array_of_strings",
+    "error_message": "Each funding source requires its own documentary trail. Select all that apply — follow-up questions check whether each source is properly documented.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_large_recent_deposits",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "Were there any large/sudden deposits in the last few months?",
+    "help_text": "Large deposits are not banned — but each must be explainable with a paper trail. Routes to the source-of-funds check.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Large recent deposits are not banned but each must be explainable with a traceable paper trail: a sale deed, salary record, loan letter, or notarised gift affidavit.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_source_of_funds_documented",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "Can you document the source of every significant deposit (sale deed, salary, loan letter, gift affidavit)?",
+    "help_text": "The core legitimacy test. Each major deposit needs proof: registered sale deed for property, FBR-declared salary, sanctioned loan letter, or a notarised gift affidavit from a traceable giver.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Every significant deposit must be proved with documentary evidence: a registered sale deed, FBR-declared salary, formal bank loan letter, or a notarised gift affidavit from a traceable source.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_sponsor_immediate_family",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "If sponsored, is your sponsor an immediate family member (parent, spouse, sibling)?",
+    "help_text": "Immediate-family sponsorship is expected and trusted. Distant relatives or 'family friends' as sponsors raise scrutiny and need a strong relationship + funds explanation.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Distant-relative or 'family friend' sponsors attract greater scrutiny. An immediate-family sponsor (parent, spouse, sibling) is expected and easier to establish.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_sponsor_files_fbr",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "If sponsored, does your sponsor file FBR tax returns consistent with the funds they are providing?",
+    "help_text": "A sponsor showing large funds but no FBR tax history is a major red flag — it implies undeclared/untraceable income. Declared income should plausibly support the amount.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A sponsor with large funds but no FBR filing history implies undeclared income. The sponsor's declared income should plausibly match the amount they are providing.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_property_sale_documented",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "If property sale funds you, do you have the registered sale deed and bank-routed proceeds?",
+    "help_text": "Property-sale funding is fine if the deed is registered and proceeds entered the account via banking channel — not cash.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "can_funds_source",
+      "operator": "multi_contains",
+      "value": "property_sale"
+    },
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Property-sale proceeds are accepted if the sale deed is registered and the proceeds were routed through a banking channel — not received as cash.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_loan_sanctioned",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "If a loan funds you, do you have an official sanction/disbursement letter from a recognised bank?",
+    "help_text": "Education loans are accepted with a formal sanction letter from a recognised institution. Informal/family loans carry less weight.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "can_funds_source",
+      "operator": "multi_contains",
+      "value": "bank_loan_sanctioned"
+    },
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "An education loan requires a formal sanction letter from a recognised bank. Informal family loans carry significantly less weight as financial evidence.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_return_transport_funds",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "Do you have funds for return transportation (~CAD 1,500)?",
+    "help_text": "Return travel cost must be covered on top of living + tuition.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Sufficient Financial Proof Required — Updated Threshold September 2025",
+    "mapped_rule_id": "can_financial_sufficient_financial_proof_required_updated_threshold_september_2025",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Return transportation cost (~CAD 1,500) must be evidenced on top of living costs and tuition. It is a required component of total funds.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_has_gic",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "Do you have (or plan to buy) a GIC from a participating Canadian bank?",
+    "help_text": "SDS ended (Nov 2024) so a GIC is no longer mandatory, but it is still accepted and strengthens financial proof. Routes the next questions.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Guaranteed Investment Certificate (GIC) Still Accepted as Financial Evidence",
+    "mapped_rule_id": "can_financial_guaranteed_investment_certificate_gic_still_accepted_as_financial_evidence",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A GIC from a participating bank is still accepted as financial evidence, though it is no longer mandatory since SDS closed. It must be accompanied by separate tuition and transport evidence.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_gic_from_participating_bank",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "If using a GIC, is it from a participating bank (CIBC, BMO, Scotiabank, RBC, TD, National Bank)?",
+    "help_text": "Only GICs from participating institutions are recognised. Verify before buying.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "can_has_gic",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Guaranteed Investment Certificate (GIC) Still Accepted as Financial Evidence",
+    "mapped_rule_id": "can_financial_guaranteed_investment_certificate_gic_still_accepted_as_financial_evidence",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Only GICs from IRCC-recognised institutions (CIBC, BMO, Scotiabank, RBC, TD, National Bank) are accepted. A GIC from another institution will not count.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_gic_not_only_proof",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Financial",
+    "question": "Do you understand a GIC alone is not enough — tuition and transport must also be evidenced?",
+    "help_text": "A GIC covers part of living costs; you must still evidence tuition payment and transport separately.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "can_has_gic",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Guaranteed Investment Certificate (GIC) Still Accepted as Financial Evidence",
+    "mapped_rule_id": "can_financial_guaranteed_investment_certificate_gic_still_accepted_as_financial_evidence",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A GIC covers part of your living costs but does not replace tuition or return transport evidence. All three elements must be evidenced separately.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents/financial-support.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_stay_six_months_or_more",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Medical",
+    "question": "Will you be in Canada for 6 months or more?",
+    "help_text": "Stays of 6+ months generally require an immigration medical exam (IME). Routes the medical questions.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Medical Exam Required for Stays of 6+ Months",
+    "mapped_rule_id": "can_medical_medical_exam_required_for_stays_of_6_months",
+    "scoring_key": "health_security",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Most study permit holders stay more than 6 months. This determines whether an immigration medical exam (IME) is required for your application.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_medical_exam_required_completed",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Medical",
+    "question": "If required, have you completed your immigration medical exam (IME)?",
+    "help_text": "An IME is required for 6+ month stays. Pakistani applicants typically need TB screening (chest X-ray).",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "can_stay_six_months_or_more",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Medical Exam Required for Stays of 6+ Months",
+    "mapped_rule_id": "can_medical_medical_exam_required_for_stays_of_6_months",
+    "scoring_key": "health_security",
+    "score_impact": 7,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "An immigration medical exam by an IRCC panel physician is required for stays of 6 months or more. Pakistani applicants typically require TB screening.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_medical_panel_physician",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Medical",
+    "question": "Will you use an IRCC-approved panel physician (not a random local clinic)?",
+    "help_text": "Only exams by IRCC panel physicians count. A cheaper local clinic's report is worthless for the permit.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "can_stay_six_months_or_more",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Medical Exam Required for Stays of 6+ Months",
+    "mapped_rule_id": "can_medical_medical_exam_required_for_stays_of_6_months",
+    "scoring_key": "health_security",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Only exams conducted by IRCC-approved panel physicians are accepted. A report from a local clinic not on the panel list is worthless for the study permit application.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_biometrics_fee_paid",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Biometrics",
+    "question": "Have you paid (or will you pay) the biometrics fee?",
+    "help_text": "Biometrics (CAD ~85) apply to most applicants aged 14–79. Pay it and book at a VAC in Pakistan.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Biometrics Required for Most Applicants Aged 14–79",
+    "mapped_rule_id": "can_biometrics_biometrics_required_for_most_applicants_aged_14_79",
+    "scoring_key": "health_security",
+    "score_impact": 3,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "The biometrics fee (~CAD 85) must be paid as part of your application. Biometrics are required for most applicants aged 14–79 and are given at a Visa Application Centre.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/biometrics.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_biometrics_completed",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Biometrics",
+    "question": "Have you completed biometrics at a Visa Application Centre?",
+    "help_text": "Complete biometrics at a VAC after receiving the Biometrics Instruction Letter (BIL). Delays here slow processing.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not yet",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_yet"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Biometrics Required for Most Applicants Aged 14–79",
+    "mapped_rule_id": "can_biometrics_biometrics_required_for_most_applicants_aged_14_79",
+    "scoring_key": "health_security",
+    "score_impact": 3,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Biometrics must be completed at a VAC in Pakistan after you receive your Biometrics Instruction Letter. Delays in completing biometrics slow application processing.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/biometrics.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_has_bil",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Biometrics",
+    "question": "Do you have your Biometrics Instruction Letter (BIL)?",
+    "help_text": "The BIL is issued after you apply and pay; you need it to give biometrics.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not yet",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Biometrics Required for Most Applicants Aged 14–79",
+    "mapped_rule_id": "can_biometrics_biometrics_required_for_most_applicants_aged_14_79",
+    "scoring_key": "health_security",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your Biometrics Instruction Letter is issued by IRCC after you submit and pay. You need it before you can give biometrics at a VAC.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/biometrics.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_previous_refusals_or_violations",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Immigration History",
+    "question": "Have you EVER had a visa refusal, cancellation, or overstay in ANY country (UK, USA, Canada, Schengen, etc.)?",
+    "help_text": "Prior refusals are visible and heavily weighed. A refusal is survivable IF disclosed and explained — concealment is fatal and is misrepresentation.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Immigration History and Full Disclosure",
+    "mapped_rule_id": "can_immigration_history_immigration_history_and_full_disclosure",
+    "scoring_key": "immigration_history",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Prior refusals, cancellations, or overstays in any country are visible to IRCC. They must be disclosed — concealment is misrepresentation with a 5-year A40 bar.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_refusal_countries",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Immigration History",
+    "question": "If yes, which country/countries and the stated reason?",
+    "help_text": "Note each refusal and reason — you must address each in your Letter of Explanation.",
+    "input_type": "text",
+    "required": false,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": {
+      "question_id": "can_previous_refusals_or_violations",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Immigration History and Full Disclosure",
+    "mapped_rule_id": "can_immigration_history_immigration_history_and_full_disclosure",
+    "scoring_key": "immigration_history",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_trimmed",
+    "error_message": "Record each prior refusal, its country, and the stated reason accurately. You must address each one in your Letter of Explanation.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_asylum_history",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Immigration History",
+    "question": "Have you ever claimed asylum/protection in any country?",
+    "help_text": "An asylum history strongly conflicts with 'temporary student who will leave' and must be addressed candidly, ideally with legal advice.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Immigration History and Full Disclosure",
+    "mapped_rule_id": "can_immigration_history_immigration_history_and_full_disclosure",
+    "scoring_key": "immigration_history",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A prior asylum claim strongly conflicts with temporary student intent and must be disclosed honestly in your application, ideally with qualified legal advice.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_all_docs_truthful",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Declaration",
+    "question": "Are ALL your documents and statements completely truthful, with nothing omitted or altered?",
+    "help_text": "Misrepresentation (fake bank balances, altered transcripts, hidden refusals) causes refusal AND a 5-year ban under A40. This applies even if an agent did it in your name.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "All Documents and Statements Must Be Truthful (Misrepresentation Bar)",
+    "mapped_rule_id": "can_integrity_all_documents_and_statements_must_be_truthful_misrepresentation_bar",
+    "scoring_key": "immigration_history",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Any misrepresentation — fake bank balances, altered transcripts, hidden refusals — triggers refusal and a 5-year inadmissibility bar under A40, even if an agent prepared the documents.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_understands_sds_closed",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Application Stream",
+    "question": "Do you understand the Student Direct Stream (SDS) has ended and you apply via the regular stream?",
+    "help_text": "SDS ended 8 Nov 2024. There is no fast GIC+IELTS shortcut now — everyone uses the regular study permit stream.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Student Direct Stream (SDS) Ended — November 8, 2024",
+    "mapped_rule_id": "can_application_stream_student_direct_stream_sds_ended_november_8_2024",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "The Student Direct Stream ended on 8 November 2024. All applicants now use the regular study permit stream; there is no fast-track GIC+IELTS shortcut.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_plans_change_school",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Changing Schools",
+    "question": "Do you plan to change DLI after arriving?",
+    "help_text": "Since Nov 2024 you must apply for a NEW study permit to change DLI — you cannot just switch. Routes the next question.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Changing Schools Requires a New Study Permit (From November 8, 2024)",
+    "mapped_rule_id": "can_conditions_changing_schools_requires_a_new_study_permit_from_november_8_2024",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Indicate whether you plan to change DLI after arriving. Since November 2024, changing DLI requires an approved new study permit before switching.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_understands_new_permit_for_school_change",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Changing Schools",
+    "question": "Do you understand a school change now needs a new study permit (approved before switching)?",
+    "help_text": "Switching DLI without a new permit breaches your conditions. Plan your program carefully before applying.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "can_plans_change_school",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Changing Schools Requires a New Study Permit (From November 8, 2024)",
+    "mapped_rule_id": "can_conditions_changing_schools_requires_a_new_study_permit_from_november_8_2024",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Switching DLI without an approved new study permit breaches your conditions of stay. You must apply for and receive the new permit before changing institutions.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_program_started_before_work",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Work Rights",
+    "question": "Do you understand you can only work off-campus once your program has started?",
+    "help_text": "Off-campus work is only allowed after studies begin, not on arrival.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Off-Campus Work Limited to 24 Hours Per Week",
+    "mapped_rule_id": "can_work_rights_off_campus_work_limited_to_24_hours_per_week",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Off-campus work is only permitted after your studies have begun — not from the date of arrival. Understand this timing before travelling to Canada.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-off-campus.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_understands_24_hour_work_limit",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Work Rights",
+    "question": "Do you understand the 24-hours-per-week off-campus work limit during sessions?",
+    "help_text": "Off-campus work is capped at 24 hrs/week while classes are in session (full-time during scheduled breaks). Over-working breaches your permit.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Off-Campus Work Limited to 24 Hours Per Week",
+    "mapped_rule_id": "can_work_rights_off_campus_work_limited_to_24_hours_per_week",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Off-campus work is limited to 24 hours per week while classes are in session. Exceeding this limit breaches your study permit conditions.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-off-campus.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_has_sin_plan",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Work Rights",
+    "question": "Do you know you need a SIN to work in Canada?",
+    "help_text": "A Social Insurance Number is required to work legally; apply after arrival.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Off-Campus Work Limited to 24 Hours Per Week",
+    "mapped_rule_id": "can_work_rights_off_campus_work_limited_to_24_hours_per_week",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A Social Insurance Number is required to work legally in Canada. Apply for one after arriving — bring your study permit and other identity documents.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/work-off-campus.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_authorized_leave_understands",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Study Permit Conditions",
+    "question": "Do you understand authorized leave from studies cannot exceed 150 days?",
+    "help_text": "Stopping studies beyond 150 days without authorisation can lead to loss of status.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Authorized Leave Cannot Exceed 150 Days",
+    "mapped_rule_id": "can_conditions_authorized_leave_cannot_exceed_150_days",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Pausing studies beyond 150 days without authorisation risks loss of your study permit status. Understand this requirement before travelling to Canada.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/while-you-study/study-permit-conditions.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_extension_before_expiry",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Study Permit Conditions",
+    "question": "Do you understand you must apply to extend BEFORE your permit expires?",
+    "help_text": "Apply to extend at least 30 days before expiry to keep maintained status.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Must Apply to Extend Study Permit Before It Expires",
+    "mapped_rule_id": "can_conditions_must_apply_to_extend_study_permit_before_it_expires",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "You must apply to extend your study permit before it expires to maintain your legal status in Canada. Apply at least 30 days before expiry.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/while-you-study/study-permit-conditions.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_brings_spouse",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Dependants",
+    "question": "Are you bringing a spouse/common-law partner who wants to work?",
+    "help_text": "Spousal open work permits are now restricted (see next question). Routes accordingly.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Spousal Open Work Permit Now Restricted to Masters (16+ Months) and Doctoral Students",
+    "mapped_rule_id": "can_dependants_spousal_open_work_permit_now_restricted_to_masters_16_months_and_doctoral_students",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Indicate whether you are bringing a spouse or common-law partner who wishes to work. Spousal open work permits are now restricted to specific program types.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_spouse_owp_eligible_program",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Dependants",
+    "question": "If yes, is your program Masters (16+ months)/doctoral or another OWP-eligible program?",
+    "help_text": "From Jan 2025, spousal OWPs are limited mainly to spouses of Masters (16+ months)/doctoral and select students. Undergrad/college spouses are generally ineligible.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "can_brings_spouse",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Spousal Open Work Permit Now Restricted to Masters (16+ Months) and Doctoral Students",
+    "mapped_rule_id": "can_dependants_spousal_open_work_permit_now_restricted_to_masters_16_months_and_doctoral_students",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "From January 2025, spousal open work permits are mainly limited to spouses of Masters (16+ months) or doctoral students. Undergraduate or short-program spouses are generally ineligible.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_pgwp_goal",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "PGWP Planning",
+    "question": "Is a Post-Graduation Work Permit (PGWP) part of your plan?",
+    "help_text": "PGWP eligibility now depends on the DLI AND, for non-degree programs, the field of study. Routes the next questions.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "PGWP Requires PGWP-Eligible DLI and Qualifying Field of Study (Non-Degree Programs)",
+    "mapped_rule_id": "can_pgwp_pgwp_requires_pgwp_eligible_dli_and_qualifying_field_of_study_non_degree_programs",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Indicate whether a Post-Graduation Work Permit is part of your plan. PGWP eligibility depends on both the DLI and, for non-degree programs, the field of study.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_pgwp_eligible_dli",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "PGWP Planning",
+    "question": "If aiming for PGWP, is your DLI/program PGWP-eligible?",
+    "help_text": "Confirm PGWP eligibility before enrolling. Some programs/DLIs do not qualify — a common trap sold by agents.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "can_pgwp_goal",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "PGWP Requires PGWP-Eligible DLI and Qualifying Field of Study (Non-Degree Programs)",
+    "mapped_rule_id": "can_pgwp_pgwp_requires_pgwp_eligible_dli_and_qualifying_field_of_study_non_degree_programs",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Not all DLIs or programs qualify for a PGWP. Confirm your DLI and program are PGWP-eligible before enrolling — agents commonly sell PGWP-ineligible programs.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_non_degree_cip_checked",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "PGWP Planning",
+    "question": "For a non-degree program, have you checked it maps to an eligible field (CIP) for PGWP?",
+    "help_text": "Non-degree (college diploma) PGWP eligibility is now tied to fields linked to labour shortages. Verify your program's field.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "can_pgwp_goal",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "PGWP Requires PGWP-Eligible DLI and Qualifying Field of Study (Non-Degree Programs)",
+    "mapped_rule_id": "can_pgwp_pgwp_requires_pgwp_eligible_dli_and_qualifying_field_of_study_non_degree_programs",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "For non-degree programs, PGWP eligibility depends on the Classification of Instructional Programs (CIP) code. Verify your program maps to an eligible field before enrolling.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/work/after-graduation/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_agent_prepared_docs",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Agent Integrity",
+    "question": "Did an education agent/consultant prepare or submit any of your documents?",
+    "help_text": "Using an agent is fine — but YOU are responsible for everything submitted in your name. Routes to verification.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any",
+        "value": null
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "can_integrity_application_integrity_and_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Using an education agent is permitted, but you are legally responsible for everything submitted in your name regardless of who prepared it.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_personally_reviewed_all",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Agent Integrity",
+    "question": "Have you personally read and verified EVERY document and answer submitted in your name?",
+    "help_text": "Some agents inflate bank balances, fake experience letters, or alter transcripts. If an agent fabricated anything, YOU face refusal AND a 5-year misrepresentation ban (A40). Verify every line yourself.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "can_integrity_application_integrity_and_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "You must personally verify every document and answer submitted in your name. Agent-fabricated content — false balances, altered transcripts — makes you liable for refusal and a 5-year ban.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "can_agent_registered",
+    "country": "Canada",
+    "visa_route": "Study Permit",
+    "section": "Agent Integrity",
+    "question": "Is your agent reputable/authorised (institution-linked or a regulated consultant), not an unknown middleman?",
+    "help_text": "Prefer institution-authorised reps or an ICCRC/CICC-regulated consultant. 'Guaranteed visa' middlemen cause most fraud-related refusals.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "can_integrity_application_integrity_and_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Use a reputable, institution-authorised agent or an ICCRC/CICC-regulated consultant. Unregulated 'guaranteed visa' middlemen are the primary source of fraud-related refusals.",
+    "source_url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/eligibility.html",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  }
+]

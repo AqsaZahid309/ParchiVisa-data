@@ -1,0 +1,24 @@
+{
+  "country": "USA",
+  "visa_route": "F-1 Student Visa",
+  "last_verified": "2026-05-29",
+  "description": "Lookup table resolving source_ids used in USA F-1 student visa questions.",
+  "sources": {
+    "usa_src_state_dept": {
+      "name": "US Department of State — Student Visa",
+      "url": "https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html"
+    },
+    "usa_src_dhs_studyinstates": {
+      "name": "DHS Study in the States",
+      "url": "https://studyinthestates.dhs.gov/"
+    },
+    "usa_src_ice_sevis": {
+      "name": "ICE — SEVIS (Student and Exchange Visitor Information System)",
+      "url": "https://www.ice.gov/sevis"
+    },
+    "usa_src_ina_214b": {
+      "name": "US Department of State — Visa Denials / Section 214(b)",
+      "url": "https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-denials.html"
+    }
+  }
+}

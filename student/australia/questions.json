@@ -1,0 +1,2752 @@
+[
+  {
+    "id": "aus_applicant_age",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Profile",
+    "question": "What is your age (in years)?",
+    "help_text": "Subclass 500 applicants are usually 6+ for school sectors and 18+ for higher education. This is informational and rarely a problem for university applicants.",
+    "input_type": "number",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "gte",
+        "value": 6
+      },
+      "trigger_if": {
+        "type": "lt",
+        "value": 6
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Character Requirement — Police Clearances Required",
+    "mapped_rule_id": "aus_student_character_police_clearances",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "numeric",
+    "error_message": "Enter your age in years. Subclass 500 typically requires applicants to be at least 6 for school sectors and 18 for higher education.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_current_location",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Profile",
+    "question": "Are you applying from inside or outside Australia?",
+    "help_text": "Most Pakistani applicants apply from outside Australia (offshore). This affects health-exam and biometric logistics, not eligibility.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Inside Australia",
+        "value": "inside_australia"
+      },
+      {
+        "label": "Outside Australia",
+        "value": "outside_australia"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Health Examination Required",
+    "mapped_rule_id": "aus_student_health_examination_required",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Indicate whether you are applying from inside or outside Australia. This affects health exam and biometric logistics, not eligibility.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_is_main_applicant",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Profile",
+    "question": "Are you the main (primary) student applicant?",
+    "help_text": "The main applicant is the student. A spouse/children would be added as dependants with extra funds required.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Visa Application Fee AUD 2,000",
+    "mapped_rule_id": "aus_student_visa_application_fee",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Indicate whether you are the primary student applicant. A spouse or children added as dependants require additional funds evidence.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_has_coe",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Enrolment",
+    "question": "Do you already hold a valid Confirmation of Enrolment (CoE) from your Australian institution?",
+    "help_text": "You cannot lodge a Subclass 500 without a valid CoE from a CRICOS-registered provider. An offer letter is NOT a CoE — the CoE is issued after you accept and pay the deposit.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Confirmation of Enrolment (CoE) Required",
+    "mapped_rule_id": "aus_student_coe_required",
+    "scoring_key": "enrolment_documents",
+    "score_impact": 10,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A valid Confirmation of Enrolment from a CRICOS-registered provider is mandatory. Your application cannot proceed without one — an offer letter is not a CoE.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_coe_number_entered",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Enrolment",
+    "question": "Do you have your CoE number ready to enter in ImmiAccount?",
+    "help_text": "The exact CoE number must be entered during lodgement. Keep the PDF from your provider handy.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Confirmation of Enrolment (CoE) Required",
+    "mapped_rule_id": "aus_student_coe_required",
+    "scoring_key": "enrolment_documents",
+    "score_impact": 5,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "The exact CoE number must be entered during lodgement in ImmiAccount. Keep the CoE PDF from your provider available.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_all_courses_have_coe",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Enrolment",
+    "question": "If you have a packaged/multiple courses (e.g. foundation + degree), do you have a CoE for every course?",
+    "help_text": "Packaged courses (common for pathway/foundation programs) need a CoE for each stage at lodgement.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Confirmation of Enrolment (CoE) Required",
+    "mapped_rule_id": "aus_student_coe_required",
+    "scoring_key": "enrolment_documents",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "For packaged or pathway programs, each course stage requires its own CoE at lodgement. A single CoE for only one stage is insufficient.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_cricos_provider",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Enrolment",
+    "question": "Is your institution CRICOS-registered? (Check at cricos.teqsa.gov.au)",
+    "help_text": "Many Pakistani students are mis-sold by agents into non-CRICOS providers. Verify the provider yourself on the official CRICOS register before paying anything.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Full-Time Enrolment at CRICOS-Registered Institution Required",
+    "mapped_rule_id": "aus_student_cricos_enrolment_required",
+    "scoring_key": "enrolment_documents",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your institution must be registered on the CRICOS register. Verify the provider yourself at cricos.teqsa.gov.au before paying any agent or deposit.",
+    "source_url": "https://cricos.teqsa.gov.au/",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_cricos_course",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Enrolment",
+    "question": "Is your specific course (not just the institution) listed on CRICOS?",
+    "help_text": "The exact course must be CRICOS-registered, not only the university. Search your course title on the CRICOS register.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Full-Time Enrolment at CRICOS-Registered Institution Required",
+    "mapped_rule_id": "aus_student_cricos_enrolment_required",
+    "scoring_key": "enrolment_documents",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your specific course — not just the institution — must be listed on the CRICOS register. Search the course title yourself at cricos.teqsa.gov.au.",
+    "source_url": "https://cricos.teqsa.gov.au/",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_full_time_enrolment",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Enrolment",
+    "question": "Is your enrolment full-time?",
+    "help_text": "Subclass 500 requires full-time study. Part-time enrolment is not eligible.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Full-Time Enrolment at CRICOS-Registered Institution Required",
+    "mapped_rule_id": "aus_student_cricos_enrolment_required",
+    "scoring_key": "enrolment_documents",
+    "score_impact": 5,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Subclass 500 requires full-time enrolment. Part-time enrolment is not eligible and your application cannot proceed on that basis.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_gs_responses_ready",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Genuine Student",
+    "question": "Have you prepared answers to the Genuine Student (GS) questions in the application form?",
+    "help_text": "Since March 2024 the old GTE statement is replaced by GS questions answered directly in the form (ties at home, why this course/Australia, course-career benefit, plus any relevant facts). Weak/generic GS answers are the No.1 refusal reason for Pakistani applicants.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student (GS) Requirement",
+    "mapped_rule_id": "aus_student_genuine_student_requirement",
+    "scoring_key": "genuine_student",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Since March 2024, the GS questions in the application form replace the old GTE statement. Weak or generic GS answers are the leading refusal cause for Pakistani applicants.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_gs_home_ties",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Genuine Student",
+    "question": "Can you give specific, documentable ties to Pakistan that show you will return (family, property, job offer, business, dependants)?",
+    "help_text": "Vague ties ('my family is here') are weak. Strong ties are documentable: ancestral property in your name, a written return job offer, a family business you are part of, dependants relying on you.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student (GS) Requirement",
+    "mapped_rule_id": "aus_student_genuine_student_requirement",
+    "scoring_key": "genuine_student",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Documentable ties to Pakistan — property in your name, a written return job offer, a family business, dependants relying on you — are stronger than vague claims about family.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_gs_course_reason",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Genuine Student",
+    "question": "Can you explain — in concrete terms — why this exact course and Australia, not just 'good universities'?",
+    "help_text": "Officers reject generic reasons. Name the specific units, faculty, accreditation, or industry link that maps to YOUR background and a Pakistan-based career outcome.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student (GS) Requirement",
+    "mapped_rule_id": "aus_student_genuine_student_requirement",
+    "scoring_key": "genuine_student",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Officers reject generic reasons for choosing Australia or this course. Name the specific units, faculty, accreditation, or industry link that connects to your background.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_gs_career_benefit",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Genuine Student",
+    "question": "Can you explain how this qualification improves your career back in Pakistan (with a realistic salary/role)?",
+    "help_text": "Show the path: current background → this course → a named role/sector in Pakistan. A course with no logical career payoff at home signals migration intent.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student (GS) Requirement",
+    "mapped_rule_id": "aus_student_genuine_student_requirement",
+    "scoring_key": "genuine_student",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Show a clear path: your current background → this course → a named role or sector in Pakistan. A course with no logical career payoff at home signals migration intent.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_gs_why_australia_vs_cheaper",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Genuine Student",
+    "question": "Can you justify choosing Australia over cheaper/closer options (e.g. local universities, Malaysia, Gulf)?",
+    "help_text": "EL3 officers probe 'why spend this much?'. Have a defensible reason tied to course quality/accreditation — not lifestyle or work rights.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student (GS) Requirement",
+    "mapped_rule_id": "aus_student_genuine_student_requirement",
+    "scoring_key": "genuine_student",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Have a specific, defensible reason for choosing Australia over cheaper alternatives — one tied to course quality or accreditation, not lifestyle or work rights.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_gs_course_aligns_career",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Genuine Student",
+    "question": "Does this course logically follow your previous education and/or work, or can you justify any switch?",
+    "help_text": "A drastic, unexplained field change (e.g. MBBS → hospitality) is a classic refusal trigger. If you are switching, your GS answer must explain it credibly.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student (GS) Requirement",
+    "mapped_rule_id": "aus_student_genuine_student_requirement",
+    "scoring_key": "genuine_student",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A drastic unexplained field change is a classic refusal trigger. If you are switching fields, your GS answer must connect your old and new fields with a credible career narrative.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_gs_return_evidence_ready",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Genuine Student",
+    "question": "Do you have documents (not just words) to back your intention to return to Pakistan?",
+    "help_text": "Attach what you can: property papers, family business registration, a conditional return job letter. Documents beat narrative.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student (GS) Requirement",
+    "mapped_rule_id": "aus_student_genuine_student_requirement",
+    "scoring_key": "genuine_student",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Documents supporting your return to Pakistan — property papers, business registration, a conditional return job letter — strengthen your GS case significantly.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_prior_aus_student_visa",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Genuine Student",
+    "question": "Have you previously held an Australian student visa?",
+    "help_text": "Informational. A prior compliant Australian visa can help; a prior breach must be disclosed in the immigration-history section.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Genuine Student (GS) Requirement",
+    "mapped_rule_id": "aus_student_genuine_student_requirement",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Indicate whether you have previously held an Australian student visa. A prior compliant visa can support your case; a prior breach must be disclosed.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_edu_gap_over_1yr",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Education",
+    "question": "Do you have any education or employment gap longer than 12 months since Matric/FSc/A-Levels/Bachelors?",
+    "help_text": "Gaps are common in Pakistan (exam delays, family reasons, work). A gap is not fatal by itself — an UNEXPLAINED gap is. This routes to the next question.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Course Logic (GS-linked)",
+    "mapped_rule_id": "aus_student_educational_consistency",
+    "scoring_key": "education_consistency",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Education or employment gaps of over 12 months must be explained and evidenced. An unexplained gap is an Assessment Level 3 risk factor.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_edu_gap_justified",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Education",
+    "question": "If you have a gap over 12 months, can you justify it with evidence (job letters, exam transcripts, family/medical reasons)?",
+    "help_text": "Provide employment letters, salary slips, freelance/contract proof, or transcripts covering the gap years. 'I was preparing' without proof is weak.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "aus_edu_gap_over_1yr",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Educational Consistency and Course Logic (GS-linked)",
+    "mapped_rule_id": "aus_student_educational_consistency",
+    "scoring_key": "education_consistency",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "An unexplained gap of over 12 months weakens your GS case at EL3. Provide employment letters, salary slips, freelance contracts, or transcripts covering the gap period.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_drastic_field_change",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Education",
+    "question": "Is your Australian course in a substantially different field from your last qualification?",
+    "help_text": "A large field switch is allowed but heavily scrutinised at EL3. If yes, your GS answers must connect old and new fields with a credible career story.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Course Logic (GS-linked)",
+    "mapped_rule_id": "aus_student_educational_consistency",
+    "scoring_key": "education_consistency",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A significant unexplained field switch is heavily scrutinised at Assessment Level 3. Your GS answers must connect your previous qualification to this course with a credible career narrative.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/genuine-student-requirement",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_transcripts_authenticated",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Education",
+    "question": "Are your academic transcripts/degrees verifiable and, where needed, attested (HEC/IBCC) and translated?",
+    "help_text": "EL3 requires authenticated academic documents. Get HEC attestation for degrees and IBCC for FSc/Matric where applicable; provide certified English translations.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Educational Consistency and Course Logic (GS-linked)",
+    "mapped_rule_id": "aus_student_educational_consistency",
+    "scoring_key": "education_consistency",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Assessment Level 3 requires authenticated academic documents. Obtain HEC attestation for degrees and IBCC attestation for Matric/FSc where applicable, with certified English translations.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_tuition_first_year",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "What is your first-year tuition fee (in AUD) as shown on your CoE?",
+    "help_text": "Enter the AUD figure from your CoE/offer. The tool adds living costs and airfare to compute your minimum required funds.",
+    "input_type": "currency_amount",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "gt",
+        "value": 0
+      },
+      "trigger_if": {
+        "type": "lte",
+        "value": 0
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "numeric_aud",
+    "error_message": "Enter the first-year tuition in AUD as shown on your CoE. This figure is used to calculate the minimum funds required for your application.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_available_funds",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "How much money (in AUD equivalent) can you genuinely show as accessible for your studies?",
+    "help_text": "Minimum = first-year tuition + AUD 29,710 living costs + ~AUD 2,500 airfare (plus extra for any dependants). Funds must be genuine and accessible, not just a number on paper.",
+    "input_type": "currency_amount",
+    "required": true,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "computed_funds_ok"
+      },
+      "trigger_if": {
+        "type": "computed_funds_short",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 10,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "numeric_aud",
+    "error_message": "Funds must cover first-year tuition + AUD 29,710 living costs + ~AUD 2,500 return airfare. They must be genuine, accessible, and consistently held — not just a number on paper.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_funds_cover_tuition_living_travel",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "Do your funds cover first-year tuition + AUD 29,710 living costs + return airfare (and dependants if any)?",
+    "help_text": "This is the core financial-capacity test. Under-funding is a top refusal cause. Use current figures — the living cost rose from 24,505 to 29,710 in 2024.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 8,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Under-funding is a top refusal cause at Assessment Level 3. Your total evidence must cover tuition + AUD 29,710 living + return airfare, plus any dependant additions.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_funds_source",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "What is the MAIN source of your funds?",
+    "help_text": "Each source has its own evidence trail. The follow-up questions check whether that trail is documented to EL3 standard.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Own savings",
+        "value": "own_savings"
+      },
+      {
+        "label": "Parent / guardian sponsor",
+        "value": "parent_guardian_sponsor"
+      },
+      {
+        "label": "Spouse sponsor",
+        "value": "spouse_sponsor"
+      },
+      {
+        "label": "Property sale proceeds",
+        "value": "property_sale"
+      },
+      {
+        "label": "Bank loan (sanctioned)",
+        "value": "bank_loan_sanctioned"
+      },
+      {
+        "label": "Scholarship or funding letter",
+        "value": "scholarship"
+      },
+      {
+        "label": "Business income",
+        "value": "business_income"
+      },
+      {
+        "label": "Other",
+        "value": "other"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Each funding source requires its own paper trail. The follow-up questions check whether each source is documented to EL3 standard.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_funds_held_3_months",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "Have your funds been held in the account for at least 3 months (consistent balance), not just deposited recently?",
+    "help_text": "EL3 expects a settled balance history (~3 months minimum). Unlike the UK there is no fixed 28-day rule, but a long consistent balance beats a recent lump sum every time.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Assessment Level 3 expects approximately 3 months of consistent balance history. A balance that appears suddenly before applying signals arranged funds.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_bank_history_consistent",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "Do your (or your sponsor's) bank statements show a stable, consistent balance over several months?",
+    "help_text": "Erratic statements (empty for months, then suddenly full) signal arranged funds and trigger verification calls to your bank.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Erratic statements — empty for months then suddenly full — signal arranged funds and can trigger bank verification calls from the case officer.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_large_recent_deposits",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "Were there any large or sudden deposits in the last few months?",
+    "help_text": "Large recent deposits are not banned — but each one must be explainable with a paper trail. This routes to the source-of-funds check.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Large recent deposits are not barred but each must be explainable with a paper trail: a registered sale deed, salary record, loan letter, or notarised gift affidavit.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_source_of_funds_documented",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "Can you document the source of every significant deposit (sale deed, salary, loan letter, gift affidavit)?",
+    "help_text": "EL3's core test. Each major deposit needs proof: registered sale deed for property, FBR-declared salary, sanctioned loan letter, or a notarised gift affidavit from a traceable giver.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 5,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Every significant deposit must have documentary proof: a registered sale deed, FBR-declared salary, formal bank loan letter, or a notarised gift affidavit from a traceable source.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_sponsor_immediate_family",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "If sponsored, is your sponsor an immediate family member (parent, spouse, sibling)?",
+    "help_text": "Immediate-family sponsorship is expected and trusted. Distant relatives or 'family friends' as sponsors raise scrutiny and need a strong relationship + funds-source explanation.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Distant-relative or 'family friend' sponsors attract greater scrutiny. An immediate family sponsor (parent, spouse, sibling) is expected and easier to establish.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_sponsor_files_fbr",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "If sponsored, does your sponsor file income tax returns with the FBR, matching the funds they are providing?",
+    "help_text": "A sponsor showing large funds but no FBR tax history is a major red flag — it implies undeclared/untraceable income. Sponsor's declared income should plausibly support the amount.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A sponsor with large funds but no FBR filing history implies undeclared income. The sponsor's declared income should plausibly match the amount they are providing.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_property_sale_documented",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "If property sale is funding you, do you have the registered sale deed and bank-routed proceeds?",
+    "help_text": "Property-sale funding is fine if the sale deed is registered and money entered the account through the banking channel — not cash.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "aus_funds_source",
+      "operator": "eq",
+      "value": "property_sale"
+    },
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Property-sale proceeds are accepted if the sale deed is registered and the proceeds were routed through a banking channel — not received as cash.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_loan_sanctioned",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "If a loan is funding you, do you have an official sanction/disbursement letter from a recognised bank?",
+    "help_text": "Education loans are accepted with a formal sanction letter from a recognised financial institution. Informal/family loans are not the same and carry less weight.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "aus_funds_source",
+      "operator": "eq",
+      "value": "bank_loan_sanctioned"
+    },
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "An education loan requires a formal sanction letter from a recognised bank. Informal family loans carry less weight as financial evidence.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_has_dependant_funds",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "If including a partner/children, do you have the extra required funds for each dependant?",
+    "help_text": "Add ~AUD 10,394 for a partner and ~AUD 4,449 per child to your required funds. Under-funding dependants invalidates the financial test.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Financial Capacity — Must Cover Tuition, Living Costs, Travel",
+    "mapped_rule_id": "aus_student_financial_capacity",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Each dependant requires additional funds (~AUD 10,394 for a partner, ~AUD 4,449 per child). Under-funding dependants invalidates the financial test.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/financial-capacity",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_can_pay_visa_fee",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Financial",
+    "question": "Can you pay the Subclass 500 application charge (~AUD 2,000, separate from the funds you must show)?",
+    "help_text": "The visa charge (~AUD 2,000 per primary applicant) is paid at lodgement and is separate from your evidence-of-funds. Confirm the current charge before lodging.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Visa Application Fee AUD 2,000",
+    "mapped_rule_id": "aus_student_visa_application_fee",
+    "scoring_key": "financial_legitimacy",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "The Subclass 500 application charge (~AUD 2,000 per primary applicant) is paid at lodgement in ImmiAccount and is separate from your evidence-of-funds.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_has_oshc",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "OSHC",
+    "question": "Have you arranged Overseas Student Health Cover (OSHC) from an Australian provider?",
+    "help_text": "OSHC is mandatory and must be from an approved Australian provider. Pakistani/local health insurance is NOT accepted.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Overseas Student Health Cover (OSHC) Mandatory",
+    "mapped_rule_id": "aus_student_oshc_mandatory",
+    "scoring_key": "health_character",
+    "score_impact": 4,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Overseas Student Health Cover from an approved Australian provider is mandatory. Local Pakistani or international insurance is not accepted.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_oshc_approved_provider",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "OSHC",
+    "question": "Is your OSHC from an approved provider (Allianz, Bupa, Medibank, NIB, ahm)?",
+    "help_text": "Only the five approved Australian OSHC providers count. Verify before paying.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Overseas Student Health Cover (OSHC) Mandatory",
+    "mapped_rule_id": "aus_student_oshc_mandatory",
+    "scoring_key": "health_character",
+    "score_impact": 3,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Only OSHC from one of the five approved Australian providers (Allianz, Bupa, Medibank, NIB, ahm) is accepted. Verify the provider before purchasing.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_oshc_full_duration",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "OSHC",
+    "question": "Does your OSHC cover your full intended stay (and dependants), starting before course commencement?",
+    "help_text": "Cover must span your whole visa period, starting ~1 week before classes. Gaps in OSHC breach visa conditions.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Overseas Student Health Cover (OSHC) Mandatory",
+    "mapped_rule_id": "aus_student_oshc_mandatory",
+    "scoring_key": "health_character",
+    "score_impact": 3,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your OSHC must cover your full visa period, starting approximately one week before courses commence. Any gap in cover breaches visa conditions.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_english_exempt",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "English",
+    "question": "Are you exempt from the English evidence requirement (e.g. prior study in English in an eligible country)?",
+    "help_text": "Most Pakistani applicants are NOT exempt and must show IELTS/PTE/TOEFL. If unsure, assume you need a test.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "English Language Test Required",
+    "mapped_rule_id": "aus_student_english_language_required",
+    "scoring_key": "enrolment_documents",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Most Pakistani applicants are not exempt from the English evidence requirement. If you are unsure, assume a test is required.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_has_english_test",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "English",
+    "question": "If not exempt, do you have a valid approved English test result (IELTS/PTE/TOEFL/Cambridge)?",
+    "help_text": "A valid result is required unless genuinely exempt. Minimum IELTS 5.5 overall for the visa; your course often needs higher (6.0–7.0).",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "aus_english_exempt",
+      "operator": "eq",
+      "value": "no"
+    },
+    "mapped_rule": "English Language Test Required",
+    "mapped_rule_id": "aus_student_english_language_required",
+    "scoring_key": "enrolment_documents",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A valid approved English test result (IELTS, PTE, TOEFL iBT, or Cambridge) is required unless you are genuinely exempt. The visa minimum is IELTS 5.5 overall.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_english_score_meets_course",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "English",
+    "question": "Does your English score meet BOTH your course requirement and the visa minimum?",
+    "help_text": "Meeting the visa floor (IELTS 5.5) is not enough if your university needs 6.5. Both must be satisfied.",
+    "input_type": "yes_no_unknown",
+    "required": false,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": {
+      "question_id": "aus_english_exempt",
+      "operator": "eq",
+      "value": "no"
+    },
+    "mapped_rule": "English Language Test Required",
+    "mapped_rule_id": "aus_student_english_language_required",
+    "scoring_key": "enrolment_documents",
+    "score_impact": 5,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Your English score must satisfy both the visa minimum (IELTS 5.5) and your course's own requirement. Meeting only the visa floor is not sufficient if the course needs more.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_hap_id_generated",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Health",
+    "question": "Have you generated your HAP ID in ImmiAccount to book your health exam?",
+    "help_text": "The HAP ID lets you book the medical. Generate it early — panel-clinic slots in Pakistan can be limited.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Health Examination Required",
+    "mapped_rule_id": "aus_student_health_examination_required",
+    "scoring_key": "health_character",
+    "score_impact": 2,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Generate your HAP ID in ImmiAccount early to book your health examination. Panel-clinic appointment slots in Pakistan can fill up quickly.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_health_exam_done",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Health",
+    "question": "Have you completed (or booked) the required health examination?",
+    "help_text": "A health exam is mandatory. Pakistani applicants almost always need a chest X-ray for TB screening.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Health Examination Required",
+    "mapped_rule_id": "aus_student_health_examination_required",
+    "scoring_key": "health_character",
+    "score_impact": 3,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A health examination at an approved panel physician is mandatory. Pakistani applicants almost always require a chest X-ray for TB screening.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_health_panel_physician",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Health",
+    "question": "Will you use an approved panel physician / Bupa Medical Visa Services (not a random local clinic)?",
+    "help_text": "Only exams at approved panel clinics count. A cheaper local clinic's report is worthless for the visa and wastes money.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Health Examination Required",
+    "mapped_rule_id": "aus_student_health_examination_required",
+    "scoring_key": "health_character",
+    "score_impact": 3,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Only health examinations conducted by IRCC-approved panel physicians are accepted. A report from a local clinic not on the panel list is worthless for the visa.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_lived_12_months_other_country",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Character",
+    "question": "Have you lived in any country other than Pakistan for 12+ months in the last 10 years?",
+    "help_text": "If yes, you need a police clearance from that country too. Routes to the next question.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Character Requirement — Police Clearances Required",
+    "mapped_rule_id": "aus_student_character_police_clearances",
+    "scoring_key": "health_character",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "If you have lived in any country other than Pakistan for 12 or more months in the last 10 years, you will need a police clearance from that country as well.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_police_clearances_ready",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Character",
+    "question": "Do you have (or can obtain) police clearances for every country where you lived 12+ months?",
+    "help_text": "Pakistani applicants typically need a PCC from NADRA/local police; add clearances for any other country of long residence.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "aus_lived_12_months_other_country",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Character Requirement — Police Clearances Required",
+    "mapped_rule_id": "aus_student_character_police_clearances",
+    "scoring_key": "health_character",
+    "score_impact": 3,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Pakistani applicants typically need a PCC from NADRA or local police. If you have lived abroad for 12+ months, you also need clearances from those countries.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_criminal_history_disclosed",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Character",
+    "question": "Will you disclose any criminal/character matters fully and accurately?",
+    "help_text": "Hiding a character issue is an independent refusal ground — worse than the issue itself. Disclose everything.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Character Requirement — Police Clearances Required",
+    "mapped_rule_id": "aus_student_character_police_clearances",
+    "scoring_key": "health_character",
+    "score_impact": 3,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Hiding a character issue is an independent refusal ground — often more damaging than the underlying matter itself. Disclose everything accurately.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_prior_refusals_overstays",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Immigration History",
+    "question": "Have you EVER had a visa refusal, cancellation, or overstay in any country (UK, Canada, USA, Schengen, etc.)?",
+    "help_text": "Prior refusals (especially UK/Canada/USA) are visible to Australia and heavily scrutinised. A refusal is survivable IF disclosed and explained — concealment is fatal.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Poor Immigration History Causes Refusal",
+    "mapped_rule_id": "aus_student_immigration_history_disclosure",
+    "scoring_key": "immigration_history",
+    "score_impact": 4,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Prior refusals or breaches in any country are visible to Australian case officers and will be heavily scrutinised. Concealment is an independent refusal ground.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_refusal_countries",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Immigration History",
+    "question": "If yes, which country/countries and what was the stated reason?",
+    "help_text": "Note each refusal and its reason. You will need to address each one in your application and GS answers.",
+    "input_type": "text",
+    "required": false,
+    "options": [],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": {
+      "question_id": "aus_prior_refusals_overstays",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Poor Immigration History Causes Refusal",
+    "mapped_rule_id": "aus_student_immigration_history_disclosure",
+    "scoring_key": "immigration_history",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_trimmed",
+    "error_message": "Record each prior refusal, its country, and the stated reason. You will need to address each one in your GS answers and supporting documents.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_history_disclosed",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Immigration History",
+    "question": "Will you disclose ALL prior refusals/breaches in this application (nothing omitted)?",
+    "help_text": "Non-disclosure of immigration history is an independent refusal ground and can trigger a re-entry ban (PIC 4020). Disclose everything, even old/minor matters.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Poor Immigration History Causes Refusal",
+    "mapped_rule_id": "aus_student_immigration_history_disclosure",
+    "scoring_key": "immigration_history",
+    "score_impact": 6,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Non-disclosure of immigration history is an independent refusal ground and can trigger a PIC 4020 three-year exclusion. Disclose everything, including old or minor matters.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_asylum_history",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Immigration History",
+    "question": "Have you ever claimed asylum or protection in any country?",
+    "help_text": "An asylum claim history strongly conflicts with 'temporary student returning home' and must be addressed candidly with legal advice if it applies.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "no"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "yes"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Poor Immigration History Causes Refusal",
+    "mapped_rule_id": "aus_student_immigration_history_disclosure",
+    "scoring_key": "immigration_history",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "A prior asylum claim strongly conflicts with temporary student intent and must be disclosed and addressed candidly, ideally with qualified legal advice.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_changing_course",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Conditions",
+    "question": "Are you switching to a course at a lower level than a visa you already hold?",
+    "help_text": "Relevant only if you already hold a student visa and want to drop to a lower AQF level. Routes to the AQF check.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Course Must Be at the Same or Higher AQF Level (Condition 8202)",
+    "mapped_rule_id": "aus_student_aqf_level_condition_8202",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Indicate whether you are switching to a different course level. Dropping to a lower AQF level on the same visa breaches Condition 8202.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_course_same_higher_aqf",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Conditions",
+    "question": "If changing courses, is the new course at the SAME or HIGHER AQF level?",
+    "help_text": "Dropping to a lower AQF level on the same visa breaches Condition 8202 and risks cancellation. You'd need a new Subclass 500.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": {
+      "question_id": "aus_changing_course",
+      "operator": "eq",
+      "value": "yes"
+    },
+    "mapped_rule": "Course Must Be at the Same or Higher AQF Level (Condition 8202)",
+    "mapped_rule_id": "aus_student_aqf_level_condition_8202",
+    "scoring_key": "general_awareness",
+    "score_impact": 2,
+    "risk_category": "Critical",
+    "tier": "hard",
+    "blocker_possible": true,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Dropping to a lower AQF level on the same visa breaches Condition 8202 and risks visa cancellation. You would need to apply for a new Subclass 500.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_understands_work_limit",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Conditions",
+    "question": "Do you understand the 48-hours-per-fortnight work limit during study?",
+    "help_text": "Work is capped at 48 hours/fortnight while classes are in session (unlimited during scheduled breaks). Breaching it risks cancellation.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Work Limited to 48 Hours Per Fortnight During Study",
+    "mapped_rule_id": "aus_student_work_limit_48hrs_fortnight",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Work is capped at 48 hours per fortnight while classes are in session (unlimited during scheduled breaks). Exceeding this limit breaches your visa conditions.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_maintain_full_time_progress",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Conditions",
+    "question": "Do you understand you must stay enrolled full-time and meet satisfactory academic progress?",
+    "help_text": "Condition 8202: maintain full-time enrolment and progress. Failing this is a common cause of cancellation for students who treat study as secondary.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "eq",
+        "value": "no"
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Must Maintain Full-Time Enrolment and Satisfactory Academic Progress",
+    "mapped_rule_id": "aus_student_fulltime_enrolment_progress",
+    "scoring_key": "general_awareness",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Under Condition 8202, you must maintain full-time enrolment and satisfactory academic progress. Failing these requirements can lead to visa cancellation.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_agent_prepared_docs",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Agent Integrity",
+    "question": "Did an education agent/consultant prepare or submit any of your documents?",
+    "help_text": "Using an agent is fine — but YOU are legally responsible for everything submitted under your name. Routes to the verification check.",
+    "input_type": "yes_no",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "any"
+      },
+      "trigger_if": {
+        "type": "never",
+        "value": null
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "aus_student_application_integrity_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 1,
+    "risk_category": "Low",
+    "tier": "info",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Using an education agent is permitted, but you are legally responsible for everything submitted in your name, regardless of who prepared it.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_personally_reviewed_all",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Agent Integrity",
+    "question": "Have you personally read and verified EVERY document and form answer submitted in your name?",
+    "help_text": "Unscrupulous agents inflate bank balances, fake experience letters, or alter transcripts. If an agent fabricated anything, YOU face refusal and a PIC 4020 ban. Verify every line yourself.",
+    "input_type": "yes_no_unknown",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "eq",
+        "value": "yes"
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "aus_student_application_integrity_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 3,
+    "risk_category": "High",
+    "tier": "high_risk",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "You must personally verify every document and answer submitted in your name. Agent-fabricated content — false balances, altered transcripts — makes you liable for refusal and a PIC 4020 ban.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  },
+  {
+    "id": "aus_agent_registered",
+    "country": "Australia",
+    "visa_route": "Student Visa (Subclass 500)",
+    "section": "Agent Integrity",
+    "question": "Is your agent registered/reputable (e.g. linked to the institution, MARA agent), rather than an unknown local middleman?",
+    "help_text": "Prefer agents authorised by your institution or a registered migration agent. 'Guaranteed visa' middlemen are the source of most fraud-related refusals.",
+    "input_type": "single_choice",
+    "required": true,
+    "options": [
+      {
+        "label": "Yes",
+        "value": "yes"
+      },
+      {
+        "label": "No",
+        "value": "no"
+      },
+      {
+        "label": "Not sure",
+        "value": "unknown"
+      },
+      {
+        "label": "Not applicable",
+        "value": "not_applicable"
+      }
+    ],
+    "validation": {
+      "pass_if": {
+        "type": "in",
+        "value": [
+          "yes",
+          "not_applicable"
+        ]
+      },
+      "trigger_if": {
+        "type": "in",
+        "value": [
+          "no",
+          "unknown"
+        ]
+      }
+    },
+    "show_if": null,
+    "mapped_rule": "Application Integrity and Agent Risk",
+    "mapped_rule_id": "aus_student_application_integrity_agent_risk",
+    "scoring_key": "agent_integrity",
+    "score_impact": 1,
+    "risk_category": "Medium",
+    "tier": "soft",
+    "blocker_possible": false,
+    "normalized_answer_format": "string_lowercase",
+    "error_message": "Use an agent authorised by your institution or a registered migration agent (MARA). Unregistered 'guaranteed visa' middlemen are the primary source of fraud-related refusals.",
+    "source_url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500",
+    "source_resolution_status": "direct_url",
+    "last_verified": "2026-05-29"
+  }
+]
